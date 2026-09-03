@@ -1,0 +1,37 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "About" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="prose">
+  <h1>{% trans "About TapCon" %}</h1>
+  <p class="lead muted">
+    {% trans "TapCon makes accepting a payment in person as simple as handing over cash — without a terminal." %}
+  </p>
+
+  <h2>{% trans "Why we built it" %}</h2>
+  <p>
+    {% trans "In Uzbekistan almost everyone pays with Click, Payme or Uzum. But a small business that wants to accept those payments has to read out a card number, wait for a screenshot, or rent a terminal it cannot afford." %}
+  </p>
+  <p>
+    {% trans "A TapCon card removes that. It costs less than a month of terminal rent, needs no power, and the money goes straight to the seller's own merchant account." %}
+  </p>
+
+  <h2>{% trans "How we make money" %}</h2>
+  <p>
+    {% trans "We sell the card once. We take no commission from your payments and charge no subscription. If you want us to obtain merchant accounts on your behalf, that is a separate service you can decline." %}
+  </p>
+
+  <h2>{% trans "Where we are" %}</h2>
+  <p>{% trans "Tashkent, Uzbekistan. Support is available in Uzbek and Russian." %}</p>
+</div>
+
+<div class="section">
+  <div class="cta-band">
+    <h2>{% trans "Get in touch" %}</h2>
+    <p>{% trans "We would rather answer a question than lose a customer to confusion." %}</p>
+    <a class="btn btn-primary" href="{% url 'core:contact' %}">{% trans "Contact us" %}</a>
+  </div>
+</div>
+{% endblock %}

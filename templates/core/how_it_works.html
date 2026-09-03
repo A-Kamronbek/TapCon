@@ -1,0 +1,63 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "How it works" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="section-head">
+  <h1>{% trans "How it works" %}</h1>
+  <p>{% trans "For the customer it is one tap. For you it is a card on the counter and a page in your portal." %}</p>
+</div>
+
+<div class="steps" style="margin-bottom:var(--s-7)">
+  <div class="step">
+    <div class="num">1</div>
+    <h3>{% trans "Tap" %}</h3>
+    <p>{% trans "The customer holds their phone near your card. No app, no scanning." %}</p>
+  </div>
+  <div class="step">
+    <div class="num">2</div>
+    <h3>{% trans "Amount" %}</h3>
+    <p>{% trans "Your payment page opens in their browser. They type what they owe." %}</p>
+  </div>
+  <div class="step">
+    <div class="num">3</div>
+    <h3>{% trans "Choose" %}</h3>
+    <p>{% trans "They tap the app they use. It opens with the amount already filled in." %}</p>
+  </div>
+  <div class="step">
+    <div class="num">4</div>
+    <h3>{% trans "Paid" %}</h3>
+    <p>{% trans "The provider confirms the payment to us and the money reaches your account." %}</p>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card">
+    <h3>{% trans "What you do once" %}</h3>
+    <ol class="prose">
+      <li>{% trans "Order a card and register with your phone number." %}</li>
+      <li>{% trans "Enter your merchant credentials for the providers you use." %}</li>
+      <li>{% trans "We approve your business, usually within a day." %}</li>
+      <li>{% trans "Put the card where customers pay." %}</li>
+    </ol>
+  </div>
+  <div class="card">
+    <h3>{% trans "What about phones without NFC?" %}</h3>
+    <p class="muted small">
+      {% trans "Most phones sold in the last few years read NFC. Older iPhones and some cheap Android phones do not." %}
+    </p>
+    <p class="muted small">
+      {% trans "Your payment page is an ordinary web address, so it also works from a QR code or a link you send in a message." %}
+    </p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="cta-band">
+    <h2>{% trans "Ready to try it?" %}</h2>
+    <p>{% trans "Order a card and we will call you back to arrange delivery." %}</p>
+    <a class="btn btn-primary" href="{% url 'core:order' %}">{% trans "Order a card" %}</a>
+  </div>
+</div>
+{% endblock %}

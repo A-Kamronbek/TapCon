@@ -1,0 +1,17 @@
+{
+  "Page not found": "Страница не найдена",
+  "The address may be mistyped, or the page may have moved.": "Возможно, адрес набран с ошибкой или страница была перемещена.",
+  "Go to home page": "На главную",
+  "No access": "Нет доступа",
+  "You may need to sign in again, or this page may not belong to your account.": "Возможно, нужно войти заново, или эта страница не относится к вашему аккаунту.",
+  "Log in": "Войти",
+  "Bad request": "Неверный запрос",
+  "Something was wrong with that request": "С этим запросом что-то не так",
+  "Try again from the beginning. If it keeps happening, tell us and we will look.": "Попробуйте начать сначала. Если это повторяется, напишите нам — мы разберёмся.",
+  "Something went wrong": "Что-то пошло не так",
+  "This is a problem on our side. Please try again in a moment. If you were paying, no money has been taken.": "Это проблема на нашей стороне. Попробуйте снова через минуту. Если вы оплачивали, деньги не списаны.",
+  "The card: price and replacement": "Карта: цена и замена",
+  "Returning a payment to a customer": "Возврат платежа клиенту",
+  "TapCon does not return payments. Money goes straight from your customer to your own merchant account, and we never hold it, so we have nothing to send back.": "TapCon не возвращает платежи. Деньги идут напрямую от клиента на ваш мерчант-счёт, мы их никогда не держим — и возвращать нам нечего.",
+  "If a customer paid too much or should be refunded, settle it with them directly, or ask your payment provider to return the payment through their own system. A payment your provider returns is shown in your transactions as “Returned to customer” and is not counted in your takings.": "Если клиент заплатил лишнее или ему нужно вернуть деньги, рассчитайтесь с ним напрямую или попросите свою платёжную систему вернуть платёж через неё. Возвращённый платёж отображается в ваших транзакциях как «Возвращено клиенту» и не входит в выручку."
+}

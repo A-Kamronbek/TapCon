@@ -1,0 +1,94 @@
+{% load static i18n assets %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}TapCon{% endblock %}</title>
+  <meta name="description" content="{% block description %}{% trans "Accept payments with a single tap." %}{% endblock %}">
+  <link rel="icon" href="{% static 'img/favicon.svg' %}" type="image/svg+xml">
+
+  {% comment %}
+  Search engines and link previews.
+
+  `noindex` is opt-in per page rather than opt-out: a page has to say it wants
+  to be found. The pay page, the merchant portal and everything behind a login
+  leave this alone and are therefore excluded — the safer default when the
+  thing being indexed could be a seller's payment form.
+  {% endcomment %}
+  {% block robots %}<meta name="robots" content="noindex, nofollow">{% endblock %}
+
+  {% if canonical_path %}
+    <link rel="canonical" href="{{ site_url }}{{ canonical_path }}">
+    {% comment %}
+    One page in three languages is one page, not three competing ones.
+    hreflang tells a crawler they are translations of each other, so a
+    Russian speaker is offered the Russian one. x-default points at Uzbek,
+    which is the primary language here.
+    {% endcomment %}
+    {% for code, path in language_alternates %}
+      <link rel="alternate" hreflang="{{ code }}" href="{{ site_url }}{{ path }}">
+    {% endfor %}
+    <link rel="alternate" hreflang="x-default" href="{{ site_url }}{{ default_alternate }}">
+  {% endif %}
+
+  <meta property="og:site_name" content="TapCon">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="{{ LANGUAGE_CODE }}">
+  <meta property="og:title" content="{% block og_title %}TapCon{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{% trans "Accept payments with a single tap." %}{% endblock %}">
+  <meta property="og:image" content="{{ site_url }}{% static 'img/og-image.png' %}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  {% if canonical_path %}<meta property="og:url" content="{{ site_url }}{{ canonical_path }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#2563eb">
+  {% comment %}
+  Inter is served from our own domain, not fonts.googleapis.com. That was a
+  render-blocking request to a third party on the one page that has to be fast
+  on a phone in a shop, over networks where Google is not always quick.
+
+  The Latin subset is preloaded because every page draws with it — the brand
+  name and the digits are Latin even in Russian. The Cyrillic file is left to
+  the unicode-range rules, so an Uzbek page never fetches it.
+  {% endcomment %}
+  <link rel="preload" href="{% static 'fonts/inter-latin.woff2' %}" as="font"
+        type="font/woff2" crossorigin>
+  {% comment %}
+  One request in production, eight while developing.
+
+  The design system is written as separate files because that is how it stays
+  navigable; it is served as one because eight requests on a phone in a shop
+  is not a trade a customer should pay for. `manage.py bundlecss` builds it,
+  the deploy script runs that before collectstatic, and a test fails if the
+  bundle on disk is older than its sources.
+
+  static_v stamps each file's modification time onto its URL. A cached
+  stylesheet once made a finished fix look broken, which is a bad way to
+  spend an afternoon.
+  {% endcomment %}
+  {% if is_dev %}
+    <link rel="stylesheet" href="{% static_v 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static_v 'css/tokens.css' %}">
+    <link rel="stylesheet" href="{% static_v 'css/components.css' %}">
+    <link rel="stylesheet" href="{% static_v 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static_v 'css/layouts.css' %}">
+    <link rel="stylesheet" href="{% static_v 'css/marketing.css' %}">
+    <link rel="stylesheet" href="{% static_v 'css/integrations.css' %}">
+    <link rel="stylesheet" href="{% static_v 'css/reports.css' %}">
+  {% else %}
+    <link rel="stylesheet" href="{% static_v 'css/bundle.css' %}">
+  {% endif %}
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  {% block body %}{% endblock %}
+  {% comment %}
+  Progressive enhancement only. Every page works with these scripts blocked:
+  the drawers and accordions are CSS, and the notification rows are forms.
+  {% endcomment %}
+  {% if user.is_authenticated %}
+    <script src="{% static_v 'js/notifications.js' %}" defer></script>
+  {% endif %}
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

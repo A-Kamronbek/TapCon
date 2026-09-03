@@ -1,0 +1,7 @@
+# TapCon — production extras (installed on the VPS on top of requirements.txt)
+-r requirements.txt
+# 3.2.9 was pinned here and has no wheel for Python 3.14 — `pip install -r`
+# failed outright on the VPS's runtime, which is the sort of thing you find
+# at 2am. 3.2.13 is the first in the line that ships one.
+psycopg[binary]==3.2.13
+gunicorn==23.0.0

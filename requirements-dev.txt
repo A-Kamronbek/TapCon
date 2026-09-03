@@ -1,0 +1,3 @@
+# Tools used only during development (translation maintenance).
+-r requirements.txt
+polib==1.2.0

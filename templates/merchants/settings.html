@@ -1,0 +1,55 @@
+{% extends "layouts/merchant.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Settings" %} — TapCon{% endblock %}
+{% block page_title %}{% trans "Settings" %}{% endblock %}
+
+{% block content %}
+<div class="settings-grid">
+
+  <section class="card">
+    <h3>{% trans "Your details" %}</h3>
+    {% comment %}
+      The label needs `for`, and the note needs to be reachable from the
+      field: without them a screen reader reads this box as an unnamed text
+      input showing a phone number, with no hint that it is the login and
+      cannot be edited here.
+    {% endcomment %}
+    <div class="field">
+      <label for="account-phone">{% trans "Phone number" %}</label>
+      <input class="input" type="text" id="account-phone" value="{{ user.phone }}"
+             readonly aria-describedby="account-phone-note">
+      <div class="small muted" id="account-phone-note" style="margin-top:var(--s-2)">
+        {% trans "This is your login. Contact support to change it." %}
+      </div>
+    </div>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      <input type="hidden" name="form" value="profile">
+      {% include "partials/form_fields.html" with form=profile_form %}
+      <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h3>{% trans "Business" %}</h3>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      <input type="hidden" name="form" value="business">
+      {% include "partials/form_fields.html" with form=business_form %}
+      <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h3>{% trans "Password" %}</h3>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      <input type="hidden" name="form" value="password">
+      {% include "partials/form_fields.html" with form=password_form %}
+      <button type="submit" class="btn btn-primary">{% trans "Change password" %}</button>
+    </form>
+  </section>
+
+</div>
+{% endblock %}

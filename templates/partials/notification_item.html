@@ -1,0 +1,27 @@
+{% load i18n %}
+{% comment %}
+One notification row, shared by the bell panel and the full list.
+
+The whole row is a submit button, not a link: clicking it marks the item read,
+which changes state, so it must be a POST. Everything inside the button is
+phrasing content (span/strong) — a <div> in a <button> is invalid HTML and
+browsers only tolerate it.
+{% endcomment %}
+<li class="bell-item {% if not item.is_read %}unread{% endif %}">
+  <form method="post" action="{% url 'core:notification_read' item.pk %}"
+        class="notif-form" data-notif-id="{{ item.pk }}">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+    <button type="submit" class="notif-row">
+      <span class="dot dot-{{ item.level }}"></span>
+      <span class="notif-text">
+        <strong>{{ item.title }}</strong>
+        {% if item.body %}<span class="notif-body {{ body_class|default:'small muted' }}">{{ item.body }}</span>{% endif %}
+        <span class="small faint">{{ item.created_at|date:"d.m.Y H:i" }}</span>
+      </span>
+      {% if not item.is_read %}
+        <span class="visually-hidden">{% trans "Unread" %}</span>
+      {% endif %}
+    </button>
+  </form>
+</li>

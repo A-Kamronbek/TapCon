@@ -1,0 +1,16 @@
+{% load i18n %}
+{% get_current_language as CURRENT %}
+{% get_available_languages as LANGS %}
+{% comment %}
+set_language works for the language-prefixed pages and for the unprefixed
+pay page alike, because it also stores the choice in a cookie.
+{% endcomment %}
+<form action="{% url 'set_language' %}" method="post" class="lang-switch">
+  {% csrf_token %}
+  <input type="hidden" name="next" value="{{ request.get_full_path }}">
+  {% for code, name in LANGS %}
+    <button type="submit" name="language" value="{{ code }}" lang="{{ code }}"
+            title="{{ name }}"
+            class="{% if code == CURRENT %}active{% endif %}">{{ code|upper }}</button>
+  {% endfor %}
+</form>

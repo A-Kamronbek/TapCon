@@ -1,0 +1,309 @@
+/* Phase 6: the seller's dashboard and transactions ledger.
+   Kept out of layouts.css because none of it is a shell — these are the
+   components two pages are built from. */
+
+/* --- headline figures --------------------------------------------------- */
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--s-4);
+  margin-bottom: var(--s-5);
+}
+
+.stat { display: flex; flex-direction: column; gap: var(--s-2); }
+
+.stat-label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.stat-value {
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  line-height: 1.1;
+  /* Tabular figures, so a row of amounts lines up on the decimal instead of
+     jittering as the digits change. */
+  font-variant-numeric: tabular-nums;
+}
+.stat-value span {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--text-faint);
+}
+
+/* The number the page exists to answer. Everything else on this row is
+   context for it, so it gets the weight and the colour. */
+.stat-lead { border: 1px solid var(--primary-soft); }
+.stat-lead .stat-value { font-size: var(--fs-3xl); color: var(--primary); }
+
+/* --- the 14-day bars ---------------------------------------------------- */
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--s-2);
+  /* Enough height to tell a tall day from a short one, not so much that the
+     card dominates a page whose point is the numbers above it. */
+  height: 140px;
+}
+
+.bar-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  height: 100%;
+}
+
+.bar-track {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  background: var(--bg);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+}
+
+.bar-fill {
+  width: 100%;
+  background: var(--primary-mid);
+  border-radius: var(--r-sm);
+  /* A day with nothing still gets a visible baseline: a column drawn at zero
+     height reads as missing data rather than as a quiet day. */
+  min-height: 3px;
+}
+
+.bar-today .bar-fill { background: var(--primary); }
+
+.bar-label {
+  font-size: var(--fs-xs);
+  color: var(--text-faint);
+  text-align: center;
+  white-space: nowrap;
+}
+.bar-today .bar-label { color: var(--primary); font-weight: 600; }
+
+/* Fourteen labels do not fit across a phone. The bars still do, so the
+   labels go rather than the chart. */
+@media (max-width: 640px) {
+  .bar-label { display: none; }
+  .bars { height: 110px; }
+}
+
+/* --- the dashboard's lower half ----------------------------------------- */
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--s-4);
+  align-items: start;
+  margin-top: var(--s-5);
+}
+
+.mini-table { width: 100%; border-collapse: collapse; }
+/* Cells need horizontal padding, not just vertical. With none, a column whose
+   text fills its width touches the next one and the row reads as one word:
+   "Multicard42 000" on a phone, where the columns are narrowest. The first
+   and last cells stay flush with the card's own edges. */
+.mini-table td {
+  padding: var(--s-3) var(--s-2);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.mini-table td:first-child { padding-left: 0; }
+.mini-table td:last-child { padding-right: 0; }
+.mini-table tr:last-child td { border-bottom: none; }
+
+/* The recent-payments table carries four columns — date, method, amount and a
+   status badge — in a card that is 343px wide on a phone. It did not fit: the
+   row spilled about 7px past the card's edge, which showed up as a clipped
+   badge on the longest status word ("Muvaffaqiyatsiz").
+   Below 600px it becomes two lines, the same shape as the full transactions
+   table, so the two pages read alike. The three-column tables beside it fit
+   as they are and are left alone. */
+@media (max-width: 600px) {
+  .recent-table, .recent-table tbody { display: block; }
+  .recent-table tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: var(--s-1) var(--s-3);
+    padding: var(--s-3) 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .recent-table tr:last-child { border-bottom: none; }
+  .recent-table td { display: block; padding: 0; border: none; }
+  .recent-table td:nth-child(1) { grid-area: 1 / 1; }
+  .recent-table td:nth-child(3) { grid-area: 1 / 2; }
+  .recent-table td:nth-child(2) { grid-area: 2 / 1; }
+  .recent-table td:nth-child(4) { grid-area: 2 / 2; justify-self: end; }
+}
+
+/* Scoped to the two tables that have money columns. A bare `.num` also
+   matches the numbered step circles on the landing page — harmless today,
+   because those are flex-centred, but a global class reaching into unrelated
+   markup is a trap for whoever changes one of them next. */
+.mini-table .num,
+.txn-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* --- transactions: filters ---------------------------------------------- */
+
+.txn-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--s-4);
+  align-items: end;
+  margin-bottom: var(--s-4);
+}
+.txn-filters .field { margin-bottom: 0; }
+
+/* The toggle and the buttons get a full-width row rather than a grid cell:
+   two buttons do not fit in a 180px column, and left in the grid they stacked
+   and pulled the whole bar out of line. */
+.txn-filter-bottom {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  cursor: pointer;
+  /* The whole label is the target, not just the 13px box. */
+  min-height: var(--tap-target);
+  font-weight: 500;
+}
+.checkbox input { width: 18px; height: 18px; accent-color: var(--primary); }
+
+.txn-filter-actions { display: flex; gap: var(--s-2); flex-wrap: wrap; }
+
+/* --- transactions: the summary bar -------------------------------------- */
+
+.txn-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-4);
+}
+.txn-summary .summary-count { font-variant-numeric: tabular-nums; }
+.txn-summary-side { margin-left: auto; }
+.txn-export { margin-left: var(--s-2); }
+
+/* A sandbox view sums money that does not exist. It must not look like the
+   card that shows real takings. */
+.txn-summary-sandbox {
+  background: var(--warning-soft);
+  border: 1px solid var(--warning);
+}
+
+/* --- transactions: the table -------------------------------------------- */
+
+/* A table that cannot shrink pushes the document wider than the phone, and
+   then the whole page scrolls sideways. It scrolls inside its own box. */
+.table-wrap { overflow-x: auto; padding: 0; }
+
+.txn-table { width: 100%; border-collapse: collapse; min-width: 520px; }
+.txn-table th {
+  text-align: left;
+  padding: var(--s-3) var(--s-4);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.txn-table th.num { text-align: right; }
+.txn-table td {
+  padding: var(--s-3) var(--s-4);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.txn-table tr:last-child td { border-bottom: none; }
+
+.txn-date { font-weight: 600; }
+.txn-time { margin-left: var(--s-2); }
+.txn-ref {
+  display: block;
+  font-size: var(--fs-xs);
+  /* The reference is what a customer quotes in a support message, so it has
+     to be readable character by character — monospace, and `muted` rather
+     than `faint`, which at 12px on white is below the contrast a seller can
+     comfortably read a random string from. */
+  color: var(--text-muted);
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+}
+
+/* On a phone the four columns need 520px and the screen has 343. The table
+   scrolled inside its own box, which kept the page from scrolling sideways —
+   but it also put the amount and the status, the two things a seller opens
+   this page to read, off the right-hand edge, behind a sideways scroll with
+   nothing on screen to suggest it was there.
+   So below 600px the row stops being a row: date and amount share the first
+   line, method and status the second, and nothing is hidden. The table markup
+   is unchanged, because it is still a table — this is only how it is drawn
+   when there is no room to draw it as one. */
+@media (max-width: 600px) {
+  .table-wrap { overflow-x: visible; }
+  .txn-table { min-width: 0; }
+  .txn-table thead { display: none; }
+  .txn-table, .txn-table tbody { display: block; }
+  .txn-table tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: var(--s-1) var(--s-3);
+    padding: var(--s-3) var(--s-4);
+    border-bottom: 1px solid var(--border);
+  }
+  .txn-table td { display: block; padding: 0; border: none; }
+  .txn-table td:nth-child(1) { grid-area: 1 / 1; min-width: 0; }
+  .txn-table td:nth-child(3) { grid-area: 1 / 2; }
+  .txn-table td:nth-child(2) { grid-area: 2 / 1; color: var(--text-muted); }
+  .txn-table td:nth-child(4) { grid-area: 2 / 2; justify-self: end; }
+  /* A long reference must wrap rather than push the amount off the edge. */
+  .txn-ref { overflow-wrap: anywhere; }
+}
+
+.txn-note {
+  margin-top: var(--s-3);
+  /* Reads as a footnote to the table above it, not as a warning. */
+  max-width: 68ch;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+  margin-top: var(--s-4);
+}
+
+/* --- error pages -------------------------------------------------------- */
+
+.error-page { max-width: 520px; margin: var(--s-7) auto; }
+.error-code {
+  font-size: var(--fs-3xl);
+  font-weight: 800;
+  /* Faint on purpose: the number is for us, the sentence is for the reader. */
+  color: var(--border-strong);
+  line-height: 1;
+  margin-bottom: var(--s-4);
+}
+.error-page h1 { font-size: var(--fs-xl); margin-bottom: var(--s-2); }
+
+.empty-state { text-align: center; padding: var(--s-7) var(--s-5); }
+.empty-state h3 { margin-bottom: var(--s-2); }
+.empty-state p { margin-bottom: var(--s-4); }

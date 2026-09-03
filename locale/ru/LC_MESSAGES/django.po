@@ -1,0 +1,2538 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-03 02:04+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\accounts\admin.py:16
+msgid "Personal info"
+msgstr "Личные данные"
+
+#: .\accounts\admin.py:18
+msgid "Permissions"
+msgstr "Права"
+
+#: .\accounts\admin.py:31 .\merchants\admin.py:25
+msgid "Dates"
+msgstr "Даты"
+
+#: .\accounts\apps.py:8
+msgid "Accounts"
+msgstr "Аккаунты"
+
+#: .\accounts\forms.py:22 .\core\forms.py:20 .\merchants\forms.py:57
+msgid "Enter a valid Uzbek number: +998 XX XXX XX XX"
+msgstr "Введите корректный номер: +998 XX XXX XX XX"
+
+#: .\accounts\forms.py:28 .\core\forms.py:29 .\core\forms.py:56
+msgid "Your name"
+msgstr "Ваше имя"
+
+#: .\accounts\forms.py:33
+msgid "Business name"
+msgstr "Название бизнеса"
+
+#: .\accounts\forms.py:37 .\accounts\forms.py:66 .\accounts\forms.py:85
+#: .\core\forms.py:30 .\core\forms.py:57 .\templates\core\styleguide.html:48
+#: .\templates\merchants\settings.html:20
+msgid "Phone number"
+msgstr "Номер телефона"
+
+#: .\accounts\forms.py:39 .\accounts\forms.py:87
+#: .\templates\merchants\settings.html:46
+msgid "Password"
+msgstr "Пароль"
+
+#: .\accounts\forms.py:43 .\accounts\forms.py:116
+msgid "Repeat password"
+msgstr "Повторите пароль"
+
+#: .\accounts\forms.py:52 .\accounts\forms.py:125 .\merchants\forms.py:129
+msgid "The passwords do not match."
+msgstr "Пароли не совпадают."
+
+#: .\accounts\forms.py:61 .\accounts\models.py:63 .\accounts\services.py:187
+msgid "This number is already registered."
+msgstr "Этот номер уже зарегистрирован."
+
+#: .\accounts\forms.py:71
+msgid "Confirmation code"
+msgstr "Код подтверждения"
+
+#: .\accounts\forms.py:103
+msgid "Wrong phone number or password."
+msgstr "Неверный номер или пароль."
+
+#: .\accounts\forms.py:105
+msgid "This account is disabled."
+msgstr "Этот аккаунт отключён."
+
+#: .\accounts\forms.py:112 .\merchants\forms.py:122
+#: .\templates\accounts\password_reset_set.html:4
+#: .\templates\accounts\password_reset_set.html:5
+msgid "New password"
+msgstr "Новый пароль"
+
+#: .\accounts\models.py:15
+msgid "Format: +998 XX XXX XX XX"
+msgstr "Формат: +998 XX XXX XX XX"
+
+#: .\accounts\models.py:36
+msgid "Phone number is required."
+msgstr "Номер телефона обязателен."
+
+#: .\accounts\models.py:53
+msgid "Superuser must have is_staff and is_superuser set."
+msgstr "У суперпользователя должны быть установлены is_staff и is_superuser."
+
+#: .\accounts\models.py:59 .\accounts\models.py:103 .\core\models.py:22
+#: .\core\models.py:57
+msgid "phone number"
+msgstr "номер телефона"
+
+#: .\accounts\models.py:65
+msgid "phone verified"
+msgstr "номер подтверждён"
+
+#: .\accounts\models.py:66 .\core\models.py:20 .\core\models.py:55
+msgid "full name"
+msgstr "полное имя"
+
+#: .\accounts\models.py:67
+msgid "is seller"
+msgstr "продавец"
+
+#: .\accounts\models.py:68
+msgid "active"
+msgstr "активен"
+
+#: .\accounts\models.py:69
+msgid "staff status"
+msgstr "сотрудник"
+
+#: .\accounts\models.py:70
+msgid "date joined"
+msgstr "дата регистрации"
+
+#: .\accounts\models.py:78 .\core\models.py:93 .\merchants\models.py:34
+msgid "user"
+msgstr "пользователь"
+
+#: .\accounts\models.py:79
+msgid "users"
+msgstr "пользователи"
+
+#: .\accounts\models.py:90
+msgid "Registration"
+msgstr "Регистрация"
+
+#: .\accounts\models.py:91
+msgid "Password reset"
+msgstr "Сброс пароля"
+
+#: .\accounts\models.py:105
+msgid "purpose"
+msgstr "назначение"
+
+#: .\accounts\models.py:114
+msgid "phone code"
+msgstr "код по SMS"
+
+#: .\accounts\models.py:115
+msgid "phone codes"
+msgstr "коды по SMS"
+
+#: .\accounts\services.py:80
+msgid "Please wait before requesting another code."
+msgstr "Подождите перед запросом нового кода."
+
+#: .\accounts\services.py:86
+msgid "Too many codes requested. Try again in an hour."
+msgstr "Слишком много запросов. Попробуйте через час."
+
+#: .\accounts\services.py:138
+msgid "No active code. Request a new one."
+msgstr "Активного кода нет. Запросите новый."
+
+#: .\accounts\services.py:140
+msgid "The code has expired. Request a new one."
+msgstr "Срок действия кода истёк. Запросите новый."
+
+#: .\accounts\services.py:142
+msgid "Too many wrong attempts. Request a new code."
+msgstr "Слишком много неверных попыток. Запросите новый код."
+
+#: .\accounts\services.py:151
+msgid "Incorrect code."
+msgstr "Неверный код."
+
+#: .\accounts\services.py:226 .\accounts\services.py:237
+msgid "Account not found."
+msgstr "Аккаунт не найден."
+
+#: .\accounts\validators.py:17
+#, python-format
+msgid "The password must be at least %(min_length)d characters long."
+msgstr "Пароль должен содержать не менее %(min_length)d символов."
+
+#: .\accounts\validators.py:23
+#, python-format
+msgid "At least %(min_length)d characters."
+msgstr "Не менее %(min_length)d символов."
+
+#: .\accounts\validators.py:32
+msgid "This password is too common. Choose a less obvious one."
+msgstr "Этот пароль слишком распространён. Выберите менее очевидный."
+
+#: .\accounts\validators.py:37
+msgid "Do not use a common password."
+msgstr "Не используйте распространённый пароль."
+
+#: .\accounts\validators.py:46 .\accounts\validators.py:51
+msgid "The password cannot be only numbers."
+msgstr "Пароль не может состоять только из цифр."
+
+#: .\accounts\validators.py:60
+msgid "The password is too similar to your other details."
+msgstr "Пароль слишком похож на ваши другие данные."
+
+#: .\accounts\validators.py:65
+msgid "The password cannot be too similar to your other details."
+msgstr "Пароль не должен быть похож на ваши другие данные."
+
+#: .\accounts\views.py:84
+msgid "Could not send the SMS. Please try again."
+msgstr "Не удалось отправить SMS. Попробуйте ещё раз."
+
+#: .\accounts\views.py:130
+msgid "Start again — we don't know which number to confirm."
+msgstr "Начните заново — мы не знаем, какой номер подтверждать."
+
+#: .\accounts\views.py:165
+msgid "Start again — your session expired."
+msgstr "Начните заново — сессия истекла."
+
+#: .\accounts\views.py:176
+msgid "Your number is confirmed. Welcome to TapCon."
+msgstr "Номер подтверждён. Добро пожаловать в TapCon."
+
+#: .\accounts\views.py:209
+msgid "A new code is on its way."
+msgstr "Новый код отправлен."
+
+#: .\accounts\views.py:226
+msgid "Confirm your number to continue."
+msgstr "Подтвердите номер, чтобы продолжить."
+
+#: .\accounts\views.py:275
+msgid "No account uses that number."
+msgstr "С этим номером нет аккаунта."
+
+#: .\accounts\views.py:280
+msgid "Password changed. You can sign in now."
+msgstr "Пароль изменён. Теперь можно войти."
+
+#: .\config\settings\base.py:100
+msgid "O'zbekcha"
+msgstr "Узбекский"
+
+#: .\config\settings\base.py:101
+msgid "Русский"
+msgstr "Русский"
+
+#: .\config\settings\base.py:102
+msgid "English"
+msgstr "Английский"
+
+#: .\core\admin.py:16
+msgid "Mark as contacted"
+msgstr "Отметить как «связались»"
+
+#: .\core\admin.py:20
+msgid "Mark as delivered"
+msgstr "Отметить как «доставлено»"
+
+#: .\core\apps.py:8
+msgid "Core"
+msgstr "Основное"
+
+#: .\core\forms.py:31
+msgid "Delivery address"
+msgstr "Адрес доставки"
+
+#: .\core\forms.py:32
+msgid "How many cards"
+msgstr "Сколько карт"
+
+#: .\core\forms.py:33
+msgid "Comment"
+msgstr "Комментарий"
+
+#: .\core\forms.py:39
+msgid "City, street, house"
+msgstr "Город, улица, дом"
+
+#: .\core\forms.py:47
+msgid "Anything we should know — business type, delivery time."
+msgstr "Что нам стоит знать — тип бизнеса, удобное время доставки."
+
+#: .\core\forms.py:58
+msgid "Message"
+msgstr "Сообщение"
+
+#: .\core\limits.py:129 .\core\throttle.py:121
+msgid "Too many attempts. Please wait a moment and try again."
+msgstr "Слишком много попыток. Подождите немного и попробуйте снова."
+
+#: .\core\models.py:11
+msgid "New"
+msgstr "Новая"
+
+#: .\core\models.py:12
+msgid "Contacted"
+msgstr "Связались"
+
+#: .\core\models.py:13
+msgid "Delivered"
+msgstr "Доставлено"
+
+#: .\core\models.py:14 .\payments\models.py:213 .\payments\reporting.py:41
+msgid "Cancelled"
+msgstr "Отменено"
+
+#: .\core\models.py:24
+msgid "delivery address"
+msgstr "адрес доставки"
+
+#: .\core\models.py:26
+msgid "number of cards"
+msgstr "количество карт"
+
+#: .\core\models.py:30
+msgid "comment"
+msgstr "комментарий"
+
+#: .\core\models.py:32 .\merchants\models.py:62 .\payments\models.py:329
+msgid "status"
+msgstr "статус"
+
+#: .\core\models.py:37
+msgid "card order"
+msgstr "заказ карты"
+
+#: .\core\models.py:38
+msgid "card orders"
+msgstr "заказы карт"
+
+#: .\core\models.py:59
+msgid "message"
+msgstr "сообщение"
+
+#: .\core\models.py:60
+msgid "handled"
+msgstr "обработано"
+
+#: .\core\models.py:64
+msgid "contact message"
+msgstr "обращение"
+
+#: .\core\models.py:65
+msgid "contact messages"
+msgstr "обращения"
+
+#: .\core\models.py:77
+msgid "Information"
+msgstr "Информация"
+
+#: .\core\models.py:78
+msgid "Good news"
+msgstr "Хорошая новость"
+
+#: .\core\models.py:79
+msgid "Attention"
+msgstr "Внимание"
+
+#: .\core\models.py:95
+msgid "title"
+msgstr "заголовок"
+
+#: .\core\models.py:96
+msgid "text"
+msgstr "текст"
+
+#: .\core\models.py:98
+msgid "kind"
+msgstr "тип"
+
+#: .\core\models.py:101
+msgid "link"
+msgstr "ссылка"
+
+#: .\core\models.py:102
+msgid "read"
+msgstr "прочитано"
+
+#: .\core\models.py:106
+msgid "notification"
+msgstr "уведомление"
+
+#: .\core\models.py:107
+msgid "notifications"
+msgstr "уведомления"
+
+#: .\core\services.py:81
+msgid "Your business is approved"
+msgstr "Ваш бизнес подтверждён"
+
+#: .\core\services.py:82
+msgid "Your payment page is live. You can start accepting payments."
+msgstr "Страница оплаты работает. Можно принимать платежи."
+
+#: .\core\services.py:91
+msgid "Your account is suspended"
+msgstr "Ваш аккаунт приостановлен"
+
+#: .\core\services.py:92
+msgid "Your payment page no longer accepts payments. Please contact support."
+msgstr "Страница оплаты больше не принимает платежи. Свяжитесь с поддержкой."
+
+#: .\core\views.py:120
+msgid "Thank you. We will call you back shortly."
+msgstr "Спасибо. Мы скоро перезвоним."
+
+#: .\merchants\admin.py:19 .\templates\core\contact.html:4
+#: .\templates\core\privacy.html:36 .\templates\core\terms.html:44
+#: .\templates\layouts\marketing.html:45 .\templates\partials\navbar.html:21
+msgid "Contact"
+msgstr "Контакты"
+
+#: .\merchants\admin.py:21
+msgid "Pay page"
+msgstr "Страница оплаты"
+
+#: .\merchants\admin.py:24
+msgid "Approval"
+msgstr "Подтверждение"
+
+#: .\merchants\admin.py:30
+msgid "Approve selected sellers"
+msgstr "Подтвердить выбранных продавцов"
+
+#: .\merchants\admin.py:38
+#, python-format
+msgid "%d seller approved."
+msgid_plural "%d sellers approved."
+msgstr[0] "Подтверждён %d продавец."
+msgstr[1] "Подтверждено %d продавца."
+
+#: .\merchants\admin.py:42
+msgid "Suspend selected sellers"
+msgstr "Приостановить выбранных продавцов"
+
+#: .\merchants\admin.py:50
+#, python-format
+msgid "%d seller suspended."
+msgid_plural "%d sellers suspended."
+msgstr[0] "Приостановлен %d продавец."
+msgstr[1] "Приостановлено %d продавца."
+
+#: .\merchants\apps.py:8
+msgid "Merchants"
+msgstr "Продавцы"
+
+#: .\merchants\forms.py:47
+msgid "Shown to customers on your payment page."
+msgstr "Показывается покупателям на вашей странице оплаты."
+
+#: .\merchants\forms.py:48
+msgid "Optional. Shown to customers who need help."
+msgstr "Необязательно. Показывается покупателям, которым нужна помощь."
+
+#: .\merchants\forms.py:76
+msgid "Name shown to customers"
+msgstr "Название для покупателей"
+
+#: .\merchants\forms.py:77
+msgid "Welcome text"
+msgstr "Приветственный текст"
+
+#: .\merchants\forms.py:78
+msgid "Thank-you text"
+msgstr "Текст благодарности"
+
+#: .\merchants\forms.py:79
+msgid "Smallest amount"
+msgstr "Минимальная сумма"
+
+#: .\merchants\forms.py:80
+msgid "Largest amount"
+msgstr "Максимальная сумма"
+
+#: .\merchants\forms.py:83
+msgid "Optional. Shown under your business name."
+msgstr "Необязательно. Показывается под названием вашего бизнеса."
+
+#: .\merchants\forms.py:84
+msgid "Optional. Shown after a successful payment."
+msgstr "Необязательно. Показывается после успешной оплаты."
+
+#: .\merchants\forms.py:104
+msgid "The smallest amount must be at least 1 soum."
+msgstr "Минимальная сумма должна быть не меньше 1 сума."
+
+#: .\merchants\forms.py:107
+msgid "The largest amount must be above the smallest."
+msgstr "Максимальная сумма должна быть больше минимальной."
+
+#: .\merchants\forms.py:121
+msgid "Current password"
+msgstr "Текущий пароль"
+
+#: .\merchants\forms.py:123
+msgid "Repeat new password"
+msgstr "Повторите новый пароль"
+
+#: .\merchants\models.py:24
+msgid "Awaiting approval"
+msgstr "Ожидает подтверждения"
+
+#: .\merchants\models.py:25 .\templates\merchants\dashboard.html:132
+msgid "Approved"
+msgstr "Подтверждён"
+
+#: .\merchants\models.py:26
+msgid "Suspended"
+msgstr "Приостановлен"
+
+#: .\merchants\models.py:38
+msgid "pay link id"
+msgstr "id платёжной ссылки"
+
+#: .\merchants\models.py:40
+msgid "business name"
+msgstr "название бизнеса"
+
+#: .\merchants\models.py:41
+msgid "logo"
+msgstr "логотип"
+
+#: .\merchants\models.py:42
+msgid "contact phone"
+msgstr "контактный телефон"
+
+#: .\merchants\models.py:43
+msgid "address"
+msgstr "адрес"
+
+#: .\merchants\models.py:46
+msgid "welcome text"
+msgstr "приветственный текст"
+
+#: .\merchants\models.py:47
+msgid "thank-you text"
+msgstr "текст благодарности"
+
+#: .\merchants\models.py:49
+msgid "minimum amount"
+msgstr "минимальная сумма"
+
+#: .\merchants\models.py:55
+msgid "maximum amount"
+msgstr "максимальная сумма"
+
+#: .\merchants\models.py:64
+msgid "approved at"
+msgstr "дата подтверждения"
+
+#: .\merchants\models.py:71
+msgid "approved by"
+msgstr "кто подтвердил"
+
+#: .\merchants\models.py:78 .\payments\models.py:41 .\payments\models.py:311
+msgid "seller"
+msgstr "продавец"
+
+#: .\merchants\models.py:79
+msgid "sellers"
+msgstr "продавцы"
+
+#: .\merchants\views.py:75
+msgid "This account is not a seller account, so it has no merchant pages."
+msgstr ""
+"Этот аккаунт не является аккаунтом продавца, поэтому у него нет страниц "
+"мерчанта."
+
+#: .\merchants\views.py:146
+msgid "Your payment page is updated."
+msgstr "Ваша платёжная страница обновлена."
+
+#: .\merchants\views.py:213 .\payments\services.py:56
+#: .\payments\services.py:76 .\payments\services.py:95
+#: .\payments\services.py:252
+msgid "Unknown payment provider."
+msgstr "Неизвестный платёжный провайдер."
+
+#: .\merchants\views.py:224
+#, python-format
+msgid "%(provider)s is on."
+msgstr "%(provider)s включён."
+
+#: .\merchants\views.py:226
+#, python-format
+msgid "%(provider)s is off."
+msgstr "%(provider)s выключен."
+
+#: .\merchants\views.py:233 .\merchants\views.py:242
+msgid "Saved."
+msgstr "Сохранено."
+
+#: .\merchants\views.py:314 .\templates\merchants\transactions.html:110
+msgid "Date"
+msgstr "Дата"
+
+#: .\merchants\views.py:315 .\templates\payments\result.html:80
+msgid "Reference"
+msgstr "Номер обращения"
+
+#: .\merchants\views.py:316
+msgid "Provider"
+msgstr "Платёжная система"
+
+#: .\merchants\views.py:317 .\payments\forms.py:36
+#: .\templates\core\home.html:38 .\templates\core\how_it_works.html:20
+#: .\templates\core\styleguide.html:52
+#: .\templates\merchants\transactions.html:112
+#: .\templates\payments\pay.html:53
+msgid "Amount"
+msgstr "Сумма"
+
+#: .\merchants\views.py:318 .\templates\merchants\transactions.html:39
+#: .\templates\merchants\transactions.html:113
+msgid "Status"
+msgstr "Статус"
+
+#: .\merchants\views.py:319
+msgid "Mode"
+msgstr "Режим"
+
+#: .\merchants\views.py:331
+msgid "Sandbox"
+msgstr "Тест"
+
+#: .\merchants\views.py:331
+msgid "Live"
+msgstr "Рабочий"
+
+#: .\merchants\views.py:374
+msgid "Your details are saved."
+msgstr "Ваши данные сохранены."
+
+#: .\merchants\views.py:382
+msgid "Business details are saved."
+msgstr "Данные бизнеса сохранены."
+
+#: .\merchants\views.py:392
+msgid "Your password is changed."
+msgstr "Пароль изменён."
+
+#: .\payments\admin.py:21
+msgid "credentials set"
+msgstr "ключи заданы"
+
+#: .\payments\apps.py:8
+msgid "Payments"
+msgstr "Платежи"
+
+#: .\payments\forms.py:68
+#, python-format
+msgid "The smallest amount here is %(amount)s soum."
+msgstr "Минимальная сумма здесь — %(amount)s сум."
+
+#: .\payments\forms.py:73
+#, python-format
+msgid "The largest amount here is %(amount)s soum."
+msgstr "Максимальная сумма здесь — %(amount)s сум."
+
+#: .\payments\forms.py:87
+msgid "Enter digits only."
+msgstr "Введите только цифры."
+
+#: .\payments\forms.py:128
+msgid "Leave blank to keep the saved value."
+msgstr "Оставьте пустым, чтобы сохранить прежнее значение."
+
+#: .\payments\forms.py:192
+msgid "Fill this in."
+msgstr "Заполните это поле."
+
+#: .\payments\models.py:43 .\payments\models.py:322
+msgid "provider"
+msgstr "провайдер"
+
+#: .\payments\models.py:46
+msgid "credentials"
+msgstr "ключи"
+
+#: .\payments\models.py:48
+msgid "enabled"
+msgstr "включён"
+
+#: .\payments\models.py:50 .\payments\models.py:343
+msgid "test mode"
+msgstr "тестовый режим"
+
+#: .\payments\models.py:52
+msgid "Use the provider's sandbox instead of real money."
+msgstr "Использовать тестовую среду провайдера вместо реальных денег."
+
+#: .\payments\models.py:59
+msgid "provider integration"
+msgstr "интеграция провайдера"
+
+#: .\payments\models.py:60
+msgid "provider integrations"
+msgstr "интеграции провайдеров"
+
+#: .\payments\models.py:210
+msgid "Created"
+msgstr "Создан"
+
+#: .\payments\models.py:211 .\templates\core\styleguide.html:65
+msgid "Pending"
+msgstr "В обработке"
+
+#: .\payments\models.py:212 .\payments\reporting.py:38
+#: .\templates\core\home.html:48 .\templates\core\how_it_works.html:30
+#: .\templates\payments\result.html:32
+msgid "Paid"
+msgstr "Оплачено"
+
+#: .\payments\models.py:214 .\payments\reporting.py:42
+#: .\templates\core\styleguide.html:66
+msgid "Failed"
+msgstr "Ошибка"
+
+#: .\payments\models.py:220 .\payments\reporting.py:39
+msgid "Returned to customer"
+msgstr "Возвращено клиенту"
+
+#: .\payments\models.py:319
+msgid "reference"
+msgstr "номер обращения"
+
+#: .\payments\models.py:326
+msgid "amount"
+msgstr "сумма"
+
+#: .\payments\models.py:338
+msgid "provider transaction id"
+msgstr "номер транзакции провайдера"
+
+#: .\payments\models.py:341
+msgid "raw payload"
+msgstr "исходные данные"
+
+#: .\payments\models.py:347
+msgid "paid at"
+msgstr "оплачено"
+
+#: .\payments\models.py:352
+msgid "transaction"
+msgstr "транзакция"
+
+#: .\payments\models.py:353
+msgid "transactions"
+msgstr "транзакции"
+
+#: .\payments\providers.py:22 .\payments\providers.py:32
+#: .\payments\providers.py:62
+msgid "Merchant ID"
+msgstr "Merchant ID"
+
+#: .\payments\providers.py:23
+msgid "Key"
+msgstr "Ключ"
+
+#: .\payments\providers.py:31 .\payments\providers.py:47
+#: .\payments\providers.py:63
+msgid "Service ID"
+msgstr "Service ID"
+
+#: .\payments\providers.py:33
+msgid "Merchant user ID"
+msgstr "Merchant user ID"
+
+#: .\payments\providers.py:34
+msgid "Secret key"
+msgstr "Секретный ключ"
+
+#: .\payments\providers.py:48 .\payments\providers.py:64
+msgid "Webhook username"
+msgstr "Логин для webhook"
+
+#: .\payments\providers.py:49 .\payments\providers.py:65
+msgid "Webhook password"
+msgstr "Пароль для webhook"
+
+#: .\payments\providers.py:75 .\payments\providers.py:111
+#: .\templates\partials\provider_strip.html:20
+msgid "Bank card"
+msgstr "Банковская карта"
+
+#: .\payments\providers.py:95
+msgid "Shop ID"
+msgstr "ID магазина"
+
+#: .\payments\providers.py:97 .\payments\providers.py:122
+msgid "Secret"
+msgstr "Секретный ключ"
+
+#: .\payments\providers.py:101
+msgid "Callback key"
+msgstr "Ключ для callback"
+
+#: .\payments\providers.py:121
+msgid "Application ID"
+msgstr "ID приложения"
+
+#: .\payments\providers.py:123
+msgid "Store ID"
+msgstr "ID магазина"
+
+#: .\payments\reporting.py:31
+msgid "Today"
+msgstr "Сегодня"
+
+#: .\payments\reporting.py:32 .\templates\merchants\dashboard.html:25
+msgid "Last 7 days"
+msgstr "Последние 7 дней"
+
+#: .\payments\reporting.py:33 .\templates\merchants\dashboard.html:33
+#: .\templates\merchants\dashboard.html:74
+msgid "Last 30 days"
+msgstr "Последние 30 дней"
+
+#: .\payments\reporting.py:34
+msgid "All time"
+msgstr "Всё время"
+
+#: .\payments\reporting.py:40
+msgid "Waiting"
+msgstr "Ожидание"
+
+#: .\payments\services.py:84
+msgid "Fill in every field for this provider before switching it on."
+msgstr "Заполните все поля этого провайдера, прежде чем включать его."
+
+#: .\payments\services.py:255
+msgid "This business is not accepting payments yet."
+msgstr "Этот бизнес пока не принимает платежи."
+
+#: .\payments\services.py:259
+msgid "That payment method is not available right now."
+msgstr "Этот способ оплаты сейчас недоступен."
+
+#: .\payments\services.py:264 .\payments\services.py:277
+msgid "Enter a valid amount."
+msgstr "Введите корректную сумму."
+
+#: .\payments\services.py:272
+msgid "Enter a whole number of soum."
+msgstr "Введите сумму целым числом."
+
+#: .\payments\services.py:280
+msgid "That amount is outside this business's limits."
+msgstr "Сумма вне пределов, установленных этим бизнесом."
+
+#: .\payments\services.py:309 .\payments\services.py:314
+msgid "We could not reach that payment system. Try another."
+msgstr "Не удалось связаться с этой платёжной системой. Выберите другую."
+
+#: .\templates\400.html:4
+msgid "Bad request"
+msgstr "Неверный запрос"
+
+#: .\templates\400.html:9
+msgid "Something was wrong with that request"
+msgstr "С этим запросом что-то не так"
+
+#: .\templates\400.html:11
+msgid ""
+"Try again from the beginning. If it keeps happening, tell us and we will "
+"look."
+msgstr ""
+"Попробуйте начать сначала. Если это повторяется, напишите нам — мы "
+"разберёмся."
+
+#: .\templates\400.html:14 .\templates\403.html:20 .\templates\404.html:26
+#: .\templates\429.html:24 .\templates\500.html:59
+msgid "Go to home page"
+msgstr "На главную"
+
+#: .\templates\400.html:15 .\templates\404.html:27
+#: .\templates\core\about.html:34 .\templates\core\contact.html:10
+#: .\templates\core\faq.html:68 .\templates\core\for_business.html:62
+#: .\templates\core\pricing.html:62
+msgid "Contact us"
+msgstr "Свяжитесь с нами"
+
+#: .\templates\403.html:4 .\templates\403.html:9
+msgid "No access"
+msgstr "Нет доступа"
+
+#: .\templates\403.html:16
+msgid ""
+"You may need to sign in again, or this page may not belong to your account."
+msgstr ""
+"Возможно, нужно войти заново, или эта страница не относится к вашему "
+"аккаунту."
+
+#: .\templates\403.html:19
+msgid "Log in"
+msgstr "Войти"
+
+#: .\templates\404.html:4 .\templates\404.html:15
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+#: .\templates\404.html:17
+msgid "The address may be mistyped, or the page may have moved."
+msgstr "Возможно, адрес набран с ошибкой или страница была перемещена."
+
+#: .\templates\429.html:4 .\templates\429.html:9
+msgid "Too many attempts"
+msgstr "Слишком много попыток"
+
+#: .\templates\429.html:18
+#, python-format
+msgid "Please wait %(seconds)s second and try again."
+msgid_plural "Please wait %(seconds)s seconds and try again."
+msgstr[0] "Подождите %(seconds)s секунду и попробуйте снова."
+msgstr[1] "Подождите %(seconds)s секунды и попробуйте снова."
+msgstr[2] "Подождите %(seconds)s секунд и попробуйте снова."
+msgstr[3] "Подождите %(seconds)s секунды и попробуйте снова."
+
+#: .\templates\429.html:21
+msgid "If you were paying for something, no money has been taken."
+msgstr "Если вы оплачивали покупку, деньги не списаны."
+
+#: .\templates\500.html:23 .\templates\500.html:49
+msgid "Something went wrong"
+msgstr "Что-то пошло не так"
+
+#: .\templates\500.html:57
+msgid ""
+"This is a problem on our side. Please try again in a moment. If you were "
+"paying, no money has been taken."
+msgstr ""
+"Это проблема на нашей стороне. Попробуйте снова через минуту. Если вы "
+"оплачивали, деньги не списаны."
+
+#: .\templates\accounts\login.html:4 .\templates\accounts\login.html:5
+#: .\templates\accounts\login.html:11 .\templates\accounts\register.html:22
+#: .\templates\partials\navbar.html:28
+msgid "Sign in"
+msgstr "Войти"
+
+#: .\templates\accounts\login.html:14
+msgid "Forgot your password?"
+msgstr "Забыли пароль?"
+
+#: .\templates\accounts\login.html:20
+msgid "No account yet?"
+msgstr "Ещё нет аккаунта?"
+
+#: .\templates\accounts\login.html:21
+msgid "Create one"
+msgstr "Зарегистрируйтесь"
+
+#: .\templates\accounts\password_reset.html:4
+#: .\templates\accounts\password_reset.html:5
+msgid "Reset password"
+msgstr "Сброс пароля"
+
+#: .\templates\accounts\password_reset.html:8
+msgid "Enter your number and we will send a code."
+msgstr "Введите номер, и мы отправим код."
+
+#: .\templates\accounts\password_reset.html:15
+msgid "Send code"
+msgstr "Отправить код"
+
+#: .\templates\accounts\password_reset.html:20
+msgid "Back to sign in"
+msgstr "Вернуться ко входу"
+
+#: .\templates\accounts\password_reset_set.html:11
+msgid "Save password"
+msgstr "Сохранить пароль"
+
+#: .\templates\accounts\register.html:4 .\templates\accounts\register.html:5
+msgid "Create an account"
+msgstr "Регистрация"
+
+#: .\templates\accounts\register.html:8
+msgid "We will send a confirmation code to your phone."
+msgstr "Мы отправим код подтверждения на ваш телефон."
+
+#: .\templates\accounts\register.html:15
+msgid "Continue"
+msgstr "Продолжить"
+
+#: .\templates\accounts\register.html:21
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+#: .\templates\accounts\verify.html:4 .\templates\accounts\verify.html:5
+msgid "Confirm your number"
+msgstr "Подтвердите номер"
+
+#: .\templates\accounts\verify.html:9
+#, python-format
+msgid "We sent a code to %(phone)s."
+msgstr "Мы отправили код на %(phone)s."
+
+#: .\templates\accounts\verify.html:17
+msgid "Confirm"
+msgstr "Подтвердить"
+
+#: .\templates\accounts\verify.html:22
+msgid "Send a new code"
+msgstr "Отправить новый код"
+
+#: .\templates\base.html:7 .\templates\base.html:40
+#: .\templates\layouts\marketing.html:32
+msgid "Accept payments with a single tap."
+msgstr "Принимайте оплату одним касанием."
+
+#: .\templates\core\about.html:4 .\templates\layouts\marketing.html:43
+msgid "About"
+msgstr "О нас"
+
+#: .\templates\core\about.html:8
+msgid "About TapCon"
+msgstr "О TapCon"
+
+#: .\templates\core\about.html:10
+msgid ""
+"TapCon makes accepting a payment in person as simple as handing over cash — "
+"without a terminal."
+msgstr ""
+"TapCon делает приём платежа вживую таким же простым, как передача наличных —"
+" без терминала."
+
+#: .\templates\core\about.html:13
+msgid "Why we built it"
+msgstr "Почему мы это сделали"
+
+#: .\templates\core\about.html:15
+msgid ""
+"In Uzbekistan almost everyone pays with Click, Payme or Uzum. But a small "
+"business that wants to accept those payments has to read out a card number, "
+"wait for a screenshot, or rent a terminal it cannot afford."
+msgstr ""
+"В Узбекистане почти все платят через Click, Payme или Uzum. Но малому "
+"бизнесу, чтобы принимать такие платежи, приходится диктовать номер карты, "
+"ждать скриншот или арендовать терминал, который ему не по карману."
+
+#: .\templates\core\about.html:18
+msgid ""
+"A TapCon card removes that. It costs less than a month of terminal rent, "
+"needs no power, and the money goes straight to the seller's own merchant "
+"account."
+msgstr ""
+"Карта TapCon это решает. Она дешевле месяца аренды терминала, не требует "
+"питания, а деньги идут напрямую на мерчант-счёт продавца."
+
+#: .\templates\core\about.html:21
+msgid "How we make money"
+msgstr "Как мы зарабатываем"
+
+#: .\templates\core\about.html:23
+msgid ""
+"We sell the card once. We take no commission from your payments and charge "
+"no subscription. If you want us to obtain merchant accounts on your behalf, "
+"that is a separate service you can decline."
+msgstr ""
+"Мы продаём карту один раз. Комиссию с ваших платежей не берём, подписки нет."
+" Если хотите, чтобы мы оформили мерчант-счета за вас — это отдельная услуга,"
+" от которой можно отказаться."
+
+#: .\templates\core\about.html:26
+msgid "Where we are"
+msgstr "Где мы"
+
+#: .\templates\core\about.html:27
+msgid "Tashkent, Uzbekistan. Support is available in Uzbek and Russian."
+msgstr "Ташкент, Узбекистан. Поддержка на узбекском и русском."
+
+#: .\templates\core\about.html:32
+msgid "Get in touch"
+msgstr "Свяжитесь с нами"
+
+#: .\templates\core\about.html:33
+msgid "We would rather answer a question than lose a customer to confusion."
+msgstr "Нам лучше ответить на вопрос, чем потерять клиента из-за непонимания."
+
+#: .\templates\core\contact.html:11
+msgid ""
+"Call, write on Telegram, or leave your number and we will call you back."
+msgstr "Позвоните, напишите в Telegram или оставьте номер — мы перезвоним."
+
+#: .\templates\core\contact.html:32
+msgid "We answer in Uzbek and Russian, and in English when we can."
+msgstr "Отвечаем на узбекском и русском, при возможности — на английском."
+
+#: .\templates\core\contact.html:37
+msgid "Write to us"
+msgstr "Напишите нам"
+
+#: .\templates\core\contact.html:41
+msgid "Send message"
+msgstr "Отправить сообщение"
+
+#: .\templates\core\faq.html:4 .\templates\layouts\marketing.html:44
+#: .\templates\partials\navbar.html:20
+msgid "FAQ"
+msgstr "Вопросы и ответы"
+
+#: .\templates\core\faq.html:8
+msgid "Frequently asked questions"
+msgstr "Частые вопросы"
+
+#: .\templates\core\faq.html:9
+msgid "If your question is not here, call us or write on Telegram."
+msgstr "Если вашего вопроса здесь нет — позвоните или напишите в Telegram."
+
+#: .\templates\core\faq.html:14
+msgid "Does the customer need to install anything?"
+msgstr "Нужно ли покупателю что-то устанавливать?"
+
+#: .\templates\core\faq.html:15
+msgid ""
+"No. They tap the card and their browser opens your payment page. They only "
+"need the payment app they already use."
+msgstr ""
+"Нет. Он прикладывает телефон, и браузер открывает вашу страницу оплаты. "
+"Нужно только то платёжное приложение, которым он уже пользуется."
+
+#: .\templates\core\faq.html:19
+msgid "Does the card need charging or internet?"
+msgstr "Карту нужно заряжать? Нужен ли интернет?"
+
+#: .\templates\core\faq.html:20
+msgid ""
+"No. The card has no battery and no electronics beyond a chip that stores "
+"your web address. It works forever as long as it is not physically "
+"destroyed."
+msgstr ""
+"Нет. В карте нет батареи — только чип с вашим веб-адресом. Она работает "
+"бесконечно, если её физически не разрушить."
+
+#: .\templates\core\faq.html:24
+msgid "Where does the money go?"
+msgstr "Куда поступают деньги?"
+
+#: .\templates\core\faq.html:25
+msgid ""
+"Straight to your own merchant account with the provider. TapCon never holds "
+"your money and takes no commission from it."
+msgstr ""
+"Напрямую на ваш мерчант-счёт у провайдера. TapCon не держит ваши деньги и не"
+" берёт с них комиссию."
+
+#: .\templates\core\faq.html:29
+msgid "What if the customer's phone has no NFC?"
+msgstr "А если у покупателя нет NFC?"
+
+#: .\templates\core\faq.html:30
+msgid ""
+"Your payment page is an ordinary web address, so you can also show it as a "
+"QR code or send the link in a message."
+msgstr ""
+"Ваша страница оплаты — обычный веб-адрес, поэтому её можно показать как QR-"
+"код или отправить ссылкой."
+
+#: .\templates\core\faq.html:34
+msgid "Do I need a merchant account?"
+msgstr "Нужен ли мерчант-счёт?"
+
+#: .\templates\core\faq.html:35
+msgid ""
+"Yes, with each provider you want to accept. If you already have them, "
+"connect them in the portal for free. If not, we can obtain them for you as a"
+" separate paid service."
+msgstr ""
+"Да, у каждого провайдера, который хотите принимать. Если счета уже есть — "
+"подключите их в портале бесплатно. Если нет — оформим за вас как отдельную "
+"платную услугу."
+
+#: .\templates\core\faq.html:39
+msgid "How much does it cost?"
+msgstr "Сколько это стоит?"
+
+#: .\templates\core\faq.html:40
+#, python-format
+msgid ""
+"%(price)s soum per card, paid once. No subscription and no commission from "
+"TapCon."
+msgstr ""
+"%(price)s сум за карту, оплата один раз. Без подписки и без комиссии от "
+"TapCon."
+
+#: .\templates\core\faq.html:44
+msgid "How long does it take to start?"
+msgstr "Сколько времени нужно на запуск?"
+
+#: .\templates\core\faq.html:45
+msgid ""
+"Registration takes a minute. We approve a business usually within a day. The"
+" longest part is getting merchant accounts, if you do not already have them."
+msgstr ""
+"Регистрация — минута. Бизнес подтверждаем обычно за день. Дольше всего "
+"оформляются мерчант-счета, если их ещё нет."
+
+#: .\templates\core\faq.html:49
+msgid "Can I have more than one card?"
+msgstr "Можно взять несколько карт?"
+
+#: .\templates\core\faq.html:50
+msgid ""
+"Yes. Many cafes put one on each table. All of them open the same payment "
+"page."
+msgstr ""
+"Да. Многие кафе кладут по одной на каждый стол. Все открывают одну и ту же "
+"страницу оплаты."
+
+#: .\templates\core\faq.html:54
+msgid "Is it safe to enter card details?"
+msgstr "Безопасно ли вводить данные карты?"
+
+#: .\templates\core\faq.html:55
+msgid ""
+"Card payments happen on the payment provider's own secure page, not ours. "
+"TapCon never sees or stores card numbers."
+msgstr ""
+"Оплата картой происходит на защищённой странице самого провайдера, не на "
+"нашей. TapCon не видит и не хранит номера карт."
+
+#: .\templates\core\faq.html:59
+msgid "What if I lose a card?"
+msgstr "Что если я потеряю карту?"
+
+#: .\templates\core\faq.html:60
+msgid ""
+"Anyone finding it can only open your payment page and pay you money. Tell us"
+" and we will issue a new address if you want the old one closed."
+msgstr ""
+"Нашедший сможет только открыть вашу страницу оплаты и заплатить вам. "
+"Сообщите нам — закроем старый адрес и выдадим новый."
+
+#: .\templates\core\faq.html:66
+msgid "Still have a question?"
+msgstr "Остались вопросы?"
+
+#: .\templates\core\faq.html:67
+msgid "We answer in Uzbek and Russian, on the phone or on Telegram."
+msgstr "Отвечаем на узбекском и русском — по телефону или в Telegram."
+
+#: .\templates\core\for_business.html:4 .\templates\core\for_business.html:8
+#: .\templates\layouts\marketing.html:37 .\templates\partials\navbar.html:18
+msgid "For business"
+msgstr "Для бизнеса"
+
+#: .\templates\core\for_business.html:9
+msgid ""
+"TapCon suits any place where people pay in person and a terminal is too "
+"much."
+msgstr "TapCon подходит везде, где платят вживую, а терминал — избыточен."
+
+#: .\templates\core\for_business.html:14
+msgid "Cafes and restaurants"
+msgstr "Кафе и рестораны"
+
+#: .\templates\core\for_business.html:15
+msgid ""
+"A card on each table. The customer pays without waiting for anyone to bring "
+"a terminal."
+msgstr ""
+"Карта на каждом столе. Гость платит, не дожидаясь, пока принесут терминал."
+
+#: .\templates\core\for_business.html:18
+msgid "Shops and market stalls"
+msgstr "Магазины и рыночные прилавки"
+
+#: .\templates\core\for_business.html:19
+msgid "One card by the till. Nothing to charge, nothing to break."
+msgstr "Одна карта у кассы. Нечего заряжать и нечему ломаться."
+
+#: .\templates\core\for_business.html:22
+msgid "Taxis and delivery"
+msgstr "Такси и доставка"
+
+#: .\templates\core\for_business.html:23
+msgid ""
+"A card on the dashboard or in the courier's pocket. Payment confirmed before"
+" they drive away."
+msgstr ""
+"Карта на панели или в кармане курьера. Оплата подтверждается до отъезда."
+
+#: .\templates\core\for_business.html:26
+msgid "Barbers, salons, clinics"
+msgstr "Барбершопы, салоны, клиники"
+
+#: .\templates\core\for_business.html:27
+msgid "The client pays at the chair. No queue at the counter."
+msgstr "Клиент платит прямо в кресле. Очереди на ресепшене нет."
+
+#: .\templates\core\for_business.html:30
+msgid "Services and repairs"
+msgstr "Услуги и ремонт"
+
+#: .\templates\core\for_business.html:31
+msgid "Take payment at the customer's home, with a receipt in their own app."
+msgstr "Принимайте оплату у клиента дома — чек останется в его приложении."
+
+#: .\templates\core\for_business.html:34
+msgid "Events and pop-ups"
+msgstr "Мероприятия и временные точки"
+
+#: .\templates\core\for_business.html:35
+msgid ""
+"No power, no internet contract, no rented terminal for three days of "
+"trading."
+msgstr ""
+"Ни питания, ни договора на интернет, ни аренды терминала ради трёх дней "
+"торговли."
+
+#: .\templates\core\for_business.html:41
+msgid "What you need"
+msgstr "Что нужно"
+
+#: .\templates\core\for_business.html:43
+msgid "A phone number to register with."
+msgstr "Номер телефона для регистрации."
+
+#: .\templates\core\for_business.html:44
+msgid "A merchant account with at least one provider."
+msgstr "Мерчант-счёт хотя бы у одного провайдера."
+
+#: .\templates\core\for_business.html:45
+msgid "Somewhere to put the card."
+msgstr "Место, куда положить карту."
+
+#: .\templates\core\for_business.html:49
+msgid "What TapCon does not do"
+msgstr "Чего TapCon не делает"
+
+#: .\templates\core\for_business.html:51
+msgid "We never hold your money — it goes to your own merchant account."
+msgstr "Мы не держим ваши деньги — они идут на ваш мерчант-счёт."
+
+#: .\templates\core\for_business.html:52
+msgid "We take no commission from your payments."
+msgstr "Мы не берём комиссию с ваших платежей."
+
+#: .\templates\core\for_business.html:53
+msgid "We never see or store your customers' card numbers."
+msgstr "Мы не видим и не храним номера карт ваших клиентов."
+
+#: .\templates\core\for_business.html:60
+msgid "Talk to us about your business"
+msgstr "Расскажите о своём бизнесе"
+
+#: .\templates\core\for_business.html:61
+msgid ""
+"Tell us what you sell and how you take payment today. We will tell you what "
+"it takes."
+msgstr ""
+"Расскажите, что продаёте и как принимаете оплату сейчас. Мы объясним, что "
+"понадобится."
+
+#: .\templates\core\home.html:4 .\templates\core\home.html:10
+msgid "Accept payments with a single tap"
+msgstr "Принимайте оплату одним касанием"
+
+#: .\templates\core\home.html:5
+msgid ""
+"An NFC card for your business. The customer taps, enters the amount and pays"
+" — straight to your own merchant account."
+msgstr ""
+"NFC-карта для вашего бизнеса. Покупатель прикладывает телефон, вводит сумму "
+"и платит — прямо на ваш мерчант-счёт."
+
+#: .\templates\core\home.html:12
+msgid ""
+"Put a TapCon card on your counter. The customer taps it with their phone, "
+"enters the amount and pays with Click, Payme, Uzum, Paynet or a bank card. "
+"No terminal, no queue, no cables."
+msgstr ""
+"Положите карту TapCon на прилавок. Покупатель прикладывает телефон, вводит "
+"сумму и платит через Click, Payme, Uzum, Paynet или банковской картой. Без "
+"терминала, очереди и проводов."
+
+#: .\templates\core\home.html:15 .\templates\core\home.html:109
+#: .\templates\core\home.html:128 .\templates\core\how_it_works.html:60
+#: .\templates\core\order.html:4 .\templates\core\order.html:10
+#: .\templates\core\pricing.html:27 .\templates\layouts\marketing.html:39
+#: .\templates\partials\navbar.html:29
+msgid "Order a card"
+msgstr "Заказать карту"
+
+#: .\templates\core\home.html:16 .\templates\core\how_it_works.html:4
+#: .\templates\core\how_it_works.html:8 .\templates\core\order_done.html:19
+#: .\templates\layouts\marketing.html:36 .\templates\partials\navbar.html:17
+msgid "How it works"
+msgstr "Как это работает"
+
+#: .\templates\core\home.html:19
+#, python-format
+msgid "%(price)s soum per card — one payment, no monthly fee."
+msgstr "%(price)s сум за карту — один платёж, без абонентской платы."
+
+#: .\templates\core\home.html:27
+msgid "Four steps, about ten seconds"
+msgstr "Четыре шага, около десяти секунд"
+
+#: .\templates\core\home.html:28
+msgid ""
+"Nothing to install. Any phone with NFC opens your payment page by itself."
+msgstr ""
+"Ничего устанавливать не нужно. Любой телефон с NFC сам откроет вашу страницу"
+" оплаты."
+
+#: .\templates\core\home.html:33 .\templates\core\how_it_works.html:15
+msgid "Tap"
+msgstr "Приложите"
+
+#: .\templates\core\home.html:34
+msgid "The customer holds their phone near your card."
+msgstr "Покупатель подносит телефон к вашей карте."
+
+#: .\templates\core\home.html:39
+msgid "Your payment page opens. They type the amount."
+msgstr "Открывается ваша страница оплаты. Он вводит сумму."
+
+#: .\templates\core\home.html:43 .\templates\core\how_it_works.html:25
+msgid "Choose"
+msgstr "Выберите"
+
+#: .\templates\core\home.html:44
+msgid "They pick their app — Click, Payme, Uzum, Paynet or a card."
+msgstr "Он выбирает своё приложение — Click, Payme, Uzum, Paynet или карту."
+
+#: .\templates\core\home.html:49
+msgid "The money goes to your merchant account. You see it in your portal."
+msgstr "Деньги поступают на ваш мерчант-счёт. Вы видите платёж в портале."
+
+#: .\templates\core\home.html:56
+msgid "Every popular payment app"
+msgstr "Все популярные платёжные приложения"
+
+#: .\templates\core\home.html:57
+msgid "Your customers pay the way they already do."
+msgstr "Ваши клиенты платят так же, как привыкли."
+
+#: .\templates\core\home.html:64
+msgid "Why businesses use TapCon"
+msgstr "Почему бизнесы выбирают TapCon"
+
+#: .\templates\core\home.html:68
+msgid "The money is yours"
+msgstr "Деньги ваши"
+
+#: .\templates\core\home.html:69
+msgid ""
+"Payments go straight to your own merchant accounts. TapCon never holds your "
+"money."
+msgstr ""
+"Платежи идут напрямую на ваши мерчант-счета. TapCon не держит ваши деньги."
+
+#: .\templates\core\home.html:72
+msgid "Nothing to buy but the card"
+msgstr "Кроме карты покупать нечего"
+
+#: .\templates\core\home.html:73
+msgid "No terminal, no rent, no monthly fee. One card, one payment."
+msgstr "Ни терминала, ни аренды, ни абонплаты. Одна карта, один платёж."
+
+#: .\templates\core\home.html:76
+msgid "Works on any counter"
+msgstr "Работает на любом прилавке"
+
+#: .\templates\core\home.html:77
+msgid ""
+"A cafe table, a taxi dashboard, a market stall. The card needs no power."
+msgstr ""
+"Столик в кафе, панель такси, прилавок на рынке. Карте не нужно питание."
+
+#: .\templates\core\home.html:80
+msgid "Every payment recorded"
+msgstr "Каждый платёж записан"
+
+#: .\templates\core\home.html:81
+msgid "See what came in today, by app, confirmed by the provider itself."
+msgstr ""
+"Смотрите, сколько пришло сегодня, по приложениям — подтверждено самим "
+"провайдером."
+
+#: .\templates\core\home.html:84
+msgid "Your customers need nothing new"
+msgstr "Клиентам не нужно ничего нового"
+
+#: .\templates\core\home.html:85
+msgid ""
+"No app to install, no registration. Their phone opens the page by itself."
+msgstr ""
+"Ни установки приложения, ни регистрации. Телефон сам откроет страницу."
+
+#: .\templates\core\home.html:88
+msgid "In three languages"
+msgstr "На трёх языках"
+
+#: .\templates\core\home.html:89
+msgid "Uzbek, Russian and English — the page follows the customer's phone."
+msgstr ""
+"Узбекский, русский и английский — страница подстраивается под телефон "
+"покупателя."
+
+#: .\templates\core\home.html:97 .\templates\core\pricing.html:14
+msgid "TapCon card"
+msgstr "Карта TapCon"
+
+#: .\templates\core\home.html:99 .\templates\core\pricing.html:16
+#: .\templates\core\styleguide.html:55 .\templates\merchants\dashboard.html:18
+#: .\templates\merchants\dashboard.html:26
+#: .\templates\merchants\dashboard.html:34
+#: .\templates\merchants\transactions.html:82 .\templates\payments\pay.html:56
+#: .\templates\payments\result.html:33 .\templates\payments\result.html:55
+#: .\templates\payments\result.html:76
+msgid "soum"
+msgstr "сум"
+
+#: .\templates\core\home.html:101 .\templates\core\pricing.html:18
+msgid "per card, one payment"
+msgstr "за карту, один платёж"
+
+#: .\templates\core\home.html:103 .\templates\core\pricing.html:20
+msgid "The NFC card itself"
+msgstr "Сама NFC-карта"
+
+#: .\templates\core\home.html:104 .\templates\core\pricing.html:21
+msgid "Your own payment page"
+msgstr "Ваша собственная страница оплаты"
+
+#: .\templates\core\home.html:105 .\templates\core\pricing.html:22
+msgid "Merchant portal with transactions"
+msgstr "Портал продавца с транзакциями"
+
+#: .\templates\core\home.html:106
+msgid "No monthly fee, no commission from TapCon"
+msgstr "Без абонплаты и без комиссии от TapCon"
+
+#: .\templates\core\home.html:112
+msgid "Connecting your merchant accounts"
+msgstr "Подключение мерчант-счетов"
+
+#: .\templates\core\home.html:114
+msgid ""
+"To accept payments you need a merchant account with each provider — Click, "
+"Payme, Uzum, Paynet. If you already have them, connect them yourself in the "
+"portal for free."
+msgstr ""
+"Чтобы принимать платежи, нужен мерчант-счёт у каждого провайдера — Click, "
+"Payme, Uzum, Paynet. Если они уже есть, подключите их в портале сами и "
+"бесплатно."
+
+#: .\templates\core\home.html:117
+msgid ""
+"If you do not, we can obtain them for you. This is a separate service and is"
+" priced per business, because each provider asks for different documents."
+msgstr ""
+"Если нет — оформим за вас. Это отдельная услуга, цена считается для каждого "
+"бизнеса отдельно, так как провайдеры требуют разные документы."
+
+#: .\templates\core\home.html:119 .\templates\core\pricing.html:41
+msgid "Ask about setup"
+msgstr "Спросить о подключении"
+
+#: .\templates\core\home.html:126
+msgid "Start accepting payments this week"
+msgstr "Начните принимать платежи на этой неделе"
+
+#: .\templates\core\home.html:127
+msgid "Order a card, connect your providers, and put it on the counter."
+msgstr "Закажите карту, подключите провайдеров и положите её на прилавок."
+
+#: .\templates\core\how_it_works.html:9
+msgid ""
+"For the customer it is one tap. For you it is a card on the counter and a "
+"page in your portal."
+msgstr ""
+"Для покупателя это одно касание. Для вас — карта на прилавке и страница в "
+"портале."
+
+#: .\templates\core\how_it_works.html:16
+msgid "The customer holds their phone near your card. No app, no scanning."
+msgstr ""
+"Покупатель подносит телефон к вашей карте. Без приложения и сканирования."
+
+#: .\templates\core\how_it_works.html:21
+msgid "Your payment page opens in their browser. They type what they owe."
+msgstr "В его браузере открывается ваша страница оплаты. Он вводит сумму."
+
+#: .\templates\core\how_it_works.html:26
+msgid "They tap the app they use. It opens with the amount already filled in."
+msgstr ""
+"Он выбирает своё приложение. Оно открывается с уже заполненной суммой."
+
+#: .\templates\core\how_it_works.html:31
+msgid ""
+"The provider confirms the payment to us and the money reaches your account."
+msgstr "Провайдер подтверждает нам платёж, и деньги поступают на ваш счёт."
+
+#: .\templates\core\how_it_works.html:37
+msgid "What you do once"
+msgstr "Что делается один раз"
+
+#: .\templates\core\how_it_works.html:39
+msgid "Order a card and register with your phone number."
+msgstr "Закажите карту и зарегистрируйтесь по номеру телефона."
+
+#: .\templates\core\how_it_works.html:40
+msgid "Enter your merchant credentials for the providers you use."
+msgstr "Введите мерчант-данные тех провайдеров, которыми пользуетесь."
+
+#: .\templates\core\how_it_works.html:41
+msgid "We approve your business, usually within a day."
+msgstr "Мы подтверждаем ваш бизнес — обычно в течение дня."
+
+#: .\templates\core\how_it_works.html:42
+msgid "Put the card where customers pay."
+msgstr "Положите карту туда, где платят покупатели."
+
+#: .\templates\core\how_it_works.html:46
+msgid "What about phones without NFC?"
+msgstr "А телефоны без NFC?"
+
+#: .\templates\core\how_it_works.html:48
+msgid ""
+"Most phones sold in the last few years read NFC. Older iPhones and some "
+"cheap Android phones do not."
+msgstr ""
+"Большинство телефонов последних лет читают NFC. Старые iPhone и некоторые "
+"бюджетные Android — нет."
+
+#: .\templates\core\how_it_works.html:51
+msgid ""
+"Your payment page is an ordinary web address, so it also works from a QR "
+"code or a link you send in a message."
+msgstr ""
+"Ваша страница оплаты — обычный веб-адрес, поэтому работает и через QR-код, и"
+" по ссылке в сообщении."
+
+#: .\templates\core\how_it_works.html:58
+msgid "Ready to try it?"
+msgstr "Готовы попробовать?"
+
+#: .\templates\core\how_it_works.html:59
+msgid "Order a card and we will call you back to arrange delivery."
+msgstr "Закажите карту — мы перезвоним и договоримся о доставке."
+
+#: .\templates\core\notifications.html:4 .\templates\core\notifications.html:5
+#: .\templates\partials\notification_bell.html:9
+#: .\templates\partials\notification_bell.html:22
+msgid "Notifications"
+msgstr "Уведомления"
+
+#: .\templates\core\notifications.html:12
+#, python-format
+msgid "%(counter)s unread"
+msgid_plural "%(counter)s unread"
+msgstr[0] "%(counter)s непрочитанное"
+msgstr[1] "%(counter)s непрочитанных"
+msgstr[2] "%(counter)s непрочитанных"
+msgstr[3] "%(counter)s непрочитанных"
+
+#: .\templates\core\notifications.html:17
+#: .\templates\partials\notification_bell.html:27
+msgid "Mark all read"
+msgstr "Прочитать все"
+
+#: .\templates\core\notifications.html:26
+#: .\templates\partials\notification_bell.html:36
+msgid "Nothing new yet."
+msgstr "Пока ничего нового."
+
+#: .\templates\core\order.html:11
+msgid ""
+"Leave your number and we will call you back to confirm the order and arrange"
+" delivery."
+msgstr ""
+"Оставьте номер — мы перезвоним, подтвердим заказ и договоримся о доставке."
+
+#: .\templates\core\order.html:15
+msgid "What happens next"
+msgstr "Что дальше"
+
+#: .\templates\core\order.html:17
+msgid "We call you to confirm quantity and address."
+msgstr "Мы звоним, чтобы подтвердить количество и адрес."
+
+#: .\templates\core\order.html:18
+msgid "We deliver the cards and help you register."
+msgstr "Привозим карты и помогаем зарегистрироваться."
+
+#: .\templates\core\order.html:19
+msgid "You connect your payment providers and start taking payments."
+msgstr "Вы подключаете платёжных провайдеров и начинаете принимать оплату."
+
+#: .\templates\core\order.html:22
+#, python-format
+msgid "%(price)s soum per card. Payment on delivery."
+msgstr "%(price)s сум за карту. Оплата при доставке."
+
+#: .\templates\core\order.html:31
+msgid "Send order"
+msgstr "Отправить заказ"
+
+#: .\templates\core\order.html:33
+msgid "We only use your number to contact you about this order."
+msgstr "Мы используем ваш номер только для связи по этому заказу."
+
+#: .\templates\core\order_done.html:4 .\templates\core\order_done.html:15
+msgid "Order received"
+msgstr "Заказ принят"
+
+#: .\templates\core\order_done.html:16
+msgid "Thank you. We will call you back shortly to confirm the details."
+msgstr "Спасибо. Мы скоро перезвоним и уточним детали."
+
+#: .\templates\core\order_done.html:18
+msgid "Back to home"
+msgstr "На главную"
+
+#: .\templates\core\pricing.html:4 .\templates\core\pricing.html:8
+#: .\templates\layouts\marketing.html:38 .\templates\partials\navbar.html:19
+msgid "Pricing"
+msgstr "Тарифы"
+
+#: .\templates\core\pricing.html:9
+msgid ""
+"One payment for the card. No subscription, and TapCon takes no commission "
+"from your sales."
+msgstr ""
+"Один платёж за карту. Без подписки, и TapCon не берёт комиссию с ваших "
+"продаж."
+
+#: .\templates\core\pricing.html:23
+msgid "Connect your own provider accounts yourself, free"
+msgstr "Подключите свои счета провайдеров сами и бесплатно"
+
+#: .\templates\core\pricing.html:24
+msgid "Support in Uzbek and Russian"
+msgstr "Поддержка на узбекском и русском"
+
+#: .\templates\core\pricing.html:31
+msgid "Merchant account setup"
+msgstr "Оформление мерчант-счетов"
+
+#: .\templates\core\pricing.html:32
+msgid "Priced per business"
+msgstr "Цена для каждого бизнеса отдельно"
+
+#: .\templates\core\pricing.html:33
+msgid "Optional — only if you want us to do it"
+msgstr "По желанию — только если хотите, чтобы это сделали мы"
+
+#: .\templates\core\pricing.html:35
+msgid ""
+"To accept payments you need a merchant account with each provider you want "
+"to offer: Click, Payme, Uzum, Paynet. Each of them asks for different "
+"documents and takes a different amount of time."
+msgstr ""
+"Чтобы принимать платежи, нужен мерчант-счёт у каждого провайдера, который "
+"хотите предложить: Click, Payme, Uzum, Paynet. Каждый требует свои документы"
+" и разное время."
+
+#: .\templates\core\pricing.html:38
+msgid ""
+"If you already have those accounts, enter the credentials in your portal and"
+" pay us nothing extra. If you would rather we handled the paperwork, tell us"
+" which providers you need and we will quote you."
+msgstr ""
+"Если счета уже есть — введите данные в портале, доплачивать нам не нужно. "
+"Если хотите, чтобы бумагами занялись мы, скажите, какие провайдеры нужны, и "
+"мы назовём цену."
+
+#: .\templates\core\pricing.html:47
+msgid "What else might cost money"
+msgstr "Что ещё может стоить денег"
+
+#: .\templates\core\pricing.html:51
+msgid ""
+"Your payment providers charge their own commission on each payment. That is "
+"between you and them — TapCon adds nothing on top."
+msgstr ""
+"Платёжные провайдеры берут свою комиссию с каждого платежа. Это между вами и"
+" ними — TapCon ничего сверху не добавляет."
+
+#: .\templates\core\pricing.html:52
+msgid "Delivery of the cards, if you are outside Tashkent."
+msgstr "Доставка карт, если вы за пределами Ташкента."
+
+#: .\templates\core\pricing.html:53
+msgid "Extra cards, at the same price per card."
+msgstr "Дополнительные карты — по той же цене за штуку."
+
+#: .\templates\core\pricing.html:60
+msgid "Questions about price?"
+msgstr "Вопросы по цене?"
+
+#: .\templates\core\pricing.html:61
+msgid "Call us or write on Telegram. We answer in Uzbek and Russian."
+msgstr "Позвоните или напишите в Telegram. Отвечаем на узбекском и русском."
+
+#: .\templates\core\privacy.html:4 .\templates\core\privacy.html:8
+#: .\templates\layouts\marketing.html:49
+msgid "Privacy policy"
+msgstr "Политика конфиденциальности"
+
+#: .\templates\core\privacy.html:9 .\templates\core\terms.html:9
+msgid "Draft. To be reviewed by a lawyer before launch."
+msgstr "Черновик. Перед запуском будет проверен юристом."
+
+#: .\templates\core\privacy.html:11
+msgid "What we collect"
+msgstr "Что мы собираем"
+
+#: .\templates\core\privacy.html:13
+msgid ""
+"From sellers: phone number, name, business name, address, and the provider "
+"credentials you enter."
+msgstr ""
+"От продавцов: номер телефона, имя, название бизнеса, адрес и введённые вами "
+"данные провайдеров."
+
+#: .\templates\core\privacy.html:14
+msgid "From people ordering cards: name, phone number, delivery address."
+msgstr "От заказчиков карт: имя, номер телефона, адрес доставки."
+
+#: .\templates\core\privacy.html:15
+msgid ""
+"From customers paying: the amount and which provider they chose. Nothing "
+"that identifies them personally."
+msgstr ""
+"От плательщиков: сумма и выбранный провайдер. Ничего, что позволяет их "
+"опознать."
+
+#: .\templates\core\privacy.html:18
+msgid "What we never collect"
+msgstr "Что мы никогда не собираем"
+
+#: .\templates\core\privacy.html:20
+msgid ""
+"Card numbers, CVV codes or any card details. Card payments happen on the "
+"provider's own page."
+msgstr ""
+"Номера карт, CVV-коды и любые данные карт. Оплата картой проходит на "
+"странице самого провайдера."
+
+#: .\templates\core\privacy.html:21
+msgid "Passport or ID numbers."
+msgstr "Номера паспорта или удостоверения личности."
+
+#: .\templates\core\privacy.html:24
+msgid "How we protect provider credentials"
+msgstr "Как мы защищаем данные провайдеров"
+
+#: .\templates\core\privacy.html:25
+msgid ""
+"Your merchant credentials are encrypted in our database, never shown back to"
+" you in full, and never written to logs."
+msgstr ""
+"Ваши мерчант-данные зашифрованы в базе, не показываются вам целиком и не "
+"пишутся в логи."
+
+#: .\templates\core\privacy.html:27
+msgid "Who we share it with"
+msgstr "С кем мы делимся"
+
+#: .\templates\core\privacy.html:28
+msgid ""
+"Payment providers receive what they need to process a payment. Our SMS "
+"provider receives your phone number to deliver a confirmation code. We sell "
+"your data to nobody."
+msgstr ""
+"Платёжные провайдеры получают то, что нужно для проведения платежа. SMS-"
+"провайдер получает ваш номер, чтобы доставить код. Никому ваши данные мы не "
+"продаём."
+
+#: .\templates\core\privacy.html:30
+msgid "How long we keep it"
+msgstr "Сколько мы храним"
+
+#: .\templates\core\privacy.html:31
+msgid ""
+"Transaction records are kept while your account is active and afterwards as "
+"long as the law requires. Confirmation codes are deleted within minutes."
+msgstr ""
+"Записи о транзакциях хранятся, пока аккаунт активен, и затем столько, "
+"сколько требует закон. Коды подтверждения удаляются за минуты."
+
+#: .\templates\core\privacy.html:33
+msgid "Your rights"
+msgstr "Ваши права"
+
+#: .\templates\core\privacy.html:34
+msgid ""
+"Ask us to correct or delete your data at any time using the contacts below. "
+"We will do it unless the law requires us to keep a record."
+msgstr ""
+"В любой момент попросите исправить или удалить ваши данные по контактам "
+"ниже. Мы сделаем это, если закон не требует хранить запись."
+
+#: .\templates\core\styleguide.html:4 .\templates\core\styleguide.html:7
+msgid "Design system"
+msgstr "Дизайн-система"
+
+#: .\templates\core\styleguide.html:8
+msgid ""
+"Every page is built from these pieces. Change a token, everything follows."
+msgstr ""
+"Каждая страница собрана из этих элементов. Измените одно значение — "
+"изменится всё."
+
+#: .\templates\core\styleguide.html:11
+msgid "Colours"
+msgstr "Цвета"
+
+#: .\templates\core\styleguide.html:22
+msgid "Buttons"
+msgstr "Кнопки"
+
+#: .\templates\core\styleguide.html:24
+msgid "Pay"
+msgstr "Оплатить"
+
+#: .\templates\core\styleguide.html:25
+msgid "Cancel"
+msgstr "Отмена"
+
+#: .\templates\core\styleguide.html:26 .\templates\core\styleguide.html:64
+msgid "Disabled"
+msgstr "Отключено"
+
+#: .\templates\core\styleguide.html:31
+msgid "Provider buttons"
+msgstr "Кнопки платёжных систем"
+
+#: .\templates\core\styleguide.html:46
+msgid "Inputs"
+msgstr "Поля ввода"
+
+#: .\templates\core\styleguide.html:61
+msgid "Badges & toggle"
+msgstr "Бейджи и переключатель"
+
+#: .\templates\core\styleguide.html:63
+msgid "Active"
+msgstr "Активно"
+
+#: .\templates\core\styleguide.html:69
+msgid "Saved successfully."
+msgstr "Успешно сохранено."
+
+#: .\templates\core\styleguide.html:70
+msgid "Something went wrong."
+msgstr "Произошла ошибка."
+
+#: .\templates\core\terms.html:4 .\templates\core\terms.html:8
+#: .\templates\layouts\marketing.html:50
+msgid "Terms of service"
+msgstr "Условия использования"
+
+#: .\templates\core\terms.html:11
+msgid "What TapCon provides"
+msgstr "Что предоставляет TapCon"
+
+#: .\templates\core\terms.html:12
+msgid ""
+"TapCon supplies an NFC card and a payment page that forwards your customer "
+"to the payment provider you have chosen. TapCon is not a bank, not a payment"
+" institution, and does not hold your money."
+msgstr ""
+"TapCon предоставляет NFC-карту и страницу оплаты, которая направляет "
+"покупателя к выбранному вами провайдеру. TapCon не банк, не платёжная "
+"организация и не держит ваши деньги."
+
+#: .\templates\core\terms.html:14
+msgid "Your responsibilities"
+msgstr "Ваши обязанности"
+
+#: .\templates\core\terms.html:16
+msgid "Keep your own merchant accounts with the providers in good standing."
+msgstr "Поддерживать свои мерчант-счета у провайдеров в рабочем состоянии."
+
+#: .\templates\core\terms.html:17
+msgid "Keep your account credentials and provider keys secret."
+msgstr "Хранить данные аккаунта и ключи провайдеров в секрете."
+
+#: .\templates\core\terms.html:18
+msgid "Only accept payments for lawful goods and services."
+msgstr "Принимать оплату только за законные товары и услуги."
+
+#: .\templates\core\terms.html:19
+msgid "Give your customers a receipt where the law requires one."
+msgstr "Выдавать покупателям чек там, где этого требует закон."
+
+#: .\templates\core\terms.html:22
+msgid "Approval and suspension"
+msgstr "Подтверждение и приостановка"
+
+#: .\templates\core\terms.html:23
+msgid ""
+"A new business must be approved before its payment page accepts payments. We"
+" may suspend an account that breaks these terms or that a provider asks us "
+"to stop serving."
+msgstr ""
+"Новый бизнес должен быть подтверждён, прежде чем его страница начнёт "
+"принимать платежи. Мы можем приостановить аккаунт, нарушающий эти условия "
+"или по требованию провайдера."
+
+#: .\templates\core\terms.html:25
+msgid "Money and commission"
+msgstr "Деньги и комиссия"
+
+#: .\templates\core\terms.html:26
+msgid ""
+"Payments go directly to your merchant account. TapCon takes no commission. "
+"Your providers charge their own fees under your agreement with them."
+msgstr ""
+"Платежи идут напрямую на ваш мерчант-счёт. TapCon не берёт комиссию. "
+"Провайдеры берут свои тарифы по вашему договору с ними."
+
+#: .\templates\core\terms.html:28
+msgid "The card: price and replacement"
+msgstr "Карта: цена и замена"
+
+#: .\templates\core\terms.html:29
+msgid ""
+"The card is paid for once, on delivery. A faulty card is replaced free of "
+"charge."
+msgstr ""
+"Карта оплачивается один раз, при доставке. Неисправная карта заменяется "
+"бесплатно."
+
+#: .\templates\core\terms.html:37
+msgid "Returning a payment to a customer"
+msgstr "Возврат платежа клиенту"
+
+#: .\templates\core\terms.html:38
+msgid ""
+"TapCon does not return payments. Money goes straight from your customer to "
+"your own merchant account, and we never hold it, so we have nothing to send "
+"back."
+msgstr ""
+"TapCon не возвращает платежи. Деньги идут напрямую от клиента на ваш "
+"мерчант-счёт, мы их никогда не держим — и возвращать нам нечего."
+
+#: .\templates\core\terms.html:39
+msgid ""
+"If a customer paid too much or should be refunded, settle it with them "
+"directly, or ask your payment provider to return the payment through their "
+"own system. A payment your provider returns is shown in your transactions as"
+" “Returned to customer” and is not counted in your takings."
+msgstr ""
+"Если клиент заплатил лишнее или ему нужно вернуть деньги, рассчитайтесь с "
+"ним напрямую или попросите свою платёжную систему вернуть платёж через неё. "
+"Возвращённый платёж отображается в ваших транзакциях как «Возвращено "
+"клиенту» и не входит в выручку."
+
+#: .\templates\core\terms.html:41
+msgid "Limits of responsibility"
+msgstr "Границы ответственности"
+
+#: .\templates\core\terms.html:42
+msgid ""
+"We do our best to keep the service running, but we are not responsible for a"
+" payment provider being unavailable, nor for a dispute between you and your "
+"customer."
+msgstr ""
+"Мы делаем всё, чтобы сервис работал, но не отвечаем за недоступность "
+"платёжного провайдера и за спор между вами и покупателем."
+
+#: .\templates\layouts\marketing.html:35
+msgid "Product"
+msgstr "Продукт"
+
+#: .\templates\layouts\marketing.html:42
+msgid "Company"
+msgstr "Компания"
+
+#: .\templates\layouts\marketing.html:48
+msgid "Legal"
+msgstr "Документы"
+
+#: .\templates\layouts\marketing.html:54
+msgid "Tashkent, Uzbekistan"
+msgstr "Ташкент, Узбекистан"
+
+#: .\templates\layouts\merchant.html:12 .\templates\partials\navbar.html:39
+msgid "Menu"
+msgstr "Меню"
+
+#: .\templates\layouts\merchant.html:23 .\templates\merchants\dashboard.html:4
+#: .\templates\merchants\dashboard.html:5 .\templates\partials\navbar.html:26
+msgid "Dashboard"
+msgstr "Панель"
+
+#: .\templates\layouts\merchant.html:24
+#: .\templates\merchants\payment_page.html:4
+#: .\templates\merchants\payment_page.html:5
+msgid "Payment page"
+msgstr "Страница оплаты"
+
+#: .\templates\layouts\merchant.html:25
+#: .\templates\merchants\integrations.html:4
+#: .\templates\merchants\integrations.html:5
+msgid "Integrations"
+msgstr "Интеграции"
+
+#: .\templates\layouts\merchant.html:26
+#: .\templates\merchants\transactions.html:4
+#: .\templates\merchants\transactions.html:5
+msgid "Transactions"
+msgstr "Транзакции"
+
+#: .\templates\layouts\merchant.html:27 .\templates\merchants\settings.html:4
+#: .\templates\merchants\settings.html:5
+msgid "Settings"
+msgstr "Настройки"
+
+#: .\templates\layouts\merchant.html:32
+msgid "Sign out"
+msgstr "Выйти"
+
+#: .\templates\layouts\merchant.html:41
+msgid "Your account is awaiting approval."
+msgstr "Ваш аккаунт ожидает подтверждения."
+
+#: .\templates\layouts\merchant.html:42
+msgid ""
+"You can set everything up now. Your payment page goes live once we approve "
+"your business."
+msgstr ""
+"Вы можете всё настроить уже сейчас. Страница оплаты заработает после "
+"подтверждения вашего бизнеса."
+
+#: .\templates\layouts\pay.html:23
+msgid "Secure payments powered by TapCon"
+msgstr "Безопасные платежи — TapCon"
+
+#: .\templates\layouts\pay.html:28
+msgid "Trouble paying?"
+msgstr "Проблемы с оплатой?"
+
+#: .\templates\merchants\dashboard.html:17
+msgid "Received today"
+msgstr "Получено сегодня"
+
+#: .\templates\merchants\dashboard.html:20
+#: .\templates\merchants\dashboard.html:28
+#: .\templates\merchants\dashboard.html:36
+#: .\templates\merchants\dashboard.html:81
+#, python-format
+msgid "%(counter)s payment"
+msgid_plural "%(counter)s payments"
+msgstr[0] "%(counter)s платёж"
+msgstr[1] "%(counter)s платежа"
+msgstr[2] "%(counter)s платежей"
+msgstr[3] "%(counter)s платежей"
+
+#: .\templates\merchants\dashboard.html:44
+msgid "Last 14 days"
+msgstr "Последние 14 дней"
+
+#: .\templates\merchants\dashboard.html:45
+msgid "All transactions"
+msgstr "Все транзакции"
+
+#: .\templates\merchants\dashboard.html:56
+msgid "Daily takings for the last 14 days"
+msgstr "Дневная выручка за последние 14 дней"
+
+#: .\templates\merchants\dashboard.html:73
+msgid "By payment method"
+msgstr "По способу оплаты"
+
+#: .\templates\merchants\dashboard.html:88
+msgid "Nothing received in the last 30 days."
+msgstr "За последние 30 дней поступлений не было."
+
+#: .\templates\merchants\dashboard.html:94
+msgid "Recent"
+msgstr "Последние платежи"
+
+#: .\templates\merchants\dashboard.html:95
+msgid "See all"
+msgstr "Смотреть все"
+
+#: .\templates\merchants\dashboard.html:124
+#: .\templates\merchants\transactions.html:198
+msgid "Payments appear here as soon as a customer taps your card."
+msgstr ""
+"Платежи появятся здесь, как только клиент приложит телефон к вашей карте."
+
+#: .\templates\merchants\dashboard.html:139
+#: .\templates\merchants\payment_page.html:26
+msgid "Your payment link"
+msgstr "Ваша платёжная ссылка"
+
+#: .\templates\merchants\dashboard.html:143
+#: .\templates\merchants\payment_page.html:31
+msgid "This is the address written onto your NFC card."
+msgstr "Этот адрес записывается на вашу NFC-карту."
+
+#: .\templates\merchants\dashboard.html:148
+#: .\templates\merchants\payment_page.html:35
+#: .\templates\merchants\transactions.html:201
+msgid "Open payment page"
+msgstr "Открыть страницу оплаты"
+
+#: .\templates\merchants\dashboard.html:153
+msgid "Payment methods"
+msgstr "Способы оплаты"
+
+#: .\templates\merchants\dashboard.html:155
+msgid "Switched on and ready to take payments."
+msgstr "Включено и готово принимать платежи."
+
+#: .\templates\merchants\dashboard.html:158
+msgid "Manage"
+msgstr "Управление"
+
+#: .\templates\merchants\dashboard.html:161
+msgid "Order more cards"
+msgstr "Заказать ещё карты"
+
+#: .\templates\merchants\integrations.html:11
+msgid "Payment systems switched on"
+msgstr "Включённые платёжные системы"
+
+#: .\templates\merchants\integrations.html:14
+msgid ""
+"Enter the credentials from each provider's merchant cabinet. We store them "
+"encrypted, and secret keys are never shown again."
+msgstr ""
+"Введите ключи из кабинета мерчанта каждого провайдера. Мы храним их в "
+"зашифрованном виде, а секретные ключи больше не показываем."
+
+#: .\templates\merchants\integrations.html:30
+msgid "On"
+msgstr "Включён"
+
+#: .\templates\merchants\integrations.html:32
+msgid "Off"
+msgstr "Выключен"
+
+#: .\templates\merchants\integrations.html:34
+msgid "Not set up"
+msgstr "Не настроен"
+
+#: .\templates\merchants\integrations.html:49
+#: .\templates\merchants\payment_page.html:14
+#: .\templates\merchants\settings.html:31
+#: .\templates\merchants\settings.html:41
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\templates\merchants\integrations.html:54
+msgid "Sandbox mode"
+msgstr "Тестовый режим"
+
+#: .\templates\merchants\integrations.html:56
+msgid "Live mode"
+msgstr "Рабочий режим"
+
+#: .\templates\merchants\integrations.html:72
+msgid "Switch to live mode"
+msgstr "Перейти в рабочий режим"
+
+#: .\templates\merchants\integrations.html:74
+msgid "Switch to sandbox"
+msgstr "Перейти в тестовый режим"
+
+#: .\templates\merchants\integrations.html:88
+msgid "Switch off"
+msgstr "Выключить"
+
+#: .\templates\merchants\integrations.html:90
+msgid "Switch on"
+msgstr "Включить"
+
+#: .\templates\merchants\integrations.html:98
+msgid "Fill in every field before you can switch this provider on."
+msgstr "Заполните все поля, чтобы включить этого провайдера."
+
+#: .\templates\merchants\integrations.html:104
+#, python-format
+msgid ""
+"Card payments already go through %(used)s, so your payment page shows one "
+"card button. Switch %(used)s off to use this one instead."
+msgstr ""
+"Платежи картой идут через %(used)s, поэтому на вашей платёжной странице одна"
+" кнопка карты. Чтобы использовать этот способ, отключите %(used)s."
+
+#: .\templates\merchants\payment_page.html:10
+msgid "What customers see"
+msgstr "Что видят покупатели"
+
+#: .\templates\merchants\payment_page.html:40
+#: .\templates\merchants\payment_page.html:43
+msgid "Preview"
+msgstr "Предпросмотр"
+
+#: .\templates\merchants\payment_page.html:41
+msgid "How your page looks on a phone right now."
+msgstr "Так ваша страница выглядит на телефоне сейчас."
+
+#: .\templates\merchants\payment_page.html:48
+msgid "Your business is not approved yet, so the page does not take payments."
+msgstr "Ваш бизнес ещё не одобрен, поэтому страница не принимает платежи."
+
+#: .\templates\merchants\placeholder.html:10
+#, python-format
+msgid "This screen is built in Phase %(phase)s."
+msgstr "Этот экран создаётся на этапе %(phase)s."
+
+#: .\templates\merchants\settings.html:11
+msgid "Your details"
+msgstr "Ваши данные"
+
+#: .\templates\merchants\settings.html:24
+msgid "This is your login. Contact support to change it."
+msgstr "Это ваш логин. Чтобы изменить его, обратитесь в поддержку."
+
+#: .\templates\merchants\settings.html:36
+msgid "Business"
+msgstr "Бизнес"
+
+#: .\templates\merchants\settings.html:51
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: .\templates\merchants\transactions.html:20
+msgid "Period"
+msgstr "Период"
+
+#: .\templates\merchants\transactions.html:29
+msgid "Payment method"
+msgstr "Способ оплаты"
+
+#: .\templates\merchants\transactions.html:31
+msgid "All methods"
+msgstr "Все способы"
+
+#: .\templates\merchants\transactions.html:41
+msgid "All statuses"
+msgstr "Все статусы"
+
+#: .\templates\merchants\transactions.html:59
+msgid "Show test payments"
+msgstr "Показать тестовые платежи"
+
+#: .\templates\merchants\transactions.html:63
+msgid "Apply"
+msgstr "Применить"
+
+#: .\templates\merchants\transactions.html:64
+#: .\templates\merchants\transactions.html:194
+msgid "Reset"
+msgstr "Сбросить"
+
+#: .\templates\merchants\transactions.html:78
+msgid "Test payments — no money moved"
+msgstr "Тестовые платежи — деньги не переводились"
+
+#: .\templates\merchants\transactions.html:84
+#, python-format
+msgid "%(counter)s payment received"
+msgid_plural "%(counter)s payments received"
+msgstr[0] "Получен %(counter)s платёж"
+msgstr[1] "Получено %(counter)s платежа"
+msgstr[2] "Получено %(counter)s платежей"
+msgstr[3] "Получено %(counter)s платежей"
+
+#: .\templates\merchants\transactions.html:88
+#, python-format
+msgid "%(counter)s attempt in this view"
+msgid_plural "%(counter)s attempts in this view"
+msgstr[0] "%(counter)s попытка в этом списке"
+msgstr[1] "%(counter)s попытки в этом списке"
+msgstr[2] "%(counter)s попыток в этом списке"
+msgstr[3] "%(counter)s попыток в этом списке"
+
+#: .\templates\merchants\transactions.html:95
+msgid "Download CSV"
+msgstr "Скачать CSV"
+
+#: .\templates\merchants\transactions.html:111
+msgid "Method"
+msgstr "Способ"
+
+#: .\templates\merchants\transactions.html:145
+#: .\templates\payments\pay.html:100
+msgid "Test"
+msgstr "Тест"
+
+#: .\templates\merchants\transactions.html:161
+msgid ""
+"“Returned to customer” means the bank sent that payment back — through your "
+"payment provider, not through TapCon. Payments cannot be returned from here."
+msgstr ""
+"«Возвращено клиенту» означает, что банк вернул этот платёж — через вашу "
+"платёжную систему, а не через TapCon. Отсюда вернуть платёж нельзя."
+
+#: .\templates\merchants\transactions.html:166
+msgid "Pages"
+msgstr "Страницы"
+
+#: .\templates\merchants\transactions.html:169
+msgid "Previous"
+msgstr "Назад"
+
+#: .\templates\merchants\transactions.html:173
+#, python-format
+msgid "Page %(current)s of %(total)s"
+msgstr "Страница %(current)s из %(total)s"
+
+#: .\templates\merchants\transactions.html:177
+msgid "Next"
+msgstr "Далее"
+
+#: .\templates\merchants\transactions.html:192
+msgid "Nothing matches these filters"
+msgstr "Ничего не найдено по этим фильтрам"
+
+#: .\templates\merchants\transactions.html:193
+msgid "Try a longer period, or reset the filters."
+msgstr "Выберите период подлиннее или сбросьте фильтры."
+
+#: .\templates\merchants\transactions.html:196
+msgid "No payments yet"
+msgstr "Платежей пока нет"
+
+#: .\templates\partials\card_visual.html:9
+msgid "The TapCon card and the payment apps it works with"
+msgstr "Карта TapCon и платёжные приложения, с которыми она работает"
+
+#: .\templates\partials\navbar.html:16
+msgid "Main menu"
+msgstr "Главное меню"
+
+#: .\templates\partials\notification_bell.html:40
+msgid "All notifications"
+msgstr "Все уведомления"
+
+#: .\templates\partials\notification_item.html:23
+msgid "Unread"
+msgstr "Не прочитано"
+
+#: .\templates\payments\pay.html:28
+msgid "Not accepting payments yet"
+msgstr "Оплата пока недоступна"
+
+#: .\templates\payments\pay.html:29
+msgid "This business has not been activated. Please pay another way."
+msgstr "Этот бизнес ещё не активирован. Оплатите другим способом."
+
+#: .\templates\payments\pay.html:34
+msgid "No payment method available"
+msgstr "Нет доступных способов оплаты"
+
+#: .\templates\payments\pay.html:35
+msgid "This business has not switched on any payment system yet."
+msgstr "Этот бизнес пока не включил ни одной платёжной системы."
+
+#: .\templates\payments\pay.html:68
+#, python-format
+msgid "From %(low)s to %(high)s soum"
+msgstr "От %(low)s до %(high)s сум"
+
+#: .\templates\payments\pay.html:73
+msgid "Choose how to pay"
+msgstr "Выберите способ оплаты"
+
+#: .\templates\payments\pay.html:118
+msgid "This business is still testing. No money will be taken."
+msgstr "Этот бизнес ещё в тестовом режиме. Деньги списаны не будут."
+
+#: .\templates\payments\result.html:24
+#, python-format
+msgid ""
+"This is taking longer than usual. If the money has left your account, the "
+"payment will still be recorded — show this page to the seller, or call "
+"%(support_phone)s."
+msgstr ""
+"Это занимает больше времени, чем обычно. Если деньги списаны, платёж всё "
+"равно будет зарегистрирован — покажите эту страницу продавцу или позвоните "
+"по номеру %(support_phone)s."
+
+#: .\templates\payments\result.html:45
+msgid "Payment cancelled"
+msgstr "Платёж отменён"
+
+#: .\templates\payments\result.html:46
+msgid "Nothing was charged."
+msgstr "Деньги не списаны."
+
+#: .\templates\payments\result.html:54
+msgid "Refunded"
+msgstr "Возвращено"
+
+#: .\templates\payments\result.html:56
+msgid "This payment was returned to you."
+msgstr "Этот платёж возвращён вам."
+
+#: .\templates\payments\result.html:65
+msgid "Payment did not go through"
+msgstr "Платёж не прошёл"
+
+#: .\templates\payments\result.html:66
+msgid "Nothing was charged. You can try again."
+msgstr "Деньги не списаны. Можно попробовать снова."
+
+#: .\templates\payments\result.html:72
+msgid "Waiting for confirmation"
+msgstr "Ожидаем подтверждения"
+
+#: .\templates\payments\result.html:74
+msgid "This usually takes a few seconds. Keep this page open."
+msgstr "Обычно это занимает несколько секунд. Не закрывайте страницу."
+
+#: .\templates\payments\result.html:85
+msgid "Refresh"
+msgstr "Обновить"
+
+#: .\templates\payments\result.html:88
+msgid "Pay again"
+msgstr "Оплатить снова"
+
+#: .\templates\payments\result.html:88
+msgid "Back"
+msgstr "Назад"

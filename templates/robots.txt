@@ -1,0 +1,30 @@
+User-agent: *
+
+# A seller's pay page is the address written on their card, not a web page to
+# be found. Indexing it would put every seller's payment form into search
+# results, and the uid is meant to be unguessable rather than advertised.
+Disallow: /pay/
+
+# Callbacks from payment providers. Nothing here is for a person.
+Disallow: /webhooks/
+
+# Behind a login, and nothing in it is public.
+Disallow: /uz/merchant/
+Disallow: /ru/merchant/
+Disallow: /en/merchant/
+Disallow: /uz/auth/
+Disallow: /ru/auth/
+Disallow: /en/auth/
+Disallow: /uz/notifications/
+Disallow: /ru/notifications/
+Disallow: /en/notifications/
+
+# Ours, not a customer's.
+Disallow: /uz/styleguide/
+Disallow: /ru/styleguide/
+Disallow: /en/styleguide/
+Disallow: /uz/admin/
+Disallow: /ru/admin/
+Disallow: /en/admin/
+
+Sitemap: {{ site_url }}/sitemap.xml

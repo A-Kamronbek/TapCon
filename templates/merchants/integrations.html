@@ -1,0 +1,111 @@
+{% extends "layouts/merchant.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Integrations" %} — TapCon{% endblock %}
+{% block page_title %}{% trans "Integrations" %}{% endblock %}
+
+{% block content %}
+<div class="card integrations-summary">
+  <div>
+    <div class="summary-count">{{ connected }}<span>/{{ total }}</span></div>
+    <div class="small muted">{% trans "Payment systems switched on" %}</div>
+  </div>
+  <p class="small muted" style="margin:0;max-width:46ch">
+    {% trans "Enter the credentials from each provider's merchant cabinet. We store them encrypted, and secret keys are never shown again." %}
+  </p>
+</div>
+
+<div class="integration-list">
+  {% for row in rows %}
+    <details class="integration" id="p-{{ row.key }}" {% if row.open %}open{% endif %}>
+      <summary>
+        {% if row.logo_url %}
+          <img class="integration-logo" src="{{ row.logo_url }}"
+               alt="{{ row.integration.label }}">
+        {% else %}
+          <span class="integration-name">{{ row.integration.label }}</span>
+        {% endif %}
+
+        {% if row.integration.is_live %}
+          <span class="badge badge-success">{% trans "On" %}</span>
+        {% elif row.integration.is_complete %}
+          <span class="badge badge-muted">{% trans "Off" %}</span>
+        {% else %}
+          <span class="badge badge-warning">{% trans "Not set up" %}</span>
+        {% endif %}
+
+        <span class="integration-chevron" aria-hidden="true">&rsaquo;</span>
+      </summary>
+
+      <div class="integration-body">
+        <form method="post" novalidate>
+          {% csrf_token %}
+          <input type="hidden" name="provider" value="{{ row.key }}">
+          <input type="hidden" name="action" value="save">
+
+          {% include "partials/form_fields.html" with form=row.form %}
+
+          <div class="row" style="flex-wrap:wrap">
+            <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+
+            {% if row.integration.pk %}
+              <span class="small muted">
+                {% if row.integration.is_test_mode %}
+                  {% trans "Sandbox mode" %}
+                {% else %}
+                  {% trans "Live mode" %}
+                {% endif %}
+              </span>
+            {% endif %}
+          </div>
+        </form>
+
+        <div class="integration-actions">
+          <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="provider" value="{{ row.key }}">
+            <input type="hidden" name="action" value="test_mode">
+            <input type="hidden" name="test_mode"
+                   value="{% if row.integration.is_test_mode %}off{% else %}on{% endif %}">
+            <button type="submit" class="btn btn-ghost">
+              {% if row.integration.is_test_mode %}
+                {% trans "Switch to live mode" %}
+              {% else %}
+                {% trans "Switch to sandbox" %}
+              {% endif %}
+            </button>
+          </form>
+
+          <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="provider" value="{{ row.key }}">
+            <input type="hidden" name="action"
+                   value="{% if row.integration.is_enabled %}disable{% else %}enable{% endif %}">
+            <button type="submit"
+                    class="btn {% if row.integration.is_enabled %}btn-ghost{% else %}btn-primary{% endif %}"
+                    {% if not row.integration.is_complete and not row.integration.is_enabled %}disabled{% endif %}>
+              {% if row.integration.is_enabled %}
+                {% trans "Switch off" %}
+              {% else %}
+                {% trans "Switch on" %}
+              {% endif %}
+            </button>
+          </form>
+        </div>
+
+        {% if not row.integration.is_complete %}
+          <p class="small muted" style="margin:var(--s-3) 0 0">
+            {% trans "Fill in every field before you can switch this provider on." %}
+          </p>
+        {% endif %}
+
+        {% if row.not_offered %}
+          <p class="small muted" style="margin:var(--s-3) 0 0">
+            {% blocktrans with used=card_route %}Card payments already go through {{ used }}, so your payment page shows one card button. Switch {{ used }} off to use this one instead.{% endblocktrans %}
+          </p>
+        {% endif %}
+      </div>
+    </details>
+  {% endfor %}
+</div>
+{% endblock %}

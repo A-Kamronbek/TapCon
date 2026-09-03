@@ -1,0 +1,22 @@
+{% load i18n static %}
+{% comment %}
+The real provider marks, each in a fixed box so a future file swap cannot
+shift the layout. Provider names are brand names and are not translated.
+{% endcomment %}
+<ul class="provider-strip">
+  <li class="provider-logo">
+    <img src="{% static 'img/providers/click.png' %}" alt="Click" width="295" height="120">
+  </li>
+  <li class="provider-logo">
+    <img src="{% static 'img/providers/payme.png' %}" alt="Payme" width="407" height="120">
+  </li>
+  <li class="provider-logo">
+    <img src="{% static 'img/providers/uzum.png' %}" alt="Uzum" width="322" height="120">
+  </li>
+  <li class="provider-logo">
+    <img src="{% static 'img/providers/paynet.png' %}" alt="Paynet" width="500" height="120">
+  </li>
+  <li class="provider-logo">
+    <img src="{% static 'img/providers/card.png' %}" alt="{% trans 'Bank card' %}" width="120" height="120">
+  </li>
+</ul>

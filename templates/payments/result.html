@@ -1,0 +1,98 @@
+{% extends "layouts/pay.html" %}
+{% load i18n humanize_uzs assets %}
+
+{% block title %}{{ profile.business_name }} — TapCon{% endblock %}
+
+{% block content %}
+{% comment %}
+The customer is back from the provider, but the provider's webhook may not
+have reached us yet — the two race, and the redirect usually wins. So the page
+renders honestly as "waiting" and polls until the payment settles.
+
+It works without JavaScript: there is a Refresh button, and the waiting text
+says what is happening. The script only saves the tapping.
+{% endcomment %}
+{% comment %}
+  data-timeout-text is what the customer reads if the provider never
+  confirms within two minutes. Without it the script appended an empty
+  paragraph and stopped, leaving someone who had just paid staring at a
+  spinner and "keep this page open" with nothing else ever happening.
+{% endcomment %}
+<div class="card center result-card"
+     data-status-url="{{ status_url }}"
+     data-settled="{{ is_settled|yesno:'1,0' }}"
+     data-timeout-text="{% blocktrans %}This is taking longer than usual. If the money has left your account, the payment will still be recorded — show this page to the seller, or call {{ support_phone }}.{% endblocktrans %}">
+
+  {% if txn.status == 'paid' %}
+    <div class="result-mark result-ok" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6 9 17l-5-5"></path>
+      </svg>
+    </div>
+    <h1 class="result-heading">{% trans "Paid" %}</h1>
+    <p class="result-amount">{{ txn.amount|uzs }} <span class="unit">{% trans "soum" %}</span></p>
+    <p class="muted small">{{ profile.business_name }}</p>
+    {% if profile.thank_you_text %}
+      <p style="margin-top:var(--s-4)">{{ profile.thank_you_text }}</p>
+    {% endif %}
+
+  {% elif txn.status == 'cancelled' %}
+    <div class="result-mark result-off" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M18 6 6 18M6 6l12 12"></path>
+      </svg>
+    </div>
+    <h1 class="result-heading">{% trans "Payment cancelled" %}</h1>
+    <p class="muted">{% trans "Nothing was charged." %}</p>
+
+  {% elif txn.status == 'refunded' %}
+    <div class="result-mark result-off" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path>
+      </svg>
+    </div>
+    <h1 class="result-heading">{% trans "Refunded" %}</h1>
+    <p class="result-amount">{{ txn.amount|uzs }} <span class="unit">{% trans "soum" %}</span></p>
+    <p class="muted">{% trans "This payment was returned to you." %}</p>
+
+  {% elif txn.status == 'failed' %}
+    <div class="result-mark result-off" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M12 8v5M12 17h.01"></path>
+        <circle cx="12" cy="12" r="9"></circle>
+      </svg>
+    </div>
+    <h1 class="result-heading">{% trans "Payment did not go through" %}</h1>
+    <p class="muted">{% trans "Nothing was charged. You can try again." %}</p>
+
+  {% else %}
+    <div class="result-mark result-wait" aria-hidden="true">
+      <span class="spinner"></span>
+    </div>
+    <h1 class="result-heading">{% trans "Waiting for confirmation" %}</h1>
+    <p class="muted">
+      {% trans "This usually takes a few seconds. Keep this page open." %}
+    </p>
+    <p class="result-amount">{{ txn.amount|uzs }} <span class="unit">{% trans "soum" %}</span></p>
+  {% endif %}
+
+  <p class="small faint" style="margin-top:var(--s-5)">
+    {% trans "Reference" %}: {{ txn.uid }}
+  </p>
+
+  <div class="result-actions">
+    {% if not is_settled %}
+      <a class="btn btn-ghost" href="{{ request.get_full_path }}">{% trans "Refresh" %}</a>
+    {% endif %}
+    <a class="btn btn-ghost" href="{% url 'payments:pay' profile.uid %}">
+      {% if txn.status == 'paid' %}{% trans "Pay again" %}{% else %}{% trans "Back" %}{% endif %}
+    </a>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+  {% if not is_settled %}
+    <script src="{% static_v 'js/payment-status.js' %}" defer></script>
+  {% endif %}
+{% endblock %}

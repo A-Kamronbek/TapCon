@@ -1,0 +1,23 @@
+{% extends "layouts/auth.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Sign in" %} — TapCon{% endblock %}
+{% block heading %}{% trans "Sign in" %}{% endblock %}
+
+{% block content %}
+<form method="post" novalidate>
+  {% csrf_token %}
+  {% include "partials/form_fields.html" %}
+  <button type="submit" class="btn btn-primary btn-block">{% trans "Sign in" %}</button>
+</form>
+<p class="small center" style="margin:var(--s-4) 0 0">
+  <a href="{% url 'accounts:password_reset' %}">{% trans "Forgot your password?" %}</a>
+</p>
+{% endblock %}
+
+{% block below %}
+  <p class="small muted">
+    {% trans "No account yet?" %}
+    <a href="{% url 'accounts:register' %}">{% trans "Create one" %}</a>
+  </p>
+{% endblock %}

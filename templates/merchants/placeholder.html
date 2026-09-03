@@ -1,0 +1,13 @@
+{% extends "layouts/merchant.html" %}
+{% load i18n %}
+
+{% block title %}{{ heading }} — TapCon{% endblock %}
+{% block page_title %}{{ heading }}{% endblock %}
+
+{% block content %}
+<div class="card" style="max-width:560px">
+  <p class="muted" style="margin:0">
+    {% blocktrans %}This screen is built in Phase {{ phase }}.{% endblocktrans %}
+  </p>
+</div>
+{% endblock %}

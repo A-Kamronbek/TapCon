@@ -1,0 +1,108 @@
+/* Integrations page and payment-page settings.
+   The accordion is a plain <details>, matching the FAQ — no JavaScript. */
+
+.integrations-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-5);
+  max-width: 860px;
+}
+.summary-count {
+  font-size: var(--fs-3xl);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+.summary-count span { font-size: var(--fs-lg); color: var(--text-faint); }
+
+.integration-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  max-width: 860px;
+}
+
+.integration {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.integration > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--s-5);
+  cursor: pointer;
+  list-style: none;
+  min-height: var(--tap-target);
+}
+.integration > summary::-webkit-details-marker { display: none; }
+.integration > summary:hover { background: var(--bg); }
+
+.integration-logo {
+  height: 28px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  display: block;
+  flex: none;
+}
+.integration-name { font-weight: 700; font-size: var(--fs-lg); }
+
+/* The badge sits hard right, the chevron after it. */
+.integration > summary .badge { margin-left: auto; }
+.integration-chevron {
+  color: var(--text-faint);
+  font-size: var(--fs-xl);
+  line-height: 1;
+  transition: transform .15s ease;
+}
+.integration[open] > summary .integration-chevron { transform: rotate(90deg); }
+
+.integration-body {
+  padding: var(--s-5);
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+.integration-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-4);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--border);
+}
+.integration-actions form { margin: 0; }
+
+/* --- payment page settings -------------------------------------------- */
+.paypage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-5);
+  align-items: start;
+  max-width: 1000px;
+}
+.paypage-preview {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: var(--bg);
+  height: 520px;
+}
+.paypage-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .paypage-grid { grid-template-columns: 1fr; }
+  .integration > summary { padding: var(--s-3) var(--s-4); gap: var(--s-3); }
+  .integration-logo { height: 24px; max-width: 92px; }
+  .integration-body { padding: var(--s-4); }
+}

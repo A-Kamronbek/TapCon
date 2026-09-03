@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block body %}
+<div class="merchant-shell">
+  <input type="checkbox" id="side-toggle" class="visually-hidden side-toggle">
+  {# Tapping the dimmed area unchecks the box and closes the drawer. #}
+  <label for="side-toggle" class="drawer-scrim" aria-hidden="true"></label>
+
+  {# One top bar at every width: it carries the bell, and the burger on mobile. #}
+  <header class="merchant-topbar">
+    <label for="side-toggle" class="nav-burger" aria-label="{% trans 'Menu' %}">
+      <span></span><span></span><span></span>
+    </label>
+    <a class="site-logo" href="{% url 'core:home' %}">Tap<span>Con</span></a>
+    <div class="nav-actions">
+      {% include "partials/notification_bell.html" %}
+    </div>
+  </header>
+
+  <div class="merchant-body">
+    <aside class="merchant-sidebar">
+      <a href="{% url 'merchants:dashboard' %}" class="{% if active == 'dashboard' %}active{% endif %}">{% trans "Dashboard" %}</a>
+      <a href="{% url 'merchants:payment_page' %}" class="{% if active == 'paypage' %}active{% endif %}">{% trans "Payment page" %}</a>
+      <a href="{% url 'merchants:integrations' %}" class="{% if active == 'integrations' %}active{% endif %}">{% trans "Integrations" %}</a>
+      <a href="{% url 'merchants:transactions' %}" class="{% if active == 'transactions' %}active{% endif %}">{% trans "Transactions" %}</a>
+      <a href="{% url 'merchants:settings' %}" class="{% if active == 'settings' %}active{% endif %}">{% trans "Settings" %}</a>
+      <div class="spacer"></div>
+      {% include "partials/language_switcher.html" %}
+      <form method="post" action="{% url 'accounts:logout' %}" style="margin-top:var(--s-3)">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-ghost btn-block">{% trans "Sign out" %}</button>
+      </form>
+    </aside>
+
+    <main class="merchant-main">
+      {% include "partials/messages.html" %}
+
+      {% if profile and not profile.is_live %}
+        <div class="toast toast-error approval-banner" style="margin-bottom:var(--s-5)">
+          <strong>{% trans "Your account is awaiting approval." %}</strong><br>
+          <span class="small">{% trans "You can set everything up now. Your payment page goes live once we approve your business." %}</span>
+        </div>
+      {% endif %}
+
+      <h1>{% block page_title %}{% endblock %}</h1>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</div>
+{% endblock %}

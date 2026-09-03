@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{# Narrow centred column, same feel as the pay page: one job per screen. #}
+{% block body %}
+<div class="pay-shell">
+  <div class="pay-column">
+    <div class="center" style="margin-bottom:var(--s-5)">
+      <a class="site-logo" href="{% url 'core:home' %}" style="font-size:var(--fs-xl)">Tap<span>Con</span></a>
+    </div>
+
+    {% include "partials/messages.html" %}
+
+    {% comment %}
+      The heading is an h1, not an h2: it is the page's own title ("Sign in",
+      "Create an account"), and every page needs exactly one top-level
+      heading for a screen reader to announce and for search engines to read.
+      The main element is what lets someone skip the logo and reach the form.
+    {% endcomment %}
+    <main class="card">
+      <h1 style="font-size:var(--fs-xl)">{% block heading %}{% endblock %}</h1>
+      {% block lead %}{% endblock %}
+      {% block content %}{% endblock %}
+    </main>
+
+    <div class="pay-footer stack">
+      {% block below %}{% endblock %}
+      {% include "partials/language_switcher.html" %}
+    </div>
+  </div>
+</div>
+{% endblock %}

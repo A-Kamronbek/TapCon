@@ -1,0 +1,65 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "For business" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="section-head">
+  <h1>{% trans "For business" %}</h1>
+  <p>{% trans "TapCon suits any place where people pay in person and a terminal is too much." %}</p>
+</div>
+
+<div class="grid-3" style="margin-bottom:var(--s-7)">
+  <div class="card benefit">
+    <h3>{% trans "Cafes and restaurants" %}</h3>
+    <p>{% trans "A card on each table. The customer pays without waiting for anyone to bring a terminal." %}</p>
+  </div>
+  <div class="card benefit">
+    <h3>{% trans "Shops and market stalls" %}</h3>
+    <p>{% trans "One card by the till. Nothing to charge, nothing to break." %}</p>
+  </div>
+  <div class="card benefit">
+    <h3>{% trans "Taxis and delivery" %}</h3>
+    <p>{% trans "A card on the dashboard or in the courier's pocket. Payment confirmed before they drive away." %}</p>
+  </div>
+  <div class="card benefit">
+    <h3>{% trans "Barbers, salons, clinics" %}</h3>
+    <p>{% trans "The client pays at the chair. No queue at the counter." %}</p>
+  </div>
+  <div class="card benefit">
+    <h3>{% trans "Services and repairs" %}</h3>
+    <p>{% trans "Take payment at the customer's home, with a receipt in their own app." %}</p>
+  </div>
+  <div class="card benefit">
+    <h3>{% trans "Events and pop-ups" %}</h3>
+    <p>{% trans "No power, no internet contract, no rented terminal for three days of trading." %}</p>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card">
+    <h3>{% trans "What you need" %}</h3>
+    <ul class="prose">
+      <li>{% trans "A phone number to register with." %}</li>
+      <li>{% trans "A merchant account with at least one provider." %}</li>
+      <li>{% trans "Somewhere to put the card." %}</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>{% trans "What TapCon does not do" %}</h3>
+    <ul class="prose">
+      <li>{% trans "We never hold your money — it goes to your own merchant account." %}</li>
+      <li>{% trans "We take no commission from your payments." %}</li>
+      <li>{% trans "We never see or store your customers' card numbers." %}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="cta-band">
+    <h2>{% trans "Talk to us about your business" %}</h2>
+    <p>{% trans "Tell us what you sell and how you take payment today. We will tell you what it takes." %}</p>
+    <a class="btn btn-primary" href="{% url 'core:contact' %}">{% trans "Contact us" %}</a>
+  </div>
+</div>
+{% endblock %}

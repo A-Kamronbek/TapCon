@@ -1,0 +1,5 @@
+{
+  "Start again — your session expired.": "Начните заново — сессия истекла.",
+  "This account is not a seller account, so it has no merchant pages.": "Этот аккаунт не является аккаунтом продавца, поэтому у него нет страниц мерчанта.",
+  "This is taking longer than usual. If the money has left your account, the payment will still be recorded — show this page to the seller, or call %(support_phone)s.": "Это занимает больше времени, чем обычно. Если деньги списаны, платёж всё равно будет зарегистрирован — покажите эту страницу продавцу или позвоните по номеру %(support_phone)s."
+}

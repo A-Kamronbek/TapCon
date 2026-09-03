@@ -1,0 +1,131 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n humanize_uzs %}
+
+{% block title %}TapCon — {% trans "Accept payments with a single tap" %}{% endblock %}
+{% block description %}{% trans "An NFC card for your business. The customer taps, enters the amount and pays — straight to your own merchant account." %}{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div>
+    <h1>{% trans "Accept payments with a single tap" %}</h1>
+    <p class="lead">
+      {% trans "Put a TapCon card on your counter. The customer taps it with their phone, enters the amount and pays with Click, Payme, Uzum, Paynet or a bank card. No terminal, no queue, no cables." %}
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{% url 'core:order' %}">{% trans "Order a card" %}</a>
+      <a class="btn btn-ghost" href="{% url 'core:how_it_works' %}">{% trans "How it works" %}</a>
+    </div>
+    <p class="small muted" style="margin-top:var(--s-4)">
+      {% blocktrans with price=card_price|uzs %}{{ price }} soum per card — one payment, no monthly fee.{% endblocktrans %}
+    </p>
+  </div>
+  {% include "partials/card_visual.html" %}
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>{% trans "Four steps, about ten seconds" %}</h2>
+    <p>{% trans "Nothing to install. Any phone with NFC opens your payment page by itself." %}</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <h3>{% trans "Tap" %}</h3>
+      <p>{% trans "The customer holds their phone near your card." %}</p>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <h3>{% trans "Amount" %}</h3>
+      <p>{% trans "Your payment page opens. They type the amount." %}</p>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <h3>{% trans "Choose" %}</h3>
+      <p>{% trans "They pick their app — Click, Payme, Uzum, Paynet or a card." %}</p>
+    </div>
+    <div class="step">
+      <div class="num">4</div>
+      <h3>{% trans "Paid" %}</h3>
+      <p>{% trans "The money goes to your merchant account. You see it in your portal." %}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head center" style="margin-left:auto;margin-right:auto">
+    <h2>{% trans "Every popular payment app" %}</h2>
+    <p>{% trans "Your customers pay the way they already do." %}</p>
+  </div>
+  {% include "partials/provider_strip.html" %}
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>{% trans "Why businesses use TapCon" %}</h2>
+  </div>
+  <div class="grid-3">
+    <div class="card benefit">
+      <h3>{% trans "The money is yours" %}</h3>
+      <p>{% trans "Payments go straight to your own merchant accounts. TapCon never holds your money." %}</p>
+    </div>
+    <div class="card benefit">
+      <h3>{% trans "Nothing to buy but the card" %}</h3>
+      <p>{% trans "No terminal, no rent, no monthly fee. One card, one payment." %}</p>
+    </div>
+    <div class="card benefit">
+      <h3>{% trans "Works on any counter" %}</h3>
+      <p>{% trans "A cafe table, a taxi dashboard, a market stall. The card needs no power." %}</p>
+    </div>
+    <div class="card benefit">
+      <h3>{% trans "Every payment recorded" %}</h3>
+      <p>{% trans "See what came in today, by app, confirmed by the provider itself." %}</p>
+    </div>
+    <div class="card benefit">
+      <h3>{% trans "Your customers need nothing new" %}</h3>
+      <p>{% trans "No app to install, no registration. Their phone opens the page by itself." %}</p>
+    </div>
+    <div class="card benefit">
+      <h3>{% trans "In three languages" %}</h3>
+      <p>{% trans "Uzbek, Russian and English — the page follows the customer's phone." %}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid-2">
+    <div class="card price-card">
+      <h3>{% trans "TapCon card" %}</h3>
+      <div class="price-amount">
+        {{ card_price|uzs }} <span class="unit">{% trans "soum" %}</span>
+      </div>
+      <p class="small muted">{% trans "per card, one payment" %}</p>
+      <ul class="price-list">
+        <li>{% trans "The NFC card itself" %}</li>
+        <li>{% trans "Your own payment page" %}</li>
+        <li>{% trans "Merchant portal with transactions" %}</li>
+        <li>{% trans "No monthly fee, no commission from TapCon" %}</li>
+      </ul>
+      <a class="btn btn-primary btn-block" style="margin-top:var(--s-5)"
+         href="{% url 'core:order' %}">{% trans "Order a card" %}</a>
+    </div>
+    <div class="card">
+      <h3>{% trans "Connecting your merchant accounts" %}</h3>
+      <p class="muted small">
+        {% trans "To accept payments you need a merchant account with each provider — Click, Payme, Uzum, Paynet. If you already have them, connect them yourself in the portal for free." %}
+      </p>
+      <p class="muted small">
+        {% trans "If you do not, we can obtain them for you. This is a separate service and is priced per business, because each provider asks for different documents." %}
+      </p>
+      <a class="btn btn-ghost" href="{% url 'core:contact' %}">{% trans "Ask about setup" %}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cta-band">
+    <h2>{% trans "Start accepting payments this week" %}</h2>
+    <p>{% trans "Order a card, connect your providers, and put it on the counter." %}</p>
+    <a class="btn btn-primary" href="{% url 'core:order' %}">{% trans "Order a card" %}</a>
+  </div>
+</section>
+{% endblock %}

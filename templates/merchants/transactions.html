@@ -1,0 +1,202 @@
+{% extends "layouts/merchant.html" %}
+{% load i18n humanize_uzs %}
+
+{% block title %}{% trans "Transactions" %} — TapCon{% endblock %}
+{% block page_title %}{% trans "Transactions" %}{% endblock %}
+
+{% block content %}
+
+{% comment %}
+The filters are a GET form: the result is a page, not a change, so it belongs
+in the URL. That makes a filtered view shareable, bookmarkable, reloadable,
+and — the reason it matters here — exportable, because the CSV link carries
+the same query string.
+
+No JavaScript: the selects submit the form on change where scripts run, and
+the Apply button does the same job where they do not.
+{% endcomment %}
+<form method="get" class="card txn-filters">
+  <div class="field">
+    <label for="f-period">{% trans "Period" %}</label>
+    <select class="input" id="f-period" name="period">
+      {% for key, label in periods.items %}
+        <option value="{{ key }}" {% if filters.period == key %}selected{% endif %}>{{ label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="f-provider">{% trans "Payment method" %}</label>
+    <select class="input" id="f-provider" name="provider">
+      <option value="">{% trans "All methods" %}</option>
+      {% for key, config in providers.items %}
+        <option value="{{ key }}" {% if filters.provider == key %}selected{% endif %}>{{ config.label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="f-status">{% trans "Status" %}</label>
+    <select class="input" id="f-status" name="status">
+      <option value="">{% trans "All statuses" %}</option>
+      {% for key, label in status_filters.items %}
+        <option value="{{ key }}" {% if filters.status == key %}selected{% endif %}>{{ label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  {% comment %}
+  The toggle and the buttons share a row of their own. Left in the auto-fit
+  grid with the selects they landed in a 218px column, which is narrower than
+  two buttons — so Apply and Reset stacked on top of each other and dragged
+  the whole filter bar out of line.
+  {% endcomment %}
+  <div class="txn-filter-bottom">
+    <label for="f-sandbox" class="checkbox">
+      <input type="checkbox" id="f-sandbox" name="sandbox" value="1"
+             {% if filters.sandbox %}checked{% endif %}>
+      <span>{% trans "Show test payments" %}</span>
+    </label>
+
+    <div class="txn-filter-actions">
+      <button type="submit" class="btn btn-primary">{% trans "Apply" %}</button>
+      <a class="btn btn-ghost" href="{% url 'merchants:transactions' %}">{% trans "Reset" %}</a>
+    </div>
+  </div>
+</form>
+
+{% comment %}
+The summary describes exactly what is on screen, which is not the same as the
+seller's takings — a sandbox view sums money that does not exist, so it says
+so rather than showing a figure that reads like income.
+{% endcomment %}
+<div class="card txn-summary{% if summary.is_sandbox %} txn-summary-sandbox{% endif %}">
+  {% if summary.is_sandbox %}
+    <div>
+      <div class="summary-count">{{ summary.count }}</div>
+      <div class="small muted">{% trans "Test payments — no money moved" %}</div>
+    </div>
+  {% else %}
+    <div>
+      <div class="summary-count">{{ summary.paid_total|uzs }} <span>{% trans "soum" %}</span></div>
+      <div class="small muted">
+        {% blocktrans count counter=summary.paid_count %}{{ counter }} payment received{% plural %}{{ counter }} payments received{% endblocktrans %}
+      </div>
+    </div>
+    <div class="small muted txn-summary-side">
+      {% blocktrans count counter=summary.count %}{{ counter }} attempt in this view{% plural %}{{ counter }} attempts in this view{% endblocktrans %}
+    </div>
+  {% endif %}
+
+  {% if summary.count %}
+    <a class="btn btn-ghost txn-export"
+       href="{% url 'merchants:transactions_csv' %}{% if export_query %}?{{ export_query }}{% endif %}">
+      {% trans "Download CSV" %}
+    </a>
+  {% endif %}
+</div>
+
+{% if page.object_list %}
+  {% comment %}
+  A table that cannot shrink pushes the whole document wider than a phone, so
+  it scrolls inside its own box rather than taking the page with it.
+  {% endcomment %}
+  <div class="card table-wrap">
+    <table class="txn-table">
+      <thead>
+        <tr>
+          <th>{% trans "Date" %}</th>
+          <th>{% trans "Method" %}</th>
+          <th class="num">{% trans "Amount" %}</th>
+          <th>{% trans "Status" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for txn in page.object_list %}
+          <tr>
+            <td>
+              <span class="txn-date">{{ txn.created_at|date:"d.m.Y" }}</span>
+              <span class="txn-time small muted">{{ txn.created_at|date:"H:i" }}</span>
+              <span class="txn-ref small faint">{{ txn.uid }}</span>
+            </td>
+            <td>{{ txn.provider_label }}</td>
+            <td class="num">{{ txn.amount|uzs }}</td>
+            <td>
+              {% if txn.status == 'paid' %}
+                <span class="badge badge-success">{{ txn.get_status_display }}</span>
+              {% elif txn.status == 'refunded' %}
+                <span class="badge badge-warning">{{ txn.get_status_display }}</span>
+              {% elif txn.status == 'failed' %}
+                <span class="badge badge-danger">{{ txn.get_status_display }}</span>
+              {% elif txn.status == 'pending' or txn.status == 'created' %}
+                <span class="badge badge-info">{{ txn.get_status_display }}</span>
+              {% comment %}
+              cancelled and anything added later. A status with no colour of
+              its own must still render as a badge, not as bare text in a
+              column of badges.
+              {% endcomment %}
+              {% else %}
+                <span class="badge badge-muted">{{ txn.get_status_display }}</span>
+              {% endif %}
+              {% if txn.is_test_mode %}
+                <span class="badge badge-warning">{% trans "Test" %}</span>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% if has_returned %}
+    {% comment %}
+    The one status a seller cannot have caused from inside TapCon. Without
+    this line it reads as something the app did to their payment.
+    {% endcomment %}
+    <p class="small muted txn-note">
+      {% trans "“Returned to customer” means the bank sent that payment back — through your payment provider, not through TapCon. Payments cannot be returned from here." %}
+    </p>
+  {% endif %}
+
+  {% if page.paginator.num_pages > 1 %}
+    <nav class="pager" aria-label="{% trans 'Pages' %}">
+      {% if page.has_previous %}
+        <a class="btn btn-ghost" href="?{{ filters.as_query }}&amp;page={{ page.previous_page_number }}">
+          {% trans "Previous" %}
+        </a>
+      {% endif %}
+      <span class="small muted">
+        {% blocktrans with current=page.number total=page.paginator.num_pages %}Page {{ current }} of {{ total }}{% endblocktrans %}
+      </span>
+      {% if page.has_next %}
+        <a class="btn btn-ghost" href="?{{ filters.as_query }}&amp;page={{ page.next_page_number }}">
+          {% trans "Next" %}
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
+
+{% else %}
+  {% comment %}
+  Two different things to say. "Nothing matches these filters" is a dead end
+  the seller can undo; "you have not been paid yet" is the state of a new
+  business, and pointing at the pay page is more use than an apology.
+  {% endcomment %}
+  <div class="card empty-state {% if filters.is_narrowed %}empty-no-matches{% else %}empty-no-payments{% endif %}">
+    {% if filters.is_narrowed %}
+      <h3>{% trans "Nothing matches these filters" %}</h3>
+      <p class="muted">{% trans "Try a longer period, or reset the filters." %}</p>
+      <a class="btn btn-ghost" href="{% url 'merchants:transactions' %}">{% trans "Reset" %}</a>
+    {% else %}
+      <h3>{% trans "No payments yet" %}</h3>
+      <p class="muted">
+        {% trans "Payments appear here as soon as a customer taps your card." %}
+      </p>
+      <a class="btn btn-ghost" href="{{ profile.get_pay_url }}" target="_blank" rel="noopener">
+        {% trans "Open payment page" %}
+      </a>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% endblock %}

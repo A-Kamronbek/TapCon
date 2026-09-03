@@ -1,0 +1,119 @@
+{% extends "layouts/pay.html" %}
+{% load i18n humanize_uzs %}
+
+{% block title %}{{ profile.business_name }} — TapCon{% endblock %}
+
+{% block content %}
+{% comment %}
+Everything lives in one card, so the page reads as a single object a customer
+is filling in rather than a stack of loose parts. The amount is the only thing
+with visual weight; the provider rows are a quiet list underneath it.
+{% endcomment %}
+<div class="card pay-card">
+
+  <div class="pay-business">
+    {% if profile.logo %}
+      <img class="avatar avatar-img" src="{{ profile.logo.url }}" alt="">
+    {% else %}
+      <div class="avatar" aria-hidden="true">{{ profile.business_name|slice:":1"|upper }}</div>
+    {% endif %}
+    <h1 class="pay-name">{{ profile.business_name }}</h1>
+    {% if profile.welcome_text %}
+      <p class="muted small pay-welcome">{{ profile.welcome_text }}</p>
+    {% endif %}
+  </div>
+
+  {% if not is_live %}
+    <div class="pay-notice">
+      <h2>{% trans "Not accepting payments yet" %}</h2>
+      <p class="muted">{% trans "This business has not been activated. Please pay another way." %}</p>
+    </div>
+
+  {% elif not providers %}
+    <div class="pay-notice">
+      <h2>{% trans "No payment method available" %}</h2>
+      <p class="muted">{% trans "This business has not switched on any payment system yet." %}</p>
+    </div>
+
+  {% else %}
+    {% comment %}
+    One form, one amount, a submit button per provider. Each button carries
+    its own formaction, so choosing how to pay and sending the amount is a
+    single tap — and it is a POST, because it creates a transaction.
+    {% endcomment %}
+    <form method="post" class="pay-form" novalidate>
+      {% csrf_token %}
+
+      {% if payment_error %}
+        <div class="toast toast-error">{{ payment_error }}</div>
+      {% endif %}
+
+      <div class="field amount-field{% if form.amount.errors %} has-error{% endif %}">
+        <label for="{{ form.amount.id_for_label }}">{% trans "Amount" %}</label>
+        <div class="amount-wrap">
+          {{ form.amount }}
+          <span class="amount-suffix">{% trans "soum" %}</span>
+        </div>
+        {% comment %}
+        The error replaces the limits line rather than stacking above it —
+        two lines of small print under one box is how the old page ended up
+        looking cluttered, and the error says the limit anyway.
+        {% endcomment %}
+        {% if form.amount.errors %}
+          <div class="field-error">{{ form.amount.errors.0 }}</div>
+        {% else %}
+          <div class="small muted amount-limits">
+            {% blocktrans with low=profile.min_amount|uzs high=profile.max_amount|uzs %}From {{ low }} to {{ high }} soum{% endblocktrans %}
+          </div>
+        {% endif %}
+      </div>
+
+      <p class="pay-choose">{% trans "Choose how to pay" %}</p>
+
+      <div class="pay-providers">
+        {% for item in providers %}
+          <button type="submit" class="provider-btn"
+                  formaction="{% url 'payments:go' profile.uid item.provider %}">
+            {% comment %}
+            The logos are wordmarks, so a logo beside its name reads as
+            "Payme Payme". The name lives in the alt text, which is what a
+            screen reader announces.
+            {% endcomment %}
+            {% if item.customer_logo_url %}
+              <img class="provider-mark" src="{{ item.customer_logo_url }}"
+                   alt="{{ item.customer_label }}">
+              {% comment %}
+              The card mark is an icon, not a wordmark, so unlike the Payme
+              and Click logos it does need its name spelled out beside it.
+              {% endcomment %}
+              {% if not item.logo %}
+                <span class="provider-name">{{ item.customer_label }}</span>
+              {% endif %}
+            {% else %}
+              <span class="provider-name">{{ item.customer_label }}</span>
+            {% endif %}
+            {% if item.is_test_mode %}
+              <span class="badge badge-warning">{% trans "Test" %}</span>
+            {% endif %}
+            <span class="chevron" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                   stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </span>
+          </button>
+        {% endfor %}
+      </div>
+
+      {% if all_test_mode %}
+        {% comment %}
+        Honesty over polish: if every provider is in sandbox mode, no money
+        will move and the customer should not find that out afterwards.
+        {% endcomment %}
+        <p class="small pay-testnote">
+          {% trans "This business is still testing. No money will be taken." %}
+        </p>
+      {% endif %}
+    </form>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% load i18n %}
+{% comment %}
+Notification bell. Also a checkbox, so the panel opens without JavaScript.
+Marking as read is a normal form POST; JS only avoids the page reload.
+{% endcomment %}
+<div class="bell">
+  <input type="checkbox" id="bell-toggle" class="visually-hidden bell-toggle">
+  <label for="bell-toggle" class="bell-button"
+         aria-label="{% trans 'Notifications' %}" title="{% trans 'Notifications' %}">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+      <path d="M13.7 21a2 2 0 0 1-3.4 0"></path>
+    </svg>
+    {% if unread_notifications %}
+      <span class="bell-count">{{ unread_notifications }}</span>
+    {% endif %}
+  </label>
+
+  <div class="bell-panel">
+    <div class="bell-head">
+      <strong>{% trans "Notifications" %}</strong>
+      {% if unread_notifications %}
+        <form method="post" action="{% url 'core:notifications_read' %}" class="bell-read">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.get_full_path }}">
+          <button type="submit" class="link-button">{% trans "Mark all read" %}</button>
+        </form>
+      {% endif %}
+    </div>
+
+    <ul class="bell-list">
+      {% for item in user.notifications.all|slice:":6" %}
+        {% include "partials/notification_item.html" %}
+      {% empty %}
+        <li class="bell-empty muted small">{% trans "Nothing new yet." %}</li>
+      {% endfor %}
+    </ul>
+
+    <a class="bell-all" href="{% url 'core:notifications' %}">{% trans "All notifications" %}</a>
+  </div>
+</div>

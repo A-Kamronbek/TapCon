@@ -1,0 +1,71 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n humanize_uzs %}
+
+{% block title %}{% trans "FAQ" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="section-head">
+  <h1>{% trans "Frequently asked questions" %}</h1>
+  <p>{% trans "If your question is not here, call us or write on Telegram." %}</p>
+</div>
+
+<div class="card prose" style="max-width:none">
+  <details class="faq-item">
+    <summary>{% trans "Does the customer need to install anything?" %}</summary>
+    <p>{% trans "No. They tap the card and their browser opens your payment page. They only need the payment app they already use." %}</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>{% trans "Does the card need charging or internet?" %}</summary>
+    <p>{% trans "No. The card has no battery and no electronics beyond a chip that stores your web address. It works forever as long as it is not physically destroyed." %}</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>{% trans "Where does the money go?" %}</summary>
+    <p>{% trans "Straight to your own merchant account with the provider. TapCon never holds your money and takes no commission from it." %}</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>{% trans "What if the customer's phone has no NFC?" %}</summary>
+    <p>{% trans "Your payment page is an ordinary web address, so you can also show it as a QR code or send the link in a message." %}</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>{% trans "Do I need a merchant account?" %}</summary>
+    <p>{% trans "Yes, with each provider you want to accept. If you already have them, connect them in the portal for free. If not, we can obtain them for you as a separate paid service." %}</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>{% trans "How much does it cost?" %}</summary>
+    <p>{% blocktrans with price=card_price|uzs %}{{ price }} soum per card, paid once. No subscription and no commission from TapCon.{% endblocktrans %}</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>{% trans "How long does it take to start?" %}</summary>
+    <p>{% trans "Registration takes a minute. We approve a business usually within a day. The longest part is getting merchant accounts, if you do not already have them." %}</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>{% trans "Can I have more than one card?" %}</summary>
+    <p>{% trans "Yes. Many cafes put one on each table. All of them open the same payment page." %}</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>{% trans "Is it safe to enter card details?" %}</summary>
+    <p>{% trans "Card payments happen on the payment provider's own secure page, not ours. TapCon never sees or stores card numbers." %}</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>{% trans "What if I lose a card?" %}</summary>
+    <p>{% trans "Anyone finding it can only open your payment page and pay you money. Tell us and we will issue a new address if you want the old one closed." %}</p>
+  </details>
+</div>
+
+<div class="section">
+  <div class="cta-band">
+    <h2>{% trans "Still have a question?" %}</h2>
+    <p>{% trans "We answer in Uzbek and Russian, on the phone or on Telegram." %}</p>
+    <a class="btn btn-primary" href="{% url 'core:contact' %}">{% trans "Contact us" %}</a>
+  </div>
+</div>
+{% endblock %}

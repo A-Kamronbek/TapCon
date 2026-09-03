@@ -1,0 +1,6 @@
+{
+  "Too many attempts": "Juda ko'p urinish",
+  "Too many attempts. Please wait a moment and try again.": "Juda ko'p urinish. Biroz kuting va qayta urining.",
+  "Please wait %(seconds)s second and try again.": ["%(seconds)s soniya kuting va qayta urining."],
+  "If you were paying for something, no money has been taken.": "Agar to'lov qilayotgan bo'lsangiz, hech qanday pul yechilmadi."
+}

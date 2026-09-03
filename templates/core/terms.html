@@ -1,0 +1,46 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Terms of service" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="prose">
+  <h1>{% trans "Terms of service" %}</h1>
+  <p class="small muted">{% trans "Draft. To be reviewed by a lawyer before launch." %}</p>
+
+  <h2>{% trans "What TapCon provides" %}</h2>
+  <p>{% trans "TapCon supplies an NFC card and a payment page that forwards your customer to the payment provider you have chosen. TapCon is not a bank, not a payment institution, and does not hold your money." %}</p>
+
+  <h2>{% trans "Your responsibilities" %}</h2>
+  <ul>
+    <li>{% trans "Keep your own merchant accounts with the providers in good standing." %}</li>
+    <li>{% trans "Keep your account credentials and provider keys secret." %}</li>
+    <li>{% trans "Only accept payments for lawful goods and services." %}</li>
+    <li>{% trans "Give your customers a receipt where the law requires one." %}</li>
+  </ul>
+
+  <h2>{% trans "Approval and suspension" %}</h2>
+  <p>{% trans "A new business must be approved before its payment page accepts payments. We may suspend an account that breaks these terms or that a provider asks us to stop serving." %}</p>
+
+  <h2>{% trans "Money and commission" %}</h2>
+  <p>{% trans "Payments go directly to your merchant account. TapCon takes no commission. Your providers charge their own fees under your agreement with them." %}</p>
+
+  <h2>{% trans "The card: price and replacement" %}</h2>
+  <p>{% trans "The card is paid for once, on delivery. A faulty card is replaced free of charge." %}</p>
+
+  {% comment %}
+  Written after the decision that TapCon never issues a payment refund. It
+  matters that this is stated where a seller reads it, not only in the code:
+  the whole question is who a customer should ask.
+  {% endcomment %}
+  <h2>{% trans "Returning a payment to a customer" %}</h2>
+  <p>{% trans "TapCon does not return payments. Money goes straight from your customer to your own merchant account, and we never hold it, so we have nothing to send back." %}</p>
+  <p>{% trans "If a customer paid too much or should be refunded, settle it with them directly, or ask your payment provider to return the payment through their own system. A payment your provider returns is shown in your transactions as “Returned to customer” and is not counted in your takings." %}</p>
+
+  <h2>{% trans "Limits of responsibility" %}</h2>
+  <p>{% trans "We do our best to keep the service running, but we are not responsible for a payment provider being unavailable, nor for a dispute between you and your customer." %}</p>
+
+  <h2>{% trans "Contact" %}</h2>
+  <p>{{ support_phone }} · <a href="{{ support_telegram }}" target="_blank" rel="noopener">Telegram</a></p>
+</div>
+{% endblock %}

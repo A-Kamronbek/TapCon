@@ -1,0 +1,210 @@
+/* Marketing page sections. */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: var(--s-7);
+  align-items: center;
+  padding: var(--s-6) 0 var(--s-7);
+}
+.hero h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: -.02em; }
+.hero .lead { font-size: var(--fs-lg); color: var(--text-muted); max-width: 46ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-5); }
+
+/* Image frame for the card artwork. Reserves the space before the file
+   loads so the hero never jumps, and centres whatever is dropped in. */
+.card-frame {
+  margin: 0 0 0 auto;
+  max-width: 460px;
+  width: 100%;
+  aspect-ratio: 1.586;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border: 1px solid #000000;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.card-frame img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.section { padding: var(--s-7) 0; }
+.section-head { max-width: 62ch; margin-bottom: var(--s-6); }
+.section-head h2 { letter-spacing: -.01em; }
+.section-head p { color: var(--text-muted); margin: 0; }
+
+/* --- the four steps --------------------------------------------------- */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-5); }
+.step { position: relative; }
+.step .num {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r-pill);
+  background: var(--primary); color: #fff;
+  font-weight: 800; margin-bottom: var(--s-3);
+  flex: none;
+}
+.step h3 { font-size: var(--fs-lg); margin-bottom: var(--s-2); }
+.step p { color: var(--text-muted); font-size: var(--fs-sm); margin: 0; }
+
+/* Connecting line between the steps on wide screens. */
+@media (min-width: 901px) {
+  .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 52px;
+    right: calc(var(--s-5) * -1 + 12px);
+    height: 2px;
+    background: var(--border-strong);
+  }
+}
+
+/* --- provider logo slots ---------------------------------------------- */
+.provider-strip {
+  display: flex; flex-wrap: wrap; gap: var(--s-4);
+  align-items: center; justify-content: center;
+  padding: var(--s-5) 0;
+  list-style: none;
+  margin: 0;
+}
+.provider-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 56px;
+  padding: var(--s-2) var(--s-3);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+}
+.provider-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-5); }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-5); }
+
+.benefit h3 { font-size: var(--fs-lg); }
+.benefit p { color: var(--text-muted); font-size: var(--fs-sm); margin: 0; }
+
+.price-card { text-align: center; }
+.price-amount {
+  font-size: clamp(32px, 6vw, 44px);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -.02em;
+}
+.price-amount .unit { font-size: var(--fs-base); font-weight: 600; color: var(--text-muted); }
+.price-list { list-style: none; padding: 0; margin: var(--s-4) 0 0; text-align: left; }
+.price-list li {
+  padding: var(--s-2) 0 var(--s-2) var(--s-5);
+  position: relative;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.price-list li::before {
+  content: "✓";
+  position: absolute; left: 0;
+  color: var(--success); font-weight: 700;
+}
+
+.cta-band {
+  background: var(--navy);
+  color: #fff;
+  border-radius: var(--r-lg);
+  padding: var(--s-7) var(--s-6);
+  text-align: center;
+}
+.cta-band h2 { color: #fff; }
+.cta-band p { color: #b9c6d8; max-width: 52ch; margin: 0 auto var(--s-5); }
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: var(--s-4) 0;
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; color: var(--primary); font-size: var(--fs-xl); line-height: 1; }
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p { margin: var(--s-3) 0 0; color: var(--text-muted); font-size: var(--fs-sm); }
+
+.prose { max-width: 68ch; }
+.prose h2 { margin-top: var(--s-6); font-size: var(--fs-xl); }
+.prose li { margin-bottom: var(--s-2); color: var(--text-muted); }
+
+.contact-methods { display: flex; flex-direction: column; gap: var(--s-3); }
+.contact-method {
+  display: flex; align-items: center; gap: var(--s-3);
+  padding: var(--s-4);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  font-weight: 600;
+}
+.contact-method:hover { border-color: var(--primary); text-decoration: none; background: var(--primary-soft); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: var(--s-5); padding: var(--s-5) 0; }
+  .card-frame { margin: 0 auto; }
+  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .section { padding: var(--s-6) 0; }
+
+  /* On a phone the four steps become a vertical timeline: number on the
+     left, text beside it, a line joining them. Stacking number-above-text
+     left the column looking loose and disconnected. */
+  .steps {
+    display: block;
+    padding-left: 4px;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: var(--s-4);
+    padding-bottom: var(--s-5);
+  }
+  .step:last-child { padding-bottom: 0; }
+  .step .num { grid-row: 1 / span 2; margin-bottom: 0; }
+  .step h3 { margin: 8px 0 var(--s-1); font-size: var(--fs-base); }
+  .step p { grid-column: 2; }
+
+  /* The joining line runs from under one number down to the next. */
+  .step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 19px;
+    top: 44px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--border-strong);
+  }
+
+  .provider-logo { width: 128px; height: 52px; }
+}
+
+@media (max-width: 560px) {
+  .cta-band { padding: var(--s-5) var(--s-4); }
+  .provider-strip { gap: var(--s-3); }
+  .provider-logo { width: calc(50% - var(--s-3)); }
+}

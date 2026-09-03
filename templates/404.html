@@ -1,0 +1,29 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Page not found" %} — TapCon{% endblock %}
+
+{% comment %}
+404 and 403 keep the full site chrome on purpose: someone who mistyped a URL
+or followed a stale link needs a way onward, and the navigation is that way.
+500 does not — see 500.html for why.
+{% endcomment %}
+
+{% block content %}
+<div class="card empty-state error-page">
+  <div class="error-code" aria-hidden="true">404</div>
+  <h1>{% trans "Page not found" %}</h1>
+  <p class="muted">
+    {% trans "The address may be mistyped, or the page may have moved." %}
+  </p>
+
+  {% comment %}
+  The most likely reason a customer lands here is a mistyped pay link, so the
+  first thing offered is the way to ask the business for the right one.
+  {% endcomment %}
+  <div class="row" style="justify-content:center;flex-wrap:wrap">
+    <a class="btn btn-primary" href="{% url 'core:home' %}">{% trans "Go to home page" %}</a>
+    <a class="btn btn-ghost" href="{% url 'core:contact' %}">{% trans "Contact us" %}</a>
+  </div>
+</div>
+{% endblock %}

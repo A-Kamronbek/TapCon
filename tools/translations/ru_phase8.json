@@ -1,0 +1,11 @@
+{
+  "Too many attempts": "Слишком много попыток",
+  "Too many attempts. Please wait a moment and try again.": "Слишком много попыток. Подождите немного и попробуйте снова.",
+  "Please wait %(seconds)s second and try again.": [
+    "Подождите %(seconds)s секунду и попробуйте снова.",
+    "Подождите %(seconds)s секунды и попробуйте снова.",
+    "Подождите %(seconds)s секунд и попробуйте снова.",
+    "Подождите %(seconds)s секунды и попробуйте снова."
+  ],
+  "If you were paying for something, no money has been taken.": "Если вы оплачивали покупку, деньги не списаны."
+}

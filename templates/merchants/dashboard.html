@@ -1,0 +1,166 @@
+{% extends "layouts/merchant.html" %}
+{% load i18n humanize_uzs %}
+
+{% block title %}{% trans "Dashboard" %} — TapCon{% endblock %}
+{% block page_title %}{% trans "Dashboard" %}{% endblock %}
+
+{% block content %}
+
+{% comment %}
+Every figure on this page is real, paid money: no sandbox rows, no refunds.
+That is enforced in payments/reporting.py, not here — a template that did its
+own arithmetic would be one `Sum` away from telling a seller they earned money
+they did not.
+{% endcomment %}
+<div class="stat-row">
+  <div class="card stat stat-lead">
+    <div class="stat-label">{% trans "Received today" %}</div>
+    <div class="stat-value">{{ totals.today.total|uzs }} <span>{% trans "soum" %}</span></div>
+    <div class="small muted">
+      {% blocktrans count counter=totals.today.count %}{{ counter }} payment{% plural %}{{ counter }} payments{% endblocktrans %}
+    </div>
+  </div>
+
+  <div class="card stat">
+    <div class="stat-label">{% trans "Last 7 days" %}</div>
+    <div class="stat-value">{{ totals.week.total|uzs }} <span>{% trans "soum" %}</span></div>
+    <div class="small muted">
+      {% blocktrans count counter=totals.week.count %}{{ counter }} payment{% plural %}{{ counter }} payments{% endblocktrans %}
+    </div>
+  </div>
+
+  <div class="card stat">
+    <div class="stat-label">{% trans "Last 30 days" %}</div>
+    <div class="stat-value">{{ totals.month.total|uzs }} <span>{% trans "soum" %}</span></div>
+    <div class="small muted">
+      {% blocktrans count counter=totals.month.count %}{{ counter }} payment{% plural %}{{ counter }} payments{% endblocktrans %}
+    </div>
+  </div>
+</div>
+
+{% if has_payments %}
+  <div class="card">
+    <div class="row-between" style="margin-bottom:var(--s-4)">
+      <h3 style="margin:0">{% trans "Last 14 days" %}</h3>
+      <a class="small" href="{% url 'merchants:transactions' %}">{% trans "All transactions" %}</a>
+    </div>
+
+    {% comment %}
+    Plain divs, not an SVG and not a charting library. Each bar's height is a
+    percentage computed in Python, so there is no arithmetic here and nothing
+    to load. A day with no payments keeps its slot — a chart that skipped
+    empty days would draw a closed shop as an unbroken run of trading.
+    {% endcomment %}
+    <div class="bars" role="img"
+         aria-label="{% trans 'Daily takings for the last 14 days' %}">
+      {% for day in series %}
+        <div class="bar-col{% if day.is_today %} bar-today{% endif %}">
+          <div class="bar-track">
+            <div class="bar-fill" style="height:{{ day.height }}%"
+                 title="{{ day.date|date:'d.m.Y' }} — {{ day.total|uzs }}"></div>
+          </div>
+          <div class="bar-label">{{ day.date|date:"d.m" }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+<div class="dash-grid">
+
+  <div class="card">
+    <h3>{% trans "By payment method" %}</h3>
+    <p class="small muted">{% trans "Last 30 days" %}</p>
+    {% if by_provider %}
+      <table class="mini-table">
+        {% for row in by_provider %}
+          <tr>
+            <td>{{ row.label }}</td>
+            <td class="small muted">
+              {% blocktrans count counter=row.count %}{{ counter }} payment{% plural %}{{ counter }} payments{% endblocktrans %}
+            </td>
+            <td class="num">{{ row.total|uzs }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p class="muted">{% trans "Nothing received in the last 30 days." %}</p>
+    {% endif %}
+  </div>
+
+  <div class="card">
+    <div class="row-between" style="margin-bottom:var(--s-4)">
+      <h3 style="margin:0">{% trans "Recent" %}</h3>
+      <a class="small" href="{% url 'merchants:transactions' %}">{% trans "See all" %}</a>
+    </div>
+    {% if recent %}
+      <table class="mini-table recent-table">
+        {% for txn in recent %}
+          <tr>
+            <td>
+              <span class="txn-date">{{ txn.created_at|date:"d.m" }}</span>
+              <span class="small muted">{{ txn.created_at|date:"H:i" }}</span>
+            </td>
+            <td class="small muted">{{ txn.provider_label }}</td>
+            <td class="num">{{ txn.amount|uzs }}</td>
+            <td>
+              {% if txn.status == 'paid' %}
+                <span class="badge badge-success">{{ txn.get_status_display }}</span>
+              {% elif txn.status == 'refunded' %}
+                <span class="badge badge-warning">{{ txn.get_status_display }}</span>
+              {% elif txn.status == 'failed' %}
+                <span class="badge badge-danger">{{ txn.get_status_display }}</span>
+              {% elif txn.status == 'pending' or txn.status == 'created' %}
+                <span class="badge badge-info">{{ txn.get_status_display }}</span>
+              {% else %}
+                <span class="badge badge-muted">{{ txn.get_status_display }}</span>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p class="muted">{% trans "Payments appear here as soon as a customer taps your card." %}</p>
+    {% endif %}
+  </div>
+
+  <div class="card">
+    <div class="row-between" style="margin-bottom:var(--s-4)">
+      <h3 style="margin:0">{{ profile.business_name }}</h3>
+      {% if profile.is_live %}
+        <span class="badge badge-success">{% trans "Approved" %}</span>
+      {% else %}
+        <span class="badge badge-warning">{{ profile.get_status_display }}</span>
+      {% endif %}
+    </div>
+
+    <div class="field">
+      <label for="pay-link">{% trans "Your payment link" %}</label>
+      <input class="input" id="pay-link" type="text" readonly
+             value="{{ request.scheme }}://{{ request.get_host }}{{ profile.get_pay_url }}">
+      <div class="small muted" style="margin-top:var(--s-2)">
+        {% trans "This is the address written onto your NFC card." %}
+      </div>
+    </div>
+
+    <a class="btn btn-ghost" href="{{ profile.get_pay_url }}" target="_blank" rel="noopener">
+      {% trans "Open payment page" %}
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>{% trans "Payment methods" %}</h3>
+    <div class="summary-count">{{ connected }}<span>/{{ provider_count }}</span></div>
+    <p class="small muted">{% trans "Switched on and ready to take payments." %}</p>
+    <div class="row" style="flex-wrap:wrap">
+      <a class="btn btn-ghost" href="{% url 'merchants:integrations' %}">
+        {% trans "Manage" %}
+      </a>
+      <a class="btn btn-ghost" href="{% url 'core:order' %}">
+        {% trans "Order more cards" %}
+      </a>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% load form_extras %}
+{% if form.non_field_errors %}
+  <div class="toast toast-error">
+    {% for error in form.non_field_errors %}<div>{{ error }}</div>{% endfor %}
+  </div>
+{% endif %}
+
+{% for field in form %}
+  <div class="field">
+    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {# A rejected field must look rejected, not just carry text under it. #}
+    {% if field.errors %}
+      {{ field|add_error_class:"is-invalid" }}
+    {% else %}
+      {{ field }}
+    {% endif %}
+    {% for error in field.errors %}
+      <div class="field-error">{{ error }}</div>
+    {% endfor %}
+    {% if field.help_text %}<div class="small muted">{{ field.help_text }}</div>{% endif %}
+  </div>
+{% endfor %}

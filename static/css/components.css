@@ -1,0 +1,269 @@
+/* TapCon shared components. Reused by marketing, merchant and pay layouts. */
+
+/* --- reset & base ---------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { margin: 0 0 var(--s-3); line-height: 1.25; font-weight: 700; }
+h1 { font-size: var(--fs-3xl); }
+h2 { font-size: var(--fs-2xl); }
+h3 { font-size: var(--fs-xl); }
+p { margin: 0 0 var(--s-4); }
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; height: auto; }
+.muted { color: var(--text-muted); }
+.small { font-size: var(--fs-sm); }
+.center { text-align: center; }
+
+/* --- layout helpers -------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--s-4);
+}
+.stack > * + * { margin-top: var(--s-4); }
+/* Both wrap: a row of buttons or badges that cannot wrap pushes the whole
+   document wider than the phone and the page starts scrolling sideways. */
+.row { display: flex; align-items: center; gap: var(--s-3); flex-wrap: wrap; }
+.row-between {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--s-3); flex-wrap: wrap;
+}
+
+/* --- card ------------------------------------------------------------ */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+  padding: var(--s-5);
+}
+
+
+/* --- buttons --------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  min-height: var(--tap-target);
+  padding: 0 var(--s-5);
+  border: 1px solid transparent;
+  border-radius: var(--r-md);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease, transform .05s ease;
+}
+.btn:hover { text-decoration: none; }
+.btn:active { transform: translateY(1px); }
+/* The focus ring was --primary-soft, which is 1.06:1 against white — a ring
+   a keyboard user cannot see is not a ring. --primary is 4.7:1 against the
+   page and well past the 3:1 a non-text indicator needs. */
+.btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+.btn[disabled] { opacity: .55; cursor: not-allowed; }
+
+.btn-primary { background: var(--primary); color: var(--text-on-primary); }
+.btn-primary:hover { background: var(--primary-hover); }
+
+.btn-ghost { background: transparent; color: var(--primary); border-color: var(--border-strong); }
+.btn-ghost:hover { background: var(--primary-soft); }
+
+.btn-block { width: 100%; }
+
+/* --- provider row button (pay page) ---------------------------------- */
+.provider-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  width: 100%;
+  min-height: var(--tap-target);
+  padding: var(--s-3) var(--s-4);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  /* Rendered as a <button>, so undo the browser's own button styling. */
+  font-family: inherit;
+  font-size: inherit;
+}
+.provider-btn:hover { border-color: var(--primary); background: var(--primary-soft); text-decoration: none; }
+.provider-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.provider-btn .logo { width: 32px; height: 32px; flex: none; border-radius: var(--r-sm); }
+.provider-btn .chevron { margin-left: auto; color: var(--text-faint); }
+
+/* --- forms ----------------------------------------------------------- */
+.field { display: block; margin-bottom: var(--s-4); }
+.field > label {
+  display: block;
+  margin-bottom: var(--s-2);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.input {
+  width: 100%;
+  min-height: var(--tap-target);
+  padding: 0 var(--s-4);
+  font: inherit;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-md);
+}
+.input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+.input.is-invalid { border-color: var(--danger); }
+.field-error { margin-top: var(--s-2); font-size: var(--fs-sm); color: var(--danger); }
+
+/* Amount input with its UZS suffix.
+   The suffix is centred on .amount-wrap, not on .amount-field: the field also
+   holds the label and the limits line, so centring on it drops the suffix
+   below the box. */
+.amount-field .amount-wrap { position: relative; }
+.amount-field .input {
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  height: 68px;
+  padding-right: 88px;
+  text-align: right;
+}
+/* Chrome and Firefox put stepper arrows on number inputs, which collide with
+   the suffix and invite mis-taps on a phone. */
+.amount-field .input::-webkit-outer-spin-button,
+.amount-field .input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.amount-field .input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+/* The pay page renders the widget directly rather than through the shared
+   field partial, so the invalid state is carried by the wrapper. */
+.amount-field.has-error .input { border-color: var(--danger); }
+.amount-field.has-error .input:focus {
+  box-shadow: 0 0 0 3px var(--danger-soft);
+}
+.amount-field .amount-suffix {
+  position: absolute;
+  right: var(--s-4);
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  color: var(--text-faint);
+  pointer-events: none;
+}
+
+/* --- toggle switch --------------------------------------------------- */
+.toggle { position: relative; display: inline-block; width: 46px; height: 26px; flex: none; }
+.toggle input { opacity: 0; width: 0; height: 0; }
+.toggle .track {
+  position: absolute; inset: 0;
+  background: var(--border-strong);
+  border-radius: var(--r-pill);
+  transition: background .15s ease;
+  cursor: pointer;
+}
+.toggle .track::before {
+  content: ""; position: absolute;
+  width: 20px; height: 20px; left: 3px; top: 3px;
+  background: #fff; border-radius: 50%;
+  transition: transform .15s ease;
+}
+.toggle input:checked + .track { background: var(--success); }
+.toggle input:checked + .track::before { transform: translateX(20px); }
+
+/* --- badges ---------------------------------------------------------- */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+.badge-success { background: var(--success-soft); color: var(--success); }
+.badge-warning { background: var(--warning-soft); color: var(--warning); }
+.badge-danger  { background: var(--danger-soft);  color: var(--danger); }
+.badge-muted   { background: var(--bg);           color: var(--text-muted); }
+/* A payment still in flight. It is neither good news nor bad yet, so it gets
+   the neutral brand colour rather than borrowing success or warning. */
+.badge-info    { background: var(--primary-soft); color: var(--primary); }
+
+/* --- standalone links are targets, not words -------------------------- */
+/* A link that sits alone on its line — "Forgot your password?", "See all",
+   the support number on the pay page — is something a thumb has to hit, so
+   it needs a hit area, not just a hit word. At 12–14px these were 17–22px
+   tall, well under the 24px WCAG 2.2 asks for and nowhere near the 44px a
+   fingertip actually covers.
+   The padding grows the box and the equal negative margin puts the text back
+   exactly where it was, so nothing on any page moves. Links inside a run of
+   prose are left alone: enlarging those would overlap the lines above and
+   below, and a word inside a sentence is exempt from the rule anyway. */
+.pay-column p > a:only-child,
+.pay-footer a,
+.row-between > a.small,
+.link-button {
+  display: inline-block;
+  padding: 14px 6px;
+  margin: -14px -6px;
+}
+
+/* --- toast / messages ------------------------------------------------ */
+.toast {
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--s-3);
+}
+.toast-success { background: var(--success-soft); border-color: var(--success); }
+.toast-error   { background: var(--danger-soft);  border-color: var(--danger); }
+.toasts { margin-bottom: var(--s-4); }
+.toasts:empty { display: none; }
+
+/* --- language switcher ----------------------------------------------- */
+.lang-switch { display: inline-flex; gap: var(--s-1); background: var(--card);
+  border: 1px solid var(--border); border-radius: var(--r-pill); padding: 3px; }
+.lang-switch a,
+.lang-switch button {
+  /* 44px tall, not 30. Three small pills side by side are exactly the kind of
+     target a thumb misses, and the person reaching for them is by definition
+     someone who cannot read the current page. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 16px;
+  border: none;
+  background: transparent;
+  border-radius: var(--r-pill);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.lang-switch a:hover,
+.lang-switch button:hover { background: var(--bg); text-decoration: none; }
+.lang-switch a.active,
+.lang-switch button.active { background: var(--primary); color: var(--text-on-primary); }
+
+/* --- trust / support block ------------------------------------------- */
+.trust {
+  display: flex; align-items: center; justify-content: center; gap: var(--s-2);
+  color: var(--text-faint); font-size: var(--fs-sm);
+}
+/* Reserved for the pay page's support block in Phase 4 — not dead code. */
+.support-block {
+  border-top: 1px solid var(--border);
+  padding-top: var(--s-4);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}

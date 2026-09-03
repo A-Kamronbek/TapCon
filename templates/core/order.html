@@ -1,0 +1,38 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n humanize_uzs %}
+
+{% block title %}{% trans "Order a card" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="grid-2">
+  <div>
+    <div class="section-head">
+      <h1>{% trans "Order a card" %}</h1>
+      <p>{% trans "Leave your number and we will call you back to confirm the order and arrange delivery." %}</p>
+    </div>
+
+    <div class="card">
+      <h3>{% trans "What happens next" %}</h3>
+      <ol class="prose">
+        <li>{% trans "We call you to confirm quantity and address." %}</li>
+        <li>{% trans "We deliver the cards and help you register." %}</li>
+        <li>{% trans "You connect your payment providers and start taking payments." %}</li>
+      </ol>
+      <p class="small muted" style="margin:0">
+        {% blocktrans with price=card_price|uzs %}{{ price }} soum per card. Payment on delivery.{% endblocktrans %}
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% include "partials/form_fields.html" %}
+      <button type="submit" class="btn btn-primary btn-block">{% trans "Send order" %}</button>
+      <p class="small muted center" style="margin:var(--s-3) 0 0">
+        {% trans "We only use your number to contact you about this order." %}
+      </p>
+    </form>
+  </div>
+</div>
+{% endblock %}

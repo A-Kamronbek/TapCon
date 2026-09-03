@@ -1,0 +1,30 @@
+{% extends "layouts/merchant.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Notifications" %} — TapCon{% endblock %}
+{% block page_title %}{% trans "Notifications" %}{% endblock %}
+
+{% block content %}
+<div class="card" style="max-width:720px;padding:0;overflow:hidden">
+  {% if unread_notifications %}
+    <div class="bell-head">
+      <span class="small muted">
+        {% blocktrans count counter=unread_notifications %}{{ counter }} unread{% plural %}{{ counter }} unread{% endblocktrans %}
+      </span>
+      <form method="post" action="{% url 'core:notifications_read' %}">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+        <button type="submit" class="link-button">{% trans "Mark all read" %}</button>
+      </form>
+    </div>
+  {% endif %}
+
+  <ul class="bell-list" style="max-height:none">
+    {% for item in items %}
+      {% include "partials/notification_item.html" with body_class="muted" %}
+    {% empty %}
+      <li class="bell-empty muted">{% trans "Nothing new yet." %}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

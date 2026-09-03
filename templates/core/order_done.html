@@ -1,0 +1,22 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Order received" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="card center" style="max-width:520px;margin:0 auto">
+  <div style="width:64px;height:64px;margin:0 auto var(--s-4);border-radius:var(--r-pill);
+              background:var(--success-soft);display:flex;align-items:center;justify-content:center">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--success)"
+         stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 6 9 17l-5-5"></path>
+    </svg>
+  </div>
+  <h1 style="font-size:var(--fs-2xl)">{% trans "Order received" %}</h1>
+  <p class="muted">{% trans "Thank you. We will call you back shortly to confirm the details." %}</p>
+  <div class="row" style="justify-content:center;margin-top:var(--s-5)">
+    <a class="btn btn-ghost" href="{% url 'core:home' %}">{% trans "Back to home" %}</a>
+    <a class="btn btn-primary" href="{% url 'core:how_it_works' %}">{% trans "How it works" %}</a>
+  </div>
+</div>
+{% endblock %}

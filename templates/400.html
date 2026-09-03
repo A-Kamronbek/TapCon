@@ -1,0 +1,18 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Bad request" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="card empty-state error-page">
+  <div class="error-code" aria-hidden="true">400</div>
+  <h1>{% trans "Something was wrong with that request" %}</h1>
+  <p class="muted">
+    {% trans "Try again from the beginning. If it keeps happening, tell us and we will look." %}
+  </p>
+  <div class="row" style="justify-content:center;flex-wrap:wrap">
+    <a class="btn btn-primary" href="{% url 'core:home' %}">{% trans "Go to home page" %}</a>
+    <a class="btn btn-ghost" href="{% url 'core:contact' %}">{% trans "Contact us" %}</a>
+  </div>
+</div>
+{% endblock %}

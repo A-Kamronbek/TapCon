@@ -1,0 +1,44 @@
+{% load i18n %}
+{% comment %}
+Marketing header. The mobile drawer is driven by a hidden checkbox, so it
+works with JavaScript switched off — no framework, no scroll-jacking.
+Order matters: logo, menu, actions. On desktop the menu pushes right; on
+mobile it becomes an absolutely positioned drawer and the actions stay put.
+{% endcomment %}
+<header class="site-header">
+  <input type="checkbox" id="nav-toggle" class="visually-hidden nav-toggle">
+  {# Tapping the dimmed area unchecks the box and closes the drawer. #}
+  <label for="nav-toggle" class="drawer-scrim" aria-hidden="true"></label>
+
+  <div class="container nav-bar">
+    <a class="site-logo" href="{% url 'core:home' %}">Tap<span>Con</span></a>
+
+    <nav class="site-nav" aria-label="{% trans 'Main menu' %}">
+      <a href="{% url 'core:how_it_works' %}" {% if nav == 'how' %}class="active"{% endif %}>{% trans "How it works" %}</a>
+      <a href="{% url 'core:for_business' %}" {% if nav == 'business' %}class="active"{% endif %}>{% trans "For business" %}</a>
+      <a href="{% url 'core:pricing' %}" {% if nav == 'pricing' %}class="active"{% endif %}>{% trans "Pricing" %}</a>
+      <a href="{% url 'core:faq' %}" {% if nav == 'faq' %}class="active"{% endif %}>{% trans "FAQ" %}</a>
+      <a href="{% url 'core:contact' %}" {% if nav == 'contact' %}class="active"{% endif %}>{% trans "Contact" %}</a>
+
+      <div class="nav-divider"></div>
+
+      {% if user.is_authenticated %}
+        <a class="btn btn-primary nav-cta" href="{% url 'merchants:dashboard' %}">{% trans "Dashboard" %}</a>
+      {% else %}
+        <a href="{% url 'accounts:login' %}">{% trans "Sign in" %}</a>
+        <a class="btn btn-primary nav-cta" href="{% url 'core:order' %}">{% trans "Order a card" %}</a>
+      {% endif %}
+
+      {% include "partials/language_switcher.html" %}
+    </nav>
+
+    <div class="nav-actions">
+      {% if user.is_authenticated %}
+        {% include "partials/notification_bell.html" %}
+      {% endif %}
+      <label for="nav-toggle" class="nav-burger" aria-label="{% trans 'Menu' %}">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </div>
+</header>

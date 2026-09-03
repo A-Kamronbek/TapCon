@@ -1,0 +1,11 @@
+{% load i18n static %}
+{% comment %}
+The card image. The frame holds its aspect ratio while the file loads, so the
+page never jumps, and a new design drops in by replacing
+static/img/hero-card.png — no markup change needed.
+{% endcomment %}
+<figure class="card-frame">
+  <img src="{% static 'img/hero-card.png' %}"
+       alt="{% trans 'The TapCon card and the payment apps it works with' %}"
+       width="900" height="568" loading="eager" decoding="async">
+</figure>

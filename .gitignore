@@ -1,0 +1,46 @@
+# virtualenv
+.venv/
+venv/
+
+# secrets
+.env
+!.env.example
+
+# database (dev)
+db.sqlite3
+*.sqlite3
+
+# django
+media/
+staticfiles/
+*.mo
+
+# python
+__pycache__/
+*.py[cod]
+
+# editors / os
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# scratch
+_old_scaffold/
+.docs
+
+# Kept on disk, deliberately not published.
+#
+# This repository is intended to become public. Anything here is either
+# internal working material or something that would help an attacker, and
+# neither belongs in a portfolio repo.
+# A '#' only starts a comment at the START of a line. Written on the same
+# line as a pattern it becomes part of the pattern, and the rule silently
+# matches nothing — so every note here is on its own line.
+
+# internal phased plan and checkpoints
+TAPCON_PLAN.md
+# draft Terms and Privacy, not yet reviewed by a lawyer
+docs/legal/
+# the live server's address and its recovery route
+deploy/SERVER-ACCESS.local.md

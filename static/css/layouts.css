@@ -1,0 +1,298 @@
+/* Layout shells: marketing page, merchant portal, pay and auth columns.
+   Navigation itself lives in nav.css. */
+
+/* --- marketing -------------------------------------------------------- */
+.site-main { min-height: 60vh; padding: var(--s-7) 0; }
+
+.site-footer {
+  background: var(--navy);
+  color: #b9c6d8;
+  padding: var(--s-6) 0 var(--s-5);
+  font-size: var(--fs-sm);
+  margin-top: var(--s-7);
+}
+/* Footer links are a stacked list of separate destinations, so each one is a
+   target a thumb has to land on without catching its neighbour. At 14px the
+   link box was 22px tall with 8px between — under the 24px WCAG 2.2 asks for,
+   and close enough together to mis-tap. Padding rather than a negative margin
+   here: growing the gap between them is the point, not a side effect. */
+.site-footer a {
+  color: #dbe5f2;
+  display: block;
+  padding: 12px 0;
+  margin-bottom: 0;
+}
+.site-footer h4 { color: #fff; font-size: var(--fs-sm); margin-bottom: var(--s-3); }
+.footer-logo { color: #fff; margin-bottom: var(--s-3); }
+.footer-logo span { color: #7ea6f5; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: var(--s-5);
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-6);
+  padding-top: var(--s-4);
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+/* The phone number and Telegram link sit inside a line of text, so they keep
+   flowing with it — but they are still things a thumb aims at, so the box
+   grows around the words without moving them. */
+.footer-bottom a {
+  display: inline-block;
+  margin: -13px 0;
+  padding: 13px 4px;
+}
+
+@media (max-width: 760px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .site-main { padding: var(--s-5) 0; }
+}
+
+/* --- merchant portal --------------------------------------------------- */
+.merchant-shell { min-height: 100vh; display: flex; flex-direction: column; }
+
+.merchant-topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: var(--topbar-h);
+  padding: 0 var(--s-5);
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.merchant-topbar .nav-actions { margin-left: auto; }
+
+.merchant-body { display: flex; flex: 1; min-height: 0; }
+
+.merchant-sidebar {
+  width: 248px;
+  flex: none;
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  padding: var(--s-5) var(--s-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.merchant-sidebar a {
+  display: block;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-md);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+}
+.merchant-sidebar a:hover { background: var(--bg); text-decoration: none; }
+.merchant-sidebar a.active { background: var(--primary-soft); color: var(--primary); }
+.merchant-sidebar .spacer { margin-top: auto; }
+
+.merchant-main { flex: 1; padding: var(--s-5); min-width: 0; }
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--s-5);
+  align-items: start;
+  max-width: 960px;
+}
+.settings-grid h3 { margin-bottom: var(--s-4); }
+
+/* Mobile: the sidebar collapses into a drawer under the top bar. */
+@media (max-width: 900px) {
+  .merchant-sidebar {
+    position: fixed;
+    top: var(--topbar-h);
+    bottom: 0;
+    left: 0;
+    width: min(280px, 82vw);
+    z-index: 45;
+    box-shadow: var(--shadow-lg);
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    overflow-y: auto;
+  }
+  .side-toggle:checked ~ .merchant-body .merchant-sidebar { transform: translateX(0); }
+  .merchant-main { padding: var(--s-4); }
+}
+
+@media (min-width: 901px) {
+  /* The burger is a mobile control only. */
+  .merchant-topbar .nav-burger { display: none; }
+
+  /* The sidebar stays put while the page scrolls. Without this it is an
+     ordinary flex child, so on a long page — the integrations page with a
+     provider open, say — the navigation and Sign out scroll off the top and
+     the seller has to scroll back up to go anywhere.
+
+     `align-self: flex-start` is the part that makes it work: flex children
+     stretch to the row's height by default, and a sticky element with no
+     spare height inside its container has nothing to stick to. */
+  .merchant-sidebar {
+    position: sticky;
+    top: var(--topbar-h);
+    align-self: flex-start;
+    height: calc(100vh - var(--topbar-h));
+    overflow-y: auto;
+    /* Its own scrollbar, if the menu ever outgrows a short window. */
+    overscroll-behavior: contain;
+  }
+}
+
+/* --- pay page and auth column ------------------------------------------ */
+.pay-shell {
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center;
+  padding: var(--s-5) var(--s-4) var(--s-6);
+}
+.pay-column { width: 100%; max-width: var(--pay-width); }
+
+/* One card holds the whole payment, so it reads as a single object being
+   filled in rather than a stack of loose parts on a background. */
+.pay-card { padding: var(--s-6) var(--s-5) var(--s-5); }
+
+.pay-business { text-align: center; margin-bottom: var(--s-6); }
+.pay-business .avatar {
+  width: 56px; height: 56px; margin: 0 auto var(--s-3);
+  border-radius: var(--r-lg); background: var(--primary-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; color: var(--primary); font-size: var(--fs-lg);
+}
+.pay-business .avatar-img { object-fit: cover; }
+.pay-name {
+  margin: 0;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  line-height: 1.25;
+  /* A long business name must wrap, not push the card wide. */
+  overflow-wrap: anywhere;
+}
+.pay-welcome { margin: var(--s-2) 0 0; }
+
+.pay-notice { text-align: center; padding: var(--s-4) 0 var(--s-2); }
+.pay-notice h2 { margin: 0 0 var(--s-2); font-size: var(--fs-lg); }
+.pay-notice p { margin: 0; }
+
+.pay-footer { margin-top: var(--s-5); text-align: center; }
+
+/* --- pay page: amount, provider choice, result ------------------------ */
+.pay-form { display: block; }
+.amount-limits { margin-top: var(--s-2); }
+.pay-choose {
+  margin: var(--s-5) 0 var(--s-3);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.pay-testnote {
+  margin: var(--s-4) 0 0;
+  text-align: center;
+  color: var(--warning);
+}
+
+/* The provider list is a list: hairline-separated rows of equal height, not
+   six floating slabs. The logo sits left, the chevron right, and nothing
+   competes with the amount above it. */
+.pay-providers {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.pay-providers .provider-btn {
+  gap: var(--s-3);
+  min-height: 60px;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+}
+.pay-providers .provider-btn:last-child { border-bottom: 0; }
+.pay-providers .provider-btn:hover,
+.pay-providers .provider-btn:focus-visible { background: var(--primary-soft); }
+.pay-providers .provider-btn:active { background: var(--bg); }
+.provider-name { font-weight: 700; font-size: var(--fs-base); }
+.provider-btn .chevron {
+  margin-left: auto;
+  display: flex; align-items: center;
+  color: var(--text-faint);
+}
+/* Provider logos have wildly different aspect ratios — Paynet is four times
+   wider than it is tall, the card mark is square. Fix the height and let the
+   width follow, or the wide ones shrink to nothing inside a square box. */
+.provider-mark {
+  width: auto; height: 28px;
+  max-width: 104px;
+  object-fit: contain; object-position: left center;
+  flex: none;
+}
+/* An icon mark sits next to its name, so it gets the width of an icon. */
+.provider-mark + .provider-name { margin-left: calc(var(--s-1) * -1); }
+.provider-btn .badge { margin-left: var(--s-2); }
+
+/* Flex-wrap rather than inline text, so a long phone number breaks onto its
+   own line cleanly instead of dragging "Telegram" down with it. */
+.support-block {
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: center;
+  gap: var(--s-1) var(--s-3);
+}
+.support-block a {
+  font-weight: 600;
+  white-space: nowrap;
+  /* These are the links a customer taps when a payment has just failed, and
+     they were 22px tall. Padded to a real target without changing how the
+     line looks — the extra height is transparent. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--s-1);
+}
+
+.result-card { padding: var(--s-6) var(--s-5); }
+/* The outcome is this page's heading, so it is an h1 — but it keeps the size
+   it had as an h3. It sits above the amount, which is what the eye should
+   land on first; a heading scaled to match its level would fight it. */
+.result-heading {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  margin-bottom: var(--s-2);
+}
+.result-mark {
+  width: 64px; height: 64px; margin: 0 auto var(--s-4);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.result-ok { background: var(--success-soft); color: var(--success); }
+.result-off { background: var(--bg); color: var(--text-faint); }
+.result-wait { background: var(--primary-soft); color: var(--primary); }
+.result-amount {
+  margin: var(--s-3) 0 0;
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+}
+.result-amount .unit { font-size: var(--fs-base); font-weight: 600; color: var(--text-faint); }
+.result-actions {
+  display: flex; gap: var(--s-3); justify-content: center;
+  margin-top: var(--s-5); flex-wrap: wrap;
+}
+
+.spinner {
+  width: 28px; height: 28px;
+  border: 3px solid var(--primary-soft);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+/* Someone who asked for less motion gets a still ring, not a spinning one. */
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+}

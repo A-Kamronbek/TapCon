@@ -1,0 +1,17 @@
+{
+  "Page not found": "Sahifa topilmadi",
+  "The address may be mistyped, or the page may have moved.": "Manzil noto'g'ri yozilgan yoki sahifa ko'chirilgan bo'lishi mumkin.",
+  "Go to home page": "Bosh sahifaga o'tish",
+  "No access": "Ruxsat yo'q",
+  "You may need to sign in again, or this page may not belong to your account.": "Qaytadan kirishingiz kerak bo'lishi mumkin, yoki bu sahifa sizning hisobingizga tegishli emas.",
+  "Log in": "Kirish",
+  "Bad request": "Noto'g'ri so'rov",
+  "Something was wrong with that request": "So'rovda xatolik bor edi",
+  "Try again from the beginning. If it keeps happening, tell us and we will look.": "Boshidan qayta urinib ko'ring. Agar takrorlansa, bizga xabar bering, tekshiramiz.",
+  "Something went wrong": "Xatolik yuz berdi",
+  "This is a problem on our side. Please try again in a moment. If you were paying, no money has been taken.": "Bu bizning tomonimizdagi muammo. Bir ozdan so'ng qayta urinib ko'ring. Agar to'lov qilayotgan bo'lsangiz, hech qanday pul yechilmadi.",
+  "The card: price and replacement": "Karta: narxi va almashtirish",
+  "Returning a payment to a customer": "Mijozga to'lovni qaytarish",
+  "TapCon does not return payments. Money goes straight from your customer to your own merchant account, and we never hold it, so we have nothing to send back.": "TapCon to'lovlarni qaytarmaydi. Pul mijozdan to'g'ridan-to'g'ri sizning merchant hisobingizga tushadi, biz uni hech qachon ushlab turmaymiz, shuning uchun qaytaradigan narsamiz yo'q.",
+  "If a customer paid too much or should be refunded, settle it with them directly, or ask your payment provider to return the payment through their own system. A payment your provider returns is shown in your transactions as “Returned to customer” and is not counted in your takings.": "Agar mijoz ortiqcha to'lagan bo'lsa yoki pulini qaytarish kerak bo'lsa, u bilan to'g'ridan-to'g'ri hisob-kitob qiling yoki to'lov tizimingizdan to'lovni o'z tizimi orqali qaytarishni so'rang. To'lov tizimi qaytargan to'lov tranzaksiyalaringizda «Mijozga qaytarilgan» deb ko'rsatiladi va tushumingizga qo'shilmaydi."
+}

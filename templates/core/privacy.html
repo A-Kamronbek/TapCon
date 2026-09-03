@@ -1,0 +1,39 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Privacy policy" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="prose">
+  <h1>{% trans "Privacy policy" %}</h1>
+  <p class="small muted">{% trans "Draft. To be reviewed by a lawyer before launch." %}</p>
+
+  <h2>{% trans "What we collect" %}</h2>
+  <ul>
+    <li>{% trans "From sellers: phone number, name, business name, address, and the provider credentials you enter." %}</li>
+    <li>{% trans "From people ordering cards: name, phone number, delivery address." %}</li>
+    <li>{% trans "From customers paying: the amount and which provider they chose. Nothing that identifies them personally." %}</li>
+  </ul>
+
+  <h2>{% trans "What we never collect" %}</h2>
+  <ul>
+    <li>{% trans "Card numbers, CVV codes or any card details. Card payments happen on the provider's own page." %}</li>
+    <li>{% trans "Passport or ID numbers." %}</li>
+  </ul>
+
+  <h2>{% trans "How we protect provider credentials" %}</h2>
+  <p>{% trans "Your merchant credentials are encrypted in our database, never shown back to you in full, and never written to logs." %}</p>
+
+  <h2>{% trans "Who we share it with" %}</h2>
+  <p>{% trans "Payment providers receive what they need to process a payment. Our SMS provider receives your phone number to deliver a confirmation code. We sell your data to nobody." %}</p>
+
+  <h2>{% trans "How long we keep it" %}</h2>
+  <p>{% trans "Transaction records are kept while your account is active and afterwards as long as the law requires. Confirmation codes are deleted within minutes." %}</p>
+
+  <h2>{% trans "Your rights" %}</h2>
+  <p>{% trans "Ask us to correct or delete your data at any time using the contacts below. We will do it unless the law requires us to keep a record." %}</p>
+
+  <h2>{% trans "Contact" %}</h2>
+  <p>{{ support_phone }} · <a href="{{ support_telegram }}" target="_blank" rel="noopener">Telegram</a></p>
+</div>
+{% endblock %}

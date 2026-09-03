@@ -1,0 +1,22 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "No access" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="card empty-state error-page">
+  <div class="error-code" aria-hidden="true">403</div>
+  <h1>{% trans "No access" %}</h1>
+  <p class="muted">
+    {% comment %}
+    The commonest cause by far is an expired session on a form, not a genuine
+    permission problem — so say the useful thing rather than the accurate one.
+    {% endcomment %}
+    {% trans "You may need to sign in again, or this page may not belong to your account." %}
+  </p>
+  <div class="row" style="justify-content:center;flex-wrap:wrap">
+    <a class="btn btn-primary" href="{% url 'accounts:login' %}">{% trans "Log in" %}</a>
+    <a class="btn btn-ghost" href="{% url 'core:home' %}">{% trans "Go to home page" %}</a>
+  </div>
+</div>
+{% endblock %}

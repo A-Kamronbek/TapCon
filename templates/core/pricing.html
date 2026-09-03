@@ -1,0 +1,65 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n humanize_uzs %}
+
+{% block title %}{% trans "Pricing" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="section-head">
+  <h1>{% trans "Pricing" %}</h1>
+  <p>{% trans "One payment for the card. No subscription, and TapCon takes no commission from your sales." %}</p>
+</div>
+
+<div class="grid-2">
+  <div class="card price-card">
+    <h3>{% trans "TapCon card" %}</h3>
+    <div class="price-amount">
+      {{ card_price|uzs }} <span class="unit">{% trans "soum" %}</span>
+    </div>
+    <p class="small muted">{% trans "per card, one payment" %}</p>
+    <ul class="price-list">
+      <li>{% trans "The NFC card itself" %}</li>
+      <li>{% trans "Your own payment page" %}</li>
+      <li>{% trans "Merchant portal with transactions" %}</li>
+      <li>{% trans "Connect your own provider accounts yourself, free" %}</li>
+      <li>{% trans "Support in Uzbek and Russian" %}</li>
+    </ul>
+    <a class="btn btn-primary btn-block" style="margin-top:var(--s-5)"
+       href="{% url 'core:order' %}">{% trans "Order a card" %}</a>
+  </div>
+
+  <div class="card">
+    <h3>{% trans "Merchant account setup" %}</h3>
+    <div class="price-amount" style="font-size:var(--fs-xl)">{% trans "Priced per business" %}</div>
+    <p class="small muted">{% trans "Optional — only if you want us to do it" %}</p>
+    <p class="muted small">
+      {% trans "To accept payments you need a merchant account with each provider you want to offer: Click, Payme, Uzum, Paynet. Each of them asks for different documents and takes a different amount of time." %}
+    </p>
+    <p class="muted small">
+      {% trans "If you already have those accounts, enter the credentials in your portal and pay us nothing extra. If you would rather we handled the paperwork, tell us which providers you need and we will quote you." %}
+    </p>
+    <a class="btn btn-ghost btn-block" style="margin-top:var(--s-4)"
+       href="{% url 'core:contact' %}">{% trans "Ask about setup" %}</a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head">
+    <h2>{% trans "What else might cost money" %}</h2>
+  </div>
+  <div class="card">
+    <ul class="prose">
+      <li>{% trans "Your payment providers charge their own commission on each payment. That is between you and them — TapCon adds nothing on top." %}</li>
+      <li>{% trans "Delivery of the cards, if you are outside Tashkent." %}</li>
+      <li>{% trans "Extra cards, at the same price per card." %}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="cta-band">
+    <h2>{% trans "Questions about price?" %}</h2>
+    <p>{% trans "Call us or write on Telegram. We answer in Uzbek and Russian." %}</p>
+    <a class="btn btn-primary" href="{% url 'core:contact' %}">{% trans "Contact us" %}</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layouts/merchant.html" %}
+{% load i18n humanize_uzs %}
+
+{% block title %}{% trans "Payment page" %} — TapCon{% endblock %}
+{% block page_title %}{% trans "Payment page" %}{% endblock %}
+
+{% block content %}
+<div class="paypage-grid">
+  <div class="card">
+    <h3>{% trans "What customers see" %}</h3>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% include "partials/form_fields.html" %}
+      <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+    </form>
+  </div>
+
+  <div>
+    <div class="card" style="margin-bottom:var(--s-5)">
+      {% comment %}
+        The heading is this field's only name, so it has to be attached to
+        it: unassociated, a screen reader reads the box as an unnamed text
+        input containing a URL.
+      {% endcomment %}
+      <h3 id="pay-link-label">{% trans "Your payment link" %}</h3>
+      <input class="input" type="text" readonly
+             aria-labelledby="pay-link-label" aria-describedby="pay-link-note"
+             value="{{ request.scheme }}://{{ request.get_host }}{{ profile.get_pay_url }}">
+      <div class="small muted" id="pay-link-note" style="margin-top:var(--s-2)">
+        {% trans "This is the address written onto your NFC card." %}
+      </div>
+      <a class="btn btn-ghost" style="margin-top:var(--s-4)"
+         href="{{ profile.get_pay_url }}" target="_blank" rel="noopener">
+        {% trans "Open payment page" %}
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>{% trans "Preview" %}</h3>
+      <p class="small muted">{% trans "How your page looks on a phone right now." %}</p>
+      <div class="paypage-preview">
+        <iframe src="{{ profile.get_pay_url }}" title="{% trans 'Preview' %}"
+                loading="lazy"></iframe>
+      </div>
+      {% if not profile.is_live %}
+        <p class="small muted" style="margin:var(--s-3) 0 0">
+          {% trans "Your business is not approved yet, so the page does not take payments." %}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Design system" %} — TapCon{% endblock %}
+
+{% block content %}
+<h1>{% trans "Design system" %}</h1>
+<p class="muted">{% trans "Every page is built from these pieces. Change a token, everything follows." %}</p>
+
+<div class="card stack" style="margin-bottom:var(--s-5)">
+  <h3>{% trans "Colours" %}</h3>
+  <div class="row" style="flex-wrap:wrap">
+    <div style="width:96px"><div style="height:56px;border-radius:var(--r-md);background:var(--primary)"></div><div class="small muted">primary</div></div>
+    <div style="width:96px"><div style="height:56px;border-radius:var(--r-md);background:var(--navy)"></div><div class="small muted">navy</div></div>
+    <div style="width:96px"><div style="height:56px;border-radius:var(--r-md);background:var(--bg);border:1px solid var(--border)"></div><div class="small muted">bg</div></div>
+    <div style="width:96px"><div style="height:56px;border-radius:var(--r-md);background:var(--success)"></div><div class="small muted">success</div></div>
+    <div style="width:96px"><div style="height:56px;border-radius:var(--r-md);background:var(--danger)"></div><div class="small muted">danger</div></div>
+  </div>
+</div>
+
+<div class="card stack" style="margin-bottom:var(--s-5)">
+  <h3>{% trans "Buttons" %}</h3>
+  <div class="row">
+    <button class="btn btn-primary">{% trans "Pay" %}</button>
+    <button class="btn btn-ghost">{% trans "Cancel" %}</button>
+    <button class="btn btn-primary" disabled>{% trans "Disabled" %}</button>
+  </div>
+</div>
+
+<div class="card stack" style="margin-bottom:var(--s-5)">
+  <h3>{% trans "Provider buttons" %}</h3>
+  {% comment %}
+  Buttons, not links, and not only because these samples must go nowhere:
+  choosing a provider on the real pay page creates a Transaction before the
+  redirect, so in Phase 4 it has to be a POST too.
+  {% endcomment %}
+  <div class="pay-providers">
+    <button type="button" class="provider-btn"><span class="logo" style="background:var(--click)"></span> Click <span class="chevron">&rsaquo;</span></button>
+    <button type="button" class="provider-btn"><span class="logo" style="background:var(--payme)"></span> Payme <span class="chevron">&rsaquo;</span></button>
+    <button type="button" class="provider-btn"><span class="logo" style="background:var(--uzum)"></span> Uzum <span class="chevron">&rsaquo;</span></button>
+  </div>
+</div>
+
+<div class="card stack" style="margin-bottom:var(--s-5)">
+  <h3>{% trans "Inputs" %}</h3>
+  <label class="field">
+    <span>{% trans "Phone number" %}</span>
+    <input class="input" type="tel" placeholder="+998 90 123 45 67">
+  </label>
+  <div class="field amount-field">
+    <label for="sg-amount">{% trans "Amount" %}</label>
+    <div class="amount-wrap">
+      <input class="input" id="sg-amount" type="text" value="150 000">
+      <span class="amount-suffix">{% trans "soum" %}</span>
+    </div>
+  </div>
+</div>
+
+<div class="card stack">
+  <h3>{% trans "Badges & toggle" %}</h3>
+  <div class="row">
+    <span class="badge badge-success">{% trans "Active" %}</span>
+    <span class="badge badge-muted">{% trans "Disabled" %}</span>
+    <span class="badge badge-warning">{% trans "Pending" %}</span>
+    <span class="badge badge-danger">{% trans "Failed" %}</span>
+    <label class="toggle"><input type="checkbox" checked><span class="track"></span></label>
+  </div>
+  <div class="toast toast-success">{% trans "Saved successfully." %}</div>
+  <div class="toast toast-error">{% trans "Something went wrong." %}</div>
+</div>
+{% endblock %}

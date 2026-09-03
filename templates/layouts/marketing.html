@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% comment %}
+Marketing pages ask to be indexed — but only the ones that set `url_name` on
+their view, which is what `indexable` reflects. The styleguide, order/done and
+anything else using this layout without opting in keeps base.html's noindex.
+{% endcomment %}
+{% block robots %}
+  {% if indexable %}
+    <meta name="robots" content="index, follow">
+  {% else %}
+    <meta name="robots" content="noindex, nofollow">
+  {% endif %}
+{% endblock %}
+
+{% block body %}
+{% include "partials/navbar.html" %}
+
+<main class="site-main">
+  <div class="container">
+    {% include "partials/messages.html" %}
+    {% block content %}{% endblock %}
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="site-logo footer-logo">Tap<span>Con</span></div>
+        <p class="small">{% trans "Accept payments with a single tap." %}</p>
+      </div>
+      <div>
+        <h4>{% trans "Product" %}</h4>
+        <a href="{% url 'core:how_it_works' %}">{% trans "How it works" %}</a>
+        <a href="{% url 'core:for_business' %}">{% trans "For business" %}</a>
+        <a href="{% url 'core:pricing' %}">{% trans "Pricing" %}</a>
+        <a href="{% url 'core:order' %}">{% trans "Order a card" %}</a>
+      </div>
+      <div>
+        <h4>{% trans "Company" %}</h4>
+        <a href="{% url 'core:about' %}">{% trans "About" %}</a>
+        <a href="{% url 'core:faq' %}">{% trans "FAQ" %}</a>
+        <a href="{% url 'core:contact' %}">{% trans "Contact" %}</a>
+      </div>
+      <div>
+        <h4>{% trans "Legal" %}</h4>
+        <a href="{% url 'core:privacy' %}">{% trans "Privacy policy" %}</a>
+        <a href="{% url 'core:terms' %}">{% trans "Terms of service" %}</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; {% now "Y" %} TapCon — {% trans "Tashkent, Uzbekistan" %}</span>
+      <span>
+        <a href="tel:{{ support_phone|cut:' ' }}">{{ support_phone }}</a>
+        &nbsp;·&nbsp;
+        <a href="{{ support_telegram }}" target="_blank" rel="noopener">Telegram</a>
+      </span>
+    </div>
+  </div>
+</footer>
+{% endblock %}

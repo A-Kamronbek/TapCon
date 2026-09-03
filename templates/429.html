@@ -1,0 +1,26 @@
+{% extends "layouts/marketing.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Too many attempts" %} — TapCon{% endblock %}
+
+{% block content %}
+<div class="card empty-state error-page">
+  <div class="error-code" aria-hidden="true">429</div>
+  <h1>{% trans "Too many attempts" %}</h1>
+  {% comment %}
+    Whoever reads this page is far more likely to be a real person who
+    mistyped a code three times than an attacker, so it says what to do and
+    when, and does not accuse anyone of anything. The wait is a real number
+    from the limiter, not a vague "later".
+  {% endcomment %}
+  <p class="muted">
+    {% blocktrans count seconds=retry_after %}Please wait {{ seconds }} second and try again.{% plural %}Please wait {{ seconds }} seconds and try again.{% endblocktrans %}
+  </p>
+  <p class="small muted">
+    {% trans "If you were paying for something, no money has been taken." %}
+  </p>
+  <div class="row" style="justify-content:center;flex-wrap:wrap">
+    <a class="btn btn-ghost" href="{% url 'core:home' %}">{% trans "Go to home page" %}</a>
+  </div>
+</div>
+{% endblock %}

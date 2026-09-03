@@ -1,0 +1,61 @@
+{% load i18n %}<!DOCTYPE html>
+{% comment %}
+Deliberately standalone: no `extends`, no static files, no context processors,
+no database, no `{% url %}`.
+
+Django renders this with an empty context and no request — `{{ support_phone }}`
+and `{{ user }}` would both be blank, and anything that queries would run
+inside the failure it is reporting. The styles are inline because a broken
+`collectstatic` is exactly the kind of deploy mistake that also produces 500s,
+and an error page that cannot render itself tells nobody anything.
+
+The links are literal paths rather than `{% url %}` for the same reason: if
+the URLconf is what failed to import, reversing would fail here too.
+
+`{% trans %}` is safe — the catalogues are loaded at startup and the active
+language is already set by the time a view can fail.
+{% endcomment %}
+<html lang="{{ LANGUAGE_CODE|default:'uz' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>{% trans "Something went wrong" %} — TapCon</title>
+  <style>
+    body {
+      margin: 0; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: #f4f7fb; color: #1b2a41;
+      font: 16px/1.5 "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      padding: 24px;
+    }
+    .box {
+      background: #fff; border-radius: 16px; padding: 48px 24px;
+      box-shadow: 0 2px 12px rgba(27, 42, 65, .08);
+      max-width: 420px; width: 100%; text-align: center;
+    }
+    .code { font-size: 44px; font-weight: 800; color: #cbd6e6; line-height: 1; }
+    h1 { font-size: 22px; margin: 16px 0 8px; }
+    p { color: #5b6b83; margin: 0 0 24px; }
+    a {
+      display: inline-block; padding: 12px 20px; border-radius: 12px;
+      background: #2563eb; color: #fff; text-decoration: none; font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="code" aria-hidden="true">500</div>
+    <h1>{% trans "Something went wrong" %}</h1>
+    <p>
+      {% comment %}
+      No apology theatre and no false promise about when: say what is true —
+      it is our fault, not theirs, and trying again shortly is the useful
+      advice. A customer mid-payment needs to know their money is not lost.
+      {% endcomment %}
+      {% trans "This is a problem on our side. Please try again in a moment. If you were paying, no money has been taken." %}
+    </p>
+    <a href="/">{% trans "Go to home page" %}</a>
+  </div>
+</body>
+</html>
