@@ -9,7 +9,19 @@
     </p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="{% url 'core:order' %}">{% trans "Order a card" %}</a>
-      <a class="btn btn-ghost" href="{% url 'core:how_it_works' %}">{% trans "How it works" %}</a>
+      {% comment %}
+      Straight to the dashboard, with no is_authenticated branch around it.
+      The view is behind LoginRequiredMixin, so an anonymous visitor gets the
+      sign-in page with ?next= pointing back at the dashboard and lands there
+      the moment they sign in. Branching here would produce the same two
+      destinations and one more thing to keep in step.
+
+      This replaces "How it works", which is reachable from the navbar. On a
+      phone the navbar is behind a menu button, so the second hero button is
+      the only one-tap route a returning seller has — and a seller opening the
+      site wants today's takings, not an explainer.
+      {% endcomment %}
+      <a class="btn btn-ghost" href="{% url 'merchants:dashboard' %}">{% trans "Dashboard" %}</a>
     </div>
     <p class="small muted" style="margin-top:var(--s-4)">
       {% blocktrans with price=card_price|uzs %}{{ price }} soum per card — one payment, no monthly fee.{% endblocktrans %}
