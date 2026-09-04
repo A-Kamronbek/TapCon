@@ -1,0 +1,62 @@
+{% load static i18n %}{% comment %}
+Structured data, only for the pages that ask to be indexed.
+
+This is what lets a search engine treat the brand as one entity rather than
+ten unrelated URLs: a name, a logo, the languages spoken, the country served,
+and a phone number a person can call. Guarded by `indexable`, so the pay page
+and the merchant portal never describe themselves to anyone.
+
+Everything here must be true and must match what the page says. Marking up a
+claim the page does not make is structured-data spam by Google's definition,
+and it loses the rich result rather than winning one.
+
+Deliberately NOT here: FAQPage. The answers live in faq.html as translated
+strings, so generating the markup would mean a second copy that drifts out of
+step with the first — and since 2023 Google shows FAQ rich results only for
+government and health sites, so a commercial site gets nothing for the risk.
+{% endcomment %}{% if indexable %}<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site_url }}/#organization",
+      "name": "TapCon",
+      "url": "{{ site_url }}/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site_url }}{% static 'img/og-image.png' %}",
+        "width": 1200,
+        "height": 630
+      },
+      "description": "{% filter escapejs %}{% trans "NFC-card payments for small businesses in Uzbekistan. The customer taps the card, enters the amount and pays - the money goes straight to the seller's own merchant account." %}{% endfilter %}",
+      "areaServed": { "@type": "Country", "name": "Uzbekistan" },
+      "knowsLanguage": ["uz", "ru", "en"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "telephone": "{% filter escapejs %}{{ support_phone }}{% endfilter %}",
+        "availableLanguage": ["uz", "ru", "en"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site_url }}/#website",
+      "url": "{{ site_url }}/",
+      "name": "TapCon",
+      "publisher": { "@id": "{{ site_url }}/#organization" },
+      "inLanguage": "{{ LANGUAGE_CODE }}"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ site_url }}{{ canonical_path }}#webpage",
+      "url": "{{ site_url }}{{ canonical_path }}",
+      "name": "{% filter escapejs %}{{ meta_title }}{% endfilter %}",
+      "description": "{% filter escapejs %}{{ meta_description }}{% endfilter %}",
+      "isPartOf": { "@id": "{{ site_url }}/#website" },
+      "about": { "@id": "{{ site_url }}/#organization" },
+      "inLanguage": "{{ LANGUAGE_CODE }}"
+    }
+  ]
+}
+</script>{% endif %}

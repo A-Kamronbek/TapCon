@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-03 02:04+0500\n"
+"POT-Creation-Date: 2026-09-04 00:09+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgid "Business name"
 msgstr "Biznes nomi"
 
 #: .\accounts\forms.py:37 .\accounts\forms.py:66 .\accounts\forms.py:85
-#: .\core\forms.py:30 .\core\forms.py:57 .\templates\core\styleguide.html:48
+#: .\core\forms.py:30 .\core\forms.py:57 .\templates\core\styleguide.html:45
 #: .\templates\merchants\settings.html:20
 msgid "Phone number"
 msgstr "Telefon raqami"
@@ -413,13 +413,158 @@ msgstr ""
 "To'lov sahifangiz endi to'lov qabul qilmaydi. Qo'llab-quvvatlash xizmatiga "
 "murojaat qiling."
 
-#: .\core\views.py:120
+#: .\core\views.py:58
+msgid "TapCon — accept payments with a single tap"
+msgstr "TapCon — bir tegish bilan to'lov qabul qiling"
+
+#: .\core\views.py:60
+msgid ""
+"An NFC card for your business. The customer taps it, enters the amount and "
+"pays with Click, Payme, Uzum or a bank card — straight to your own merchant "
+"account. No terminal, no monthly fee."
+msgstr ""
+"Biznesingiz uchun NFC karta. Mijoz kartaga tegadi, summani kiritadi va "
+"Click, Payme, Uzum yoki bank kartasi orqali to'laydi — pul to'g'ridan-"
+"to'g'ri sizning merchant hisobingizga tushadi. Terminal ham, oylik to'lov "
+"ham kerak emas."
+
+#: .\core\views.py:70
+msgid "How it works — TapCon"
+msgstr "Qanday ishlaydi — TapCon"
+
+#: .\core\views.py:72
+msgid ""
+"Three steps: the customer taps your card, their phone opens your payment "
+"page, they pay. The money goes to your merchant account and you see it "
+"immediately. No app to install."
+msgstr ""
+"Uch qadam: mijoz kartangizga tegadi, telefonida to'lov sahifangiz ochiladi, "
+"u to'laydi. Pul merchant hisobingizga tushadi va siz buni darhol ko'rasiz. "
+"Hech qanday ilova o'rnatish shart emas."
+
+#: .\core\views.py:82
+msgid "For business — TapCon"
+msgstr "Biznes uchun — TapCon"
+
+#: .\core\views.py:84
+msgid ""
+"For cafes, shops, salons, taxis and couriers in Uzbekistan. Take cashless "
+"payments without a POS terminal — one card on the counter and every payment "
+"lands in your own account."
+msgstr ""
+"O'zbekistondagi kafelar, do'konlar, salonlar, taksilar va kuryerlar uchun. "
+"POS terminalsiz naqdsiz to'lovlarni qabul qiling — peshtaxtada bitta karta, "
+"va har bir to'lov o'z hisobingizga tushadi."
+
+#: .\core\views.py:94
+msgid "Pricing — TapCon"
+msgstr "Narxlar — TapCon"
+
+#: .\core\views.py:96
+msgid ""
+"100 000 soum for the card, paid once. No commission on payments, no monthly "
+"fee, no contract. Your customers' money goes directly to your merchant "
+"account — TapCon never holds it."
+msgstr ""
+"Karta uchun 100 000 so'm, bir marta to'lanadi. To'lovlardan komissiya yo'q, "
+"oylik to'lov yo'q, shartnoma yo'q. Mijozlaringizning puli to'g'ridan-to'g'ri"
+" merchant hisobingizga tushadi — TapCon uni ushlab turmaydi."
+
+#: .\core\views.py:105
+msgid "About us — TapCon"
+msgstr "Biz haqimizda — TapCon"
+
+#: .\core\views.py:107
+msgid ""
+"TapCon makes cashless payments simple for small businesses in Uzbekistan. "
+"Who we are, why we built it, and how to reach us."
+msgstr ""
+"TapCon O'zbekistondagi kichik bizneslar uchun naqdsiz to'lovlarni sodda "
+"qiladi. Biz kimmiz, buni nega yaratdik va biz bilan qanday bog'lanish "
+"mumkin."
+
+#: .\core\views.py:116
+msgid "Questions and answers — TapCon"
+msgstr "Savol-javob — TapCon"
+
+#: .\core\views.py:118
+msgid ""
+"Which phones work, which payment methods are supported, when the money "
+"arrives, what happens if a payment fails, and how to get a card for your "
+"business."
+msgstr ""
+"Qaysi telefonlar ishlaydi, qanday to'lov usullari qo'llab-quvvatlanadi, pul "
+"qachon keladi, to'lov amalga oshmasa nima bo'ladi va biznesingiz uchun "
+"kartani qanday olish mumkin."
+
+#: .\core\views.py:127
+msgid "Privacy policy — TapCon"
+msgstr "Maxfiylik siyosati — TapCon"
+
+#: .\core\views.py:129
+msgid ""
+"What TapCon collects, why, how long it is kept, and who it is shared with. "
+"TapCon never sees or stores your customers' card details."
+msgstr ""
+"TapCon nimalarni yig'adi, nega, qancha muddat saqlaydi va kim bilan "
+"bo'lishadi. TapCon mijozlaringizning karta ma'lumotlarini hech qachon "
+"ko'rmaydi va saqlamaydi."
+
+#: .\core\views.py:138
+msgid "Terms of service — TapCon"
+msgstr "Foydalanish shartlari — TapCon"
+
+#: .\core\views.py:140
+msgid ""
+"The terms for sellers using TapCon: what the service does, what it does not "
+"do, how payments are settled, and why refunds are handled by your payment "
+"provider rather than by TapCon."
+msgstr ""
+"TapCondan foydalanuvchi sotuvchilar uchun shartlar: xizmat nima qiladi, nima"
+" qilmaydi, to'lovlar qanday hisob-kitob qilinadi va nega pul qaytarish "
+"TapCon emas, to'lov provayderi orqali amalga oshiriladi."
+
+#: .\core\views.py:151
+msgid "Design system — TapCon"
+msgstr "Dizayn tizimi — TapCon"
+
+#: .\core\views.py:178
+msgid "Order an NFC card — TapCon"
+msgstr "NFC karta buyurtma qilish — TapCon"
+
+#: .\core\views.py:180
+msgid ""
+"Order a TapCon card for your business. 100 000 soum, one payment, delivered "
+"in Tashkent. Leave your number and we will call you back."
+msgstr ""
+"Biznesingiz uchun TapCon kartasini buyurtma qiling. 100 000 so'm, bir "
+"martalik to'lov, Toshkent bo'ylab yetkazib beriladi. Raqamingizni qoldiring,"
+" biz o'zimiz qo'ng'iroq qilamiz."
+
+#: .\core\views.py:194
+msgid "Order received — TapCon"
+msgstr "Buyurtma qabul qilindi — TapCon"
+
+#: .\core\views.py:205
 msgid "Thank you. We will call you back shortly."
 msgstr "Rahmat. Tez orada siz bilan bog'lanamiz."
 
-#: .\merchants\admin.py:19 .\templates\core\contact.html:4
-#: .\templates\core\privacy.html:36 .\templates\core\terms.html:44
-#: .\templates\layouts\marketing.html:45 .\templates\partials\navbar.html:21
+#: .\core\views.py:210
+msgid "Contact — TapCon"
+msgstr "Aloqa — TapCon"
+
+#: .\core\views.py:212
+msgid ""
+"Questions about TapCon, or want a card for your business? Call us, message "
+"us on Telegram, or leave your number and we will call you back."
+msgstr ""
+"TapCon haqida savollaringiz bormi yoki biznesingiz uchun karta kerakmi? "
+"Bizga qo'ng'iroq qiling, Telegramda yozing yoki raqamingizni qoldiring — biz"
+" o'zimiz bog'lanamiz."
+
+#: .\merchants\admin.py:19 .\templates\core\privacy.html:33
+#: .\templates\core\terms.html:41 .\templates\layouts\marketing.html:45
+#: .\templates\partials\navbar.html:21
 msgid "Contact"
 msgstr "Aloqa"
 
@@ -615,8 +760,8 @@ msgid "Provider"
 msgstr "To'lov tizimi"
 
 #: .\merchants\views.py:317 .\payments\forms.py:36
-#: .\templates\core\home.html:38 .\templates\core\how_it_works.html:20
-#: .\templates\core\styleguide.html:52
+#: .\templates\core\home.html:34 .\templates\core\how_it_works.html:17
+#: .\templates\core\styleguide.html:49
 #: .\templates\merchants\transactions.html:112
 #: .\templates\payments\pay.html:53
 msgid "Amount"
@@ -713,18 +858,18 @@ msgstr "provayder integratsiyalari"
 msgid "Created"
 msgstr "Yaratildi"
 
-#: .\payments\models.py:211 .\templates\core\styleguide.html:65
+#: .\payments\models.py:211 .\templates\core\styleguide.html:62
 msgid "Pending"
 msgstr "Kutilmoqda"
 
 #: .\payments\models.py:212 .\payments\reporting.py:38
-#: .\templates\core\home.html:48 .\templates\core\how_it_works.html:30
+#: .\templates\core\home.html:44 .\templates\core\how_it_works.html:27
 #: .\templates\payments\result.html:32
 msgid "Paid"
 msgstr "To'landi"
 
 #: .\payments\models.py:214 .\payments\reporting.py:42
-#: .\templates\core\styleguide.html:66
+#: .\templates\core\styleguide.html:63
 msgid "Failed"
 msgstr "Muvaffaqiyatsiz"
 
@@ -886,9 +1031,9 @@ msgid "Go to home page"
 msgstr "Bosh sahifaga o'tish"
 
 #: .\templates\400.html:15 .\templates\404.html:27
-#: .\templates\core\about.html:34 .\templates\core\contact.html:10
-#: .\templates\core\faq.html:68 .\templates\core\for_business.html:62
-#: .\templates\core\pricing.html:62
+#: .\templates\core\about.html:31 .\templates\core\contact.html:7
+#: .\templates\core\faq.html:65 .\templates\core\for_business.html:59
+#: .\templates\core\pricing.html:59
 msgid "Contact us"
 msgstr "Biz bilan bog'laning"
 
@@ -1013,30 +1158,30 @@ msgstr "Tasdiqlash"
 msgid "Send a new code"
 msgstr "Yangi kod yuborish"
 
-#: .\templates\base.html:7 .\templates\base.html:40
+#: .\templates\base.html:19 .\templates\base.html:61 .\templates\base.html:76
 #: .\templates\layouts\marketing.html:32
 msgid "Accept payments with a single tap."
 msgstr "Bir tegish bilan to'lov qabul qiling."
 
-#: .\templates\core\about.html:4 .\templates\layouts\marketing.html:43
-msgid "About"
-msgstr "Biz haqimizda"
+#: .\templates\base.html:65
+msgid "A TapCon NFC card on a shop counter"
+msgstr "Do'kon peshtaxtasidagi TapCon NFC kartasi"
 
-#: .\templates\core\about.html:8
+#: .\templates\core\about.html:5
 msgid "About TapCon"
 msgstr "TapCon haqida"
 
-#: .\templates\core\about.html:10
+#: .\templates\core\about.html:7
 msgid ""
 "TapCon makes accepting a payment in person as simple as handing over cash — "
 "without a terminal."
 msgstr "TapCon jonli to'lovni naqd pul uzatishdek oddiy qiladi — terminalsiz."
 
-#: .\templates\core\about.html:13
+#: .\templates\core\about.html:10
 msgid "Why we built it"
 msgstr "Nega buni yaratdik"
 
-#: .\templates\core\about.html:15
+#: .\templates\core\about.html:12
 msgid ""
 "In Uzbekistan almost everyone pays with Click, Payme or Uzum. But a small "
 "business that wants to accept those payments has to read out a card number, "
@@ -1047,7 +1192,7 @@ msgstr ""
 "aytib berishi, skrinshot kutishi yoki qimmat terminal ijaraga olishi kerak "
 "bo'ladi."
 
-#: .\templates\core\about.html:18
+#: .\templates\core\about.html:15
 msgid ""
 "A TapCon card removes that. It costs less than a month of terminal rent, "
 "needs no power, and the money goes straight to the seller's own merchant "
@@ -1057,11 +1202,11 @@ msgstr ""
 "arzon, quvvat talab qilmaydi, pul esa to'g'ridan-to'g'ri sotuvchining "
 "merchant hisobiga tushadi."
 
-#: .\templates\core\about.html:21
+#: .\templates\core\about.html:18
 msgid "How we make money"
 msgstr "Biz qanday daromad qilamiz"
 
-#: .\templates\core\about.html:23
+#: .\templates\core\about.html:20
 msgid ""
 "We sell the card once. We take no commission from your payments and charge "
 "no subscription. If you want us to obtain merchant accounts on your behalf, "
@@ -1071,63 +1216,58 @@ msgstr ""
 " to'lovi yo'q. Agar merchant hisoblarini siz uchun ochishimizni istasangiz, "
 "bu alohida xizmat — undan voz kechishingiz mumkin."
 
-#: .\templates\core\about.html:26
+#: .\templates\core\about.html:23
 msgid "Where we are"
 msgstr "Qayerdamiz"
 
-#: .\templates\core\about.html:27
+#: .\templates\core\about.html:24
 msgid "Tashkent, Uzbekistan. Support is available in Uzbek and Russian."
 msgstr "Toshkent, O'zbekiston. Qo'llab-quvvatlash o'zbek va rus tillarida."
 
-#: .\templates\core\about.html:32
+#: .\templates\core\about.html:29
 msgid "Get in touch"
 msgstr "Bog'laning"
 
-#: .\templates\core\about.html:33
+#: .\templates\core\about.html:30
 msgid "We would rather answer a question than lose a customer to confusion."
 msgstr ""
 "Savolga javob berganimiz, mijozni tushunmovchilik tufayli yo'qotganimizdan "
 "yaxshiroq."
 
-#: .\templates\core\contact.html:11
+#: .\templates\core\contact.html:8
 msgid ""
 "Call, write on Telegram, or leave your number and we will call you back."
 msgstr ""
 "Qo'ng'iroq qiling, Telegramga yozing yoki raqamingizni qoldiring — biz "
 "o'zimiz bog'lanamiz."
 
-#: .\templates\core\contact.html:32
+#: .\templates\core\contact.html:29
 msgid "We answer in Uzbek and Russian, and in English when we can."
 msgstr ""
 "O'zbek va rus tillarida, imkon bo'lsa ingliz tilida ham javob beramiz."
 
-#: .\templates\core\contact.html:37
+#: .\templates\core\contact.html:34
 msgid "Write to us"
 msgstr "Bizga yozing"
 
-#: .\templates\core\contact.html:41
+#: .\templates\core\contact.html:38
 msgid "Send message"
 msgstr "Xabar yuborish"
 
-#: .\templates\core\faq.html:4 .\templates\layouts\marketing.html:44
-#: .\templates\partials\navbar.html:20
-msgid "FAQ"
-msgstr "Savol-javob"
-
-#: .\templates\core\faq.html:8
+#: .\templates\core\faq.html:5
 msgid "Frequently asked questions"
 msgstr "Ko'p beriladigan savollar"
 
-#: .\templates\core\faq.html:9
+#: .\templates\core\faq.html:6
 msgid "If your question is not here, call us or write on Telegram."
 msgstr ""
 "Savolingiz bu yerda bo'lmasa, qo'ng'iroq qiling yoki Telegramga yozing."
 
-#: .\templates\core\faq.html:14
+#: .\templates\core\faq.html:11
 msgid "Does the customer need to install anything?"
 msgstr "Mijoz biror dastur o'rnatishi kerakmi?"
 
-#: .\templates\core\faq.html:15
+#: .\templates\core\faq.html:12
 msgid ""
 "No. They tap the card and their browser opens your payment page. They only "
 "need the payment app they already use."
@@ -1135,11 +1275,11 @@ msgstr ""
 "Yo'q. Kartaga tegadi va brauzeri sizning to'lov sahifangizni ochadi. Unga "
 "faqat o'zi ishlatadigan to'lov ilovasi kerak."
 
-#: .\templates\core\faq.html:19
+#: .\templates\core\faq.html:16
 msgid "Does the card need charging or internet?"
 msgstr "Kartani quvvatlash yoki internet kerakmi?"
 
-#: .\templates\core\faq.html:20
+#: .\templates\core\faq.html:17
 msgid ""
 "No. The card has no battery and no electronics beyond a chip that stores "
 "your web address. It works forever as long as it is not physically "
@@ -1148,11 +1288,11 @@ msgstr ""
 "Yo'q. Kartada batareya yo'q, faqat veb-manzilingizni saqlaydigan chip bor. "
 "Jismonan buzilmasa, u cheksiz ishlaydi."
 
-#: .\templates\core\faq.html:24
+#: .\templates\core\faq.html:21
 msgid "Where does the money go?"
 msgstr "Pul qayerga tushadi?"
 
-#: .\templates\core\faq.html:25
+#: .\templates\core\faq.html:22
 msgid ""
 "Straight to your own merchant account with the provider. TapCon never holds "
 "your money and takes no commission from it."
@@ -1160,11 +1300,11 @@ msgstr ""
 "To'g'ridan-to'g'ri provayderdagi o'z merchant hisobingizga. TapCon "
 "pulingizni ushlab turmaydi va undan komissiya olmaydi."
 
-#: .\templates\core\faq.html:29
+#: .\templates\core\faq.html:26
 msgid "What if the customer's phone has no NFC?"
 msgstr "Mijozning telefonida NFC bo'lmasa-chi?"
 
-#: .\templates\core\faq.html:30
+#: .\templates\core\faq.html:27
 msgid ""
 "Your payment page is an ordinary web address, so you can also show it as a "
 "QR code or send the link in a message."
@@ -1172,11 +1312,11 @@ msgstr ""
 "To'lov sahifangiz oddiy veb-manzil, shuning uchun uni QR kod sifatida "
 "ko'rsatishingiz yoki havolani xabarda yuborishingiz mumkin."
 
-#: .\templates\core\faq.html:34
+#: .\templates\core\faq.html:31
 msgid "Do I need a merchant account?"
 msgstr "Menga merchant hisob kerakmi?"
 
-#: .\templates\core\faq.html:35
+#: .\templates\core\faq.html:32
 msgid ""
 "Yes, with each provider you want to accept. If you already have them, "
 "connect them in the portal for free. If not, we can obtain them for you as a"
@@ -1185,11 +1325,11 @@ msgstr ""
 "Ha, qabul qilmoqchi bo'lgan har bir provayderda. Ular bo'lsa, portalda bepul"
 " ulaysiz. Bo'lmasa, alohida pullik xizmat sifatida biz ochib beramiz."
 
-#: .\templates\core\faq.html:39
+#: .\templates\core\faq.html:36
 msgid "How much does it cost?"
 msgstr "Narxi qancha?"
 
-#: .\templates\core\faq.html:40
+#: .\templates\core\faq.html:37
 #, python-format
 msgid ""
 "%(price)s soum per card, paid once. No subscription and no commission from "
@@ -1198,11 +1338,11 @@ msgstr ""
 "Bir karta %(price)s so'm, bir marta to'lanadi. Obuna ham, TapCon komissiyasi"
 " ham yo'q."
 
-#: .\templates\core\faq.html:44
+#: .\templates\core\faq.html:41
 msgid "How long does it take to start?"
 msgstr "Ishga tushirish qancha vaqt oladi?"
 
-#: .\templates\core\faq.html:45
+#: .\templates\core\faq.html:42
 msgid ""
 "Registration takes a minute. We approve a business usually within a day. The"
 " longest part is getting merchant accounts, if you do not already have them."
@@ -1210,11 +1350,11 @@ msgstr ""
 "Ro'yxatdan o'tish bir daqiqa. Biznesni odatda bir kun ichida tasdiqlaymiz. "
 "Eng uzun qismi — merchant hisoblarini olish, agar ular hali bo'lmasa."
 
-#: .\templates\core\faq.html:49
+#: .\templates\core\faq.html:46
 msgid "Can I have more than one card?"
 msgstr "Bir nechta karta olsam bo'ladimi?"
 
-#: .\templates\core\faq.html:50
+#: .\templates\core\faq.html:47
 msgid ""
 "Yes. Many cafes put one on each table. All of them open the same payment "
 "page."
@@ -1222,11 +1362,11 @@ msgstr ""
 "Ha. Ko'p kafelar har bir stolga bittadan qo'yadi. Hammasi bir xil to'lov "
 "sahifasini ochadi."
 
-#: .\templates\core\faq.html:54
+#: .\templates\core\faq.html:51
 msgid "Is it safe to enter card details?"
 msgstr "Karta ma'lumotlarini kiritish xavfsizmi?"
 
-#: .\templates\core\faq.html:55
+#: .\templates\core\faq.html:52
 msgid ""
 "Card payments happen on the payment provider's own secure page, not ours. "
 "TapCon never sees or stores card numbers."
@@ -1234,11 +1374,11 @@ msgstr ""
 "Karta to'lovlari bizda emas, provayderning o'z xavfsiz sahifasida amalga "
 "oshiriladi. TapCon karta raqamlarini ko'rmaydi va saqlamaydi."
 
-#: .\templates\core\faq.html:59
+#: .\templates\core\faq.html:56
 msgid "What if I lose a card?"
 msgstr "Kartani yo'qotsam nima bo'ladi?"
 
-#: .\templates\core\faq.html:60
+#: .\templates\core\faq.html:57
 msgid ""
 "Anyone finding it can only open your payment page and pay you money. Tell us"
 " and we will issue a new address if you want the old one closed."
@@ -1246,20 +1386,20 @@ msgstr ""
 "Uni topgan odam faqat to'lov sahifangizni ochib, sizga pul to'lay oladi. "
 "Bizga ayting — eskisini yopib, yangi manzil beramiz."
 
-#: .\templates\core\faq.html:66
+#: .\templates\core\faq.html:63
 msgid "Still have a question?"
 msgstr "Yana savolingiz bormi?"
 
-#: .\templates\core\faq.html:67
+#: .\templates\core\faq.html:64
 msgid "We answer in Uzbek and Russian, on the phone or on Telegram."
 msgstr "Telefon yoki Telegram orqali o'zbek va rus tillarida javob beramiz."
 
-#: .\templates\core\for_business.html:4 .\templates\core\for_business.html:8
-#: .\templates\layouts\marketing.html:37 .\templates\partials\navbar.html:18
+#: .\templates\core\for_business.html:5 .\templates\layouts\marketing.html:37
+#: .\templates\partials\navbar.html:18
 msgid "For business"
 msgstr "Biznes uchun"
 
-#: .\templates\core\for_business.html:9
+#: .\templates\core\for_business.html:6
 msgid ""
 "TapCon suits any place where people pay in person and a terminal is too "
 "much."
@@ -1267,11 +1407,11 @@ msgstr ""
 "TapCon odamlar joyida to'laydigan va terminal ortiqcha bo'lgan har qanday "
 "joyga mos keladi."
 
-#: .\templates\core\for_business.html:14
+#: .\templates\core\for_business.html:11
 msgid "Cafes and restaurants"
 msgstr "Kafe va restoranlar"
 
-#: .\templates\core\for_business.html:15
+#: .\templates\core\for_business.html:12
 msgid ""
 "A card on each table. The customer pays without waiting for anyone to bring "
 "a terminal."
@@ -1279,19 +1419,19 @@ msgstr ""
 "Har bir stolga bitta karta. Mijoz terminal olib kelishini kutmasdan "
 "to'laydi."
 
-#: .\templates\core\for_business.html:18
+#: .\templates\core\for_business.html:15
 msgid "Shops and market stalls"
 msgstr "Do'kon va bozor rastalari"
 
-#: .\templates\core\for_business.html:19
+#: .\templates\core\for_business.html:16
 msgid "One card by the till. Nothing to charge, nothing to break."
 msgstr "Kassa yonida bitta karta. Quvvatlash ham, buziladigan narsa ham yo'q."
 
-#: .\templates\core\for_business.html:22
+#: .\templates\core\for_business.html:19
 msgid "Taxis and delivery"
 msgstr "Taksi va yetkazib berish"
 
-#: .\templates\core\for_business.html:23
+#: .\templates\core\for_business.html:20
 msgid ""
 "A card on the dashboard or in the courier's pocket. Payment confirmed before"
 " they drive away."
@@ -1299,27 +1439,27 @@ msgstr ""
 "Karta panelda yoki kuryer cho'ntagida. To'lov jo'nab ketishdan oldin "
 "tasdiqlanadi."
 
-#: .\templates\core\for_business.html:26
+#: .\templates\core\for_business.html:23
 msgid "Barbers, salons, clinics"
 msgstr "Sartaroshxona, salon, klinikalar"
 
-#: .\templates\core\for_business.html:27
+#: .\templates\core\for_business.html:24
 msgid "The client pays at the chair. No queue at the counter."
 msgstr "Mijoz o'rindiqda o'tirib to'laydi. Kassada navbat yo'q."
 
-#: .\templates\core\for_business.html:30
+#: .\templates\core\for_business.html:27
 msgid "Services and repairs"
 msgstr "Xizmat va ta'mirlash"
 
-#: .\templates\core\for_business.html:31
+#: .\templates\core\for_business.html:28
 msgid "Take payment at the customer's home, with a receipt in their own app."
 msgstr "To'lovni mijoz uyida oling — cheki uning o'z ilovasida qoladi."
 
-#: .\templates\core\for_business.html:34
+#: .\templates\core\for_business.html:31
 msgid "Events and pop-ups"
 msgstr "Tadbir va vaqtinchalik nuqtalar"
 
-#: .\templates\core\for_business.html:35
+#: .\templates\core\for_business.html:32
 msgid ""
 "No power, no internet contract, no rented terminal for three days of "
 "trading."
@@ -1327,45 +1467,45 @@ msgstr ""
 "Uch kunlik savdo uchun quvvat ham, internet shartnomasi ham, ijaraga olingan"
 " terminal ham kerak emas."
 
-#: .\templates\core\for_business.html:41
+#: .\templates\core\for_business.html:38
 msgid "What you need"
 msgstr "Sizga nima kerak"
 
-#: .\templates\core\for_business.html:43
+#: .\templates\core\for_business.html:40
 msgid "A phone number to register with."
 msgstr "Ro'yxatdan o'tish uchun telefon raqami."
 
-#: .\templates\core\for_business.html:44
+#: .\templates\core\for_business.html:41
 msgid "A merchant account with at least one provider."
 msgstr "Kamida bitta provayderda merchant hisob."
 
-#: .\templates\core\for_business.html:45
+#: .\templates\core\for_business.html:42
 msgid "Somewhere to put the card."
 msgstr "Kartani qo'yish uchun joy."
 
-#: .\templates\core\for_business.html:49
+#: .\templates\core\for_business.html:46
 msgid "What TapCon does not do"
 msgstr "TapCon nima qilmaydi"
 
-#: .\templates\core\for_business.html:51
+#: .\templates\core\for_business.html:48
 msgid "We never hold your money — it goes to your own merchant account."
 msgstr ""
 "Pulingizni hech qachon ushlab turmaymiz — u o'z merchant hisobingizga "
 "tushadi."
 
-#: .\templates\core\for_business.html:52
+#: .\templates\core\for_business.html:49
 msgid "We take no commission from your payments."
 msgstr "To'lovlaringizdan komissiya olmaymiz."
 
-#: .\templates\core\for_business.html:53
+#: .\templates\core\for_business.html:50
 msgid "We never see or store your customers' card numbers."
 msgstr "Mijozlaringizning karta raqamlarini ko'rmaymiz va saqlamaymiz."
 
-#: .\templates\core\for_business.html:60
+#: .\templates\core\for_business.html:57
 msgid "Talk to us about your business"
 msgstr "Biznesingiz haqida gaplashaylik"
 
-#: .\templates\core\for_business.html:61
+#: .\templates\core\for_business.html:58
 msgid ""
 "Tell us what you sell and how you take payment today. We will tell you what "
 "it takes."
@@ -1373,19 +1513,11 @@ msgstr ""
 "Nima sotishingizni va hozir to'lovni qanday olishingizni ayting. Nima "
 "kerakligini tushuntiramiz."
 
-#: .\templates\core\home.html:4 .\templates\core\home.html:10
+#: .\templates\core\home.html:6
 msgid "Accept payments with a single tap"
 msgstr "Bir tegish bilan to'lov qabul qiling"
 
-#: .\templates\core\home.html:5
-msgid ""
-"An NFC card for your business. The customer taps, enters the amount and pays"
-" — straight to your own merchant account."
-msgstr ""
-"Biznesingiz uchun NFC karta. Mijoz tegadi, summani kiritadi va to'laydi — "
-"pul to'g'ridan-to'g'ri merchant hisobingizga."
-
-#: .\templates\core\home.html:12
+#: .\templates\core\home.html:8
 msgid ""
 "Put a TapCon card on your counter. The customer taps it with their phone, "
 "enters the amount and pays with Click, Payme, Uzum, Paynet or a bank card. "
@@ -1395,77 +1527,76 @@ msgstr ""
 "summani kiritadi va Click, Payme, Uzum, Paynet yoki bank kartasi orqali "
 "to'laydi. Terminal ham, navbat ham, sim ham yo'q."
 
-#: .\templates\core\home.html:15 .\templates\core\home.html:109
-#: .\templates\core\home.html:128 .\templates\core\how_it_works.html:60
-#: .\templates\core\order.html:4 .\templates\core\order.html:10
-#: .\templates\core\pricing.html:27 .\templates\layouts\marketing.html:39
-#: .\templates\partials\navbar.html:29
+#: .\templates\core\home.html:11 .\templates\core\home.html:105
+#: .\templates\core\home.html:124 .\templates\core\how_it_works.html:57
+#: .\templates\core\order.html:7 .\templates\core\pricing.html:24
+#: .\templates\layouts\marketing.html:39 .\templates\partials\navbar.html:29
 msgid "Order a card"
 msgstr "Karta buyurtma qilish"
 
-#: .\templates\core\home.html:16 .\templates\core\how_it_works.html:4
-#: .\templates\core\how_it_works.html:8 .\templates\core\order_done.html:19
-#: .\templates\layouts\marketing.html:36 .\templates\partials\navbar.html:17
+#: .\templates\core\home.html:12 .\templates\core\how_it_works.html:5
+#: .\templates\core\order_done.html:16 .\templates\layouts\marketing.html:36
+#: .\templates\partials\navbar.html:17
 msgid "How it works"
 msgstr "Qanday ishlaydi"
 
-#: .\templates\core\home.html:19
+#: .\templates\core\home.html:15
 #, python-format
 msgid "%(price)s soum per card — one payment, no monthly fee."
 msgstr "Bir karta %(price)s so'm — bir marta to'lov, oylik to'lovsiz."
 
-#: .\templates\core\home.html:27
+#: .\templates\core\home.html:23
 msgid "Four steps, about ten seconds"
 msgstr "To'rt qadam, taxminan o'n soniya"
 
-#: .\templates\core\home.html:28
+#: .\templates\core\home.html:24
 msgid ""
 "Nothing to install. Any phone with NFC opens your payment page by itself."
 msgstr ""
 "Hech narsa o'rnatish shart emas. NFC'li har qanday telefon to'lov "
 "sahifangizni o'zi ochadi."
 
-#: .\templates\core\home.html:33 .\templates\core\how_it_works.html:15
+#: .\templates\core\home.html:29 .\templates\core\how_it_works.html:12
 msgid "Tap"
 msgstr "Tegizing"
 
-#: .\templates\core\home.html:34
+#: .\templates\core\home.html:30
 msgid "The customer holds their phone near your card."
 msgstr "Mijoz telefonini kartangizga yaqinlashtiradi."
 
-#: .\templates\core\home.html:39
+#: .\templates\core\home.html:35
 msgid "Your payment page opens. They type the amount."
 msgstr "To'lov sahifangiz ochiladi. Mijoz summani kiritadi."
 
-#: .\templates\core\home.html:43 .\templates\core\how_it_works.html:25
+#: .\templates\core\home.html:39 .\templates\core\how_it_works.html:22
 msgid "Choose"
 msgstr "Tanlang"
 
-#: .\templates\core\home.html:44
+#: .\templates\core\home.html:40
 msgid "They pick their app — Click, Payme, Uzum, Paynet or a card."
 msgstr "O'z ilovasini tanlaydi — Click, Payme, Uzum, Paynet yoki karta."
 
-#: .\templates\core\home.html:49
+#: .\templates\core\home.html:45
 msgid "The money goes to your merchant account. You see it in your portal."
 msgstr "Pul merchant hisobingizga tushadi. Buni portalda ko'rasiz."
 
-#: .\templates\core\home.html:56
+#: .\templates\core\home.html:52
 msgid "Every popular payment app"
 msgstr "Barcha ommabop to'lov ilovalari"
 
-#: .\templates\core\home.html:57
+#: .\templates\core\home.html:53
 msgid "Your customers pay the way they already do."
 msgstr "Mijozlaringiz odatdagidek to'laydi."
 
-#: .\templates\core\home.html:64
+#: .\templates\core\home.html:60
 msgid "Why businesses use TapCon"
 msgstr "Nega bizneslar TapCon'ni tanlaydi"
 
-#: .\templates\core\home.html:68
+#: .\templates\core\home.html:64
 msgid "The money is yours"
 msgstr "Pul sizniki"
 
-#: .\templates\core\home.html:69
+#: .\templates\core\home.html:65
 msgid ""
 "Payments go straight to your own merchant accounts. TapCon never holds your "
 "money."
@@ -1473,59 +1604,59 @@ msgstr ""
 "To'lovlar to'g'ridan-to'g'ri o'z merchant hisoblaringizga tushadi. TapCon "
 "pulingizni ushlab turmaydi."
 
-#: .\templates\core\home.html:72
+#: .\templates\core\home.html:68
 msgid "Nothing to buy but the card"
 msgstr "Kartadan boshqa hech narsa sotib olish shart emas"
 
-#: .\templates\core\home.html:73
+#: .\templates\core\home.html:69
 msgid "No terminal, no rent, no monthly fee. One card, one payment."
 msgstr ""
 "Terminal ham, ijara ham, oylik to'lov ham yo'q. Bitta karta, bitta to'lov."
 
-#: .\templates\core\home.html:76
+#: .\templates\core\home.html:72
 msgid "Works on any counter"
 msgstr "Har qanday peshtaxtada ishlaydi"
 
-#: .\templates\core\home.html:77
+#: .\templates\core\home.html:73
 msgid ""
 "A cafe table, a taxi dashboard, a market stall. The card needs no power."
 msgstr "Kafe stoli, taksi paneli, bozor rastasi. Karta quvvat talab qilmaydi."
 
-#: .\templates\core\home.html:80
+#: .\templates\core\home.html:76
 msgid "Every payment recorded"
 msgstr "Har bir to'lov qayd etiladi"
 
-#: .\templates\core\home.html:81
+#: .\templates\core\home.html:77
 msgid "See what came in today, by app, confirmed by the provider itself."
 msgstr ""
 "Bugun qancha tushganini ilovalar bo'yicha ko'ring — provayderning o'zi "
 "tasdiqlaydi."
 
-#: .\templates\core\home.html:84
+#: .\templates\core\home.html:80
 msgid "Your customers need nothing new"
 msgstr "Mijozlaringizga yangi hech narsa kerak emas"
 
-#: .\templates\core\home.html:85
+#: .\templates\core\home.html:81
 msgid ""
 "No app to install, no registration. Their phone opens the page by itself."
 msgstr ""
 "Ilova o'rnatish ham, ro'yxatdan o'tish ham shart emas. Telefoni sahifani "
 "o'zi ochadi."
 
-#: .\templates\core\home.html:88
+#: .\templates\core\home.html:84
 msgid "In three languages"
 msgstr "Uch tilda"
 
-#: .\templates\core\home.html:89
+#: .\templates\core\home.html:85
 msgid "Uzbek, Russian and English — the page follows the customer's phone."
 msgstr "O'zbek, rus va ingliz tillarida — sahifa mijoz telefoniga moslashadi."
 
-#: .\templates\core\home.html:97 .\templates\core\pricing.html:14
+#: .\templates\core\home.html:93 .\templates\core\pricing.html:11
 msgid "TapCon card"
 msgstr "TapCon kartasi"
 
-#: .\templates\core\home.html:99 .\templates\core\pricing.html:16
-#: .\templates\core\styleguide.html:55 .\templates\merchants\dashboard.html:18
+#: .\templates\core\home.html:95 .\templates\core\pricing.html:13
+#: .\templates\core\styleguide.html:52 .\templates\merchants\dashboard.html:18
 #: .\templates\merchants\dashboard.html:26
 #: .\templates\merchants\dashboard.html:34
 #: .\templates\merchants\transactions.html:82 .\templates\payments\pay.html:56
@@ -1534,31 +1665,31 @@ msgstr "TapCon kartasi"
 msgid "soum"
 msgstr "so'm"
 
-#: .\templates\core\home.html:101 .\templates\core\pricing.html:18
+#: .\templates\core\home.html:97 .\templates\core\pricing.html:15
 msgid "per card, one payment"
 msgstr "bir karta uchun, bir marta"
 
-#: .\templates\core\home.html:103 .\templates\core\pricing.html:20
+#: .\templates\core\home.html:99 .\templates\core\pricing.html:17
 msgid "The NFC card itself"
 msgstr "NFC kartaning o'zi"
 
-#: .\templates\core\home.html:104 .\templates\core\pricing.html:21
+#: .\templates\core\home.html:100 .\templates\core\pricing.html:18
 msgid "Your own payment page"
 msgstr "Shaxsiy to'lov sahifangiz"
 
-#: .\templates\core\home.html:105 .\templates\core\pricing.html:22
+#: .\templates\core\home.html:101 .\templates\core\pricing.html:19
 msgid "Merchant portal with transactions"
 msgstr "Tranzaksiyalar bilan sotuvchi portali"
 
-#: .\templates\core\home.html:106
+#: .\templates\core\home.html:102
 msgid "No monthly fee, no commission from TapCon"
 msgstr "Oylik to'lov yo'q, TapCon komissiyasi yo'q"
 
-#: .\templates\core\home.html:112
+#: .\templates\core\home.html:108
 msgid "Connecting your merchant accounts"
 msgstr "Merchant hisoblaringizni ulash"
 
-#: .\templates\core\home.html:114
+#: .\templates\core\home.html:110
 msgid ""
 "To accept payments you need a merchant account with each provider — Click, "
 "Payme, Uzum, Paynet. If you already have them, connect them yourself in the "
@@ -1567,7 +1698,7 @@ msgstr ""
 "To'lov qabul qilish uchun har bir provayderda merchant hisob kerak — Click, "
 "Payme, Uzum, Paynet. Ular bo'lsa, portalda o'zingiz bepul ulaysiz."
 
-#: .\templates\core\home.html:117
+#: .\templates\core\home.html:113
 msgid ""
 "If you do not, we can obtain them for you. This is a separate service and is"
 " priced per business, because each provider asks for different documents."
@@ -1575,19 +1706,19 @@ msgstr ""
 "Bo'lmasa, biz ochib beramiz. Bu alohida xizmat va narxi har bir biznes uchun"
 " alohida belgilanadi, chunki har bir provayder turli hujjat so'raydi."
 
-#: .\templates\core\home.html:119 .\templates\core\pricing.html:41
+#: .\templates\core\home.html:115 .\templates\core\pricing.html:38
 msgid "Ask about setup"
 msgstr "Ulash haqida so'rang"
 
-#: .\templates\core\home.html:126
+#: .\templates\core\home.html:122
 msgid "Start accepting payments this week"
 msgstr "Shu hafta to'lov qabul qilishni boshlang"
 
-#: .\templates\core\home.html:127
+#: .\templates\core\home.html:123
 msgid "Order a card, connect your providers, and put it on the counter."
 msgstr "Karta buyurtma qiling, provayderlarni ulang va peshtaxtaga qo'ying."
 
-#: .\templates\core\how_it_works.html:9
+#: .\templates\core\how_it_works.html:6
 msgid ""
 "For the customer it is one tap. For you it is a card on the counter and a "
 "page in your portal."
@@ -1595,54 +1726,54 @@ msgstr ""
 "Mijoz uchun bu bitta tegish. Siz uchun — peshtaxtadagi karta va portaldagi "
 "sahifa."
 
-#: .\templates\core\how_it_works.html:16
+#: .\templates\core\how_it_works.html:13
 msgid "The customer holds their phone near your card. No app, no scanning."
 msgstr ""
 "Mijoz telefonini kartangizga yaqinlashtiradi. Ilova ham, skanerlash ham "
 "kerak emas."
 
-#: .\templates\core\how_it_works.html:21
+#: .\templates\core\how_it_works.html:18
 msgid "Your payment page opens in their browser. They type what they owe."
 msgstr ""
 "To'lov sahifangiz uning brauzerida ochiladi. To'lanadigan summani kiritadi."
 
-#: .\templates\core\how_it_works.html:26
+#: .\templates\core\how_it_works.html:23
 msgid "They tap the app they use. It opens with the amount already filled in."
 msgstr ""
 "O'zi ishlatadigan ilovani bosadi. Ilova summa kiritilgan holda ochiladi."
 
-#: .\templates\core\how_it_works.html:31
+#: .\templates\core\how_it_works.html:28
 msgid ""
 "The provider confirms the payment to us and the money reaches your account."
 msgstr ""
 "Provayder to'lovni bizga tasdiqlaydi va pul hisobingizga yetib boradi."
 
-#: .\templates\core\how_it_works.html:37
+#: .\templates\core\how_it_works.html:34
 msgid "What you do once"
 msgstr "Bir marta qiladigan ishlar"
 
-#: .\templates\core\how_it_works.html:39
+#: .\templates\core\how_it_works.html:36
 msgid "Order a card and register with your phone number."
 msgstr "Karta buyurtma qiling va telefon raqamingiz bilan ro'yxatdan o'ting."
 
-#: .\templates\core\how_it_works.html:40
+#: .\templates\core\how_it_works.html:37
 msgid "Enter your merchant credentials for the providers you use."
 msgstr ""
 "Ishlatadigan provayderlaringiz uchun merchant ma'lumotlarini kiriting."
 
-#: .\templates\core\how_it_works.html:41
+#: .\templates\core\how_it_works.html:38
 msgid "We approve your business, usually within a day."
 msgstr "Biznesingizni tasdiqlaymiz — odatda bir kun ichida."
 
-#: .\templates\core\how_it_works.html:42
+#: .\templates\core\how_it_works.html:39
 msgid "Put the card where customers pay."
 msgstr "Kartani mijozlar to'laydigan joyga qo'ying."
 
-#: .\templates\core\how_it_works.html:46
+#: .\templates\core\how_it_works.html:43
 msgid "What about phones without NFC?"
 msgstr "NFC'siz telefonlar-chi?"
 
-#: .\templates\core\how_it_works.html:48
+#: .\templates\core\how_it_works.html:45
 msgid ""
 "Most phones sold in the last few years read NFC. Older iPhones and some "
 "cheap Android phones do not."
@@ -1650,7 +1781,7 @@ msgstr ""
 "So'nggi yillarda sotilgan telefonlarning aksariyati NFC'ni o'qiydi. Eski "
 "iPhone'lar va ba'zi arzon Android telefonlar o'qimaydi."
 
-#: .\templates\core\how_it_works.html:51
+#: .\templates\core\how_it_works.html:48
 msgid ""
 "Your payment page is an ordinary web address, so it also works from a QR "
 "code or a link you send in a message."
@@ -1658,11 +1789,11 @@ msgstr ""
 "To'lov sahifangiz oddiy veb-manzil, shuning uchun QR kod yoki xabardagi "
 "havola orqali ham ishlaydi."
 
-#: .\templates\core\how_it_works.html:58
+#: .\templates\core\how_it_works.html:55
 msgid "Ready to try it?"
 msgstr "Sinab ko'rasizmi?"
 
-#: .\templates\core\how_it_works.html:59
+#: .\templates\core\how_it_works.html:56
 msgid "Order a card and we will call you back to arrange delivery."
 msgstr ""
 "Karta buyurtma qiling — yetkazib berishni kelishish uchun biz bog'lanamiz."
@@ -1689,7 +1820,7 @@ msgstr "Hammasini o'qildi"
 msgid "Nothing new yet."
 msgstr "Hozircha yangilik yo'q."
 
-#: .\templates\core\order.html:11
+#: .\templates\core\order.html:8
 msgid ""
 "Leave your number and we will call you back to confirm the order and arrange"
 " delivery."
@@ -1697,55 +1828,55 @@ msgstr ""
 "Raqamingizni qoldiring — buyurtmani tasdiqlash va yetkazib berishni "
 "kelishish uchun bog'lanamiz."
 
-#: .\templates\core\order.html:15
+#: .\templates\core\order.html:12
 msgid "What happens next"
 msgstr "Keyin nima bo'ladi"
 
-#: .\templates\core\order.html:17
+#: .\templates\core\order.html:14
 msgid "We call you to confirm quantity and address."
 msgstr "Miqdor va manzilni tasdiqlash uchun qo'ng'iroq qilamiz."
 
-#: .\templates\core\order.html:18
+#: .\templates\core\order.html:15
 msgid "We deliver the cards and help you register."
 msgstr "Kartalarni yetkazamiz va ro'yxatdan o'tishga yordam beramiz."
 
-#: .\templates\core\order.html:19
+#: .\templates\core\order.html:16
 msgid "You connect your payment providers and start taking payments."
 msgstr ""
 "To'lov provayderlaringizni ulaysiz va to'lov qabul qilishni boshlaysiz."
 
-#: .\templates\core\order.html:22
+#: .\templates\core\order.html:19
 #, python-format
 msgid "%(price)s soum per card. Payment on delivery."
 msgstr "Bir karta %(price)s so'm. To'lov yetkazib berilganda."
 
-#: .\templates\core\order.html:31
+#: .\templates\core\order.html:28
 msgid "Send order"
 msgstr "Buyurtma yuborish"
 
-#: .\templates\core\order.html:33
+#: .\templates\core\order.html:30
 msgid "We only use your number to contact you about this order."
 msgstr ""
 "Raqamingizdan faqat shu buyurtma bo'yicha bog'lanish uchun foydalanamiz."
 
-#: .\templates\core\order_done.html:4 .\templates\core\order_done.html:15
+#: .\templates\core\order_done.html:12
 msgid "Order received"
 msgstr "Buyurtma qabul qilindi"
 
-#: .\templates\core\order_done.html:16
+#: .\templates\core\order_done.html:13
 msgid "Thank you. We will call you back shortly to confirm the details."
 msgstr "Rahmat. Tafsilotlarni tasdiqlash uchun tez orada bog'lanamiz."
 
-#: .\templates\core\order_done.html:18
+#: .\templates\core\order_done.html:15
 msgid "Back to home"
 msgstr "Bosh sahifaga"
 
-#: .\templates\core\pricing.html:4 .\templates\core\pricing.html:8
-#: .\templates\layouts\marketing.html:38 .\templates\partials\navbar.html:19
+#: .\templates\core\pricing.html:5 .\templates\layouts\marketing.html:38
+#: .\templates\partials\navbar.html:19
 msgid "Pricing"
 msgstr "Narxlar"
 
-#: .\templates\core\pricing.html:9
+#: .\templates\core\pricing.html:6
 msgid ""
 "One payment for the card. No subscription, and TapCon takes no commission "
 "from your sales."
@@ -1753,27 +1884,27 @@ msgstr ""
 "Karta uchun bir marta to'lov. Obuna yo'q, TapCon savdongizdan komissiya "
 "olmaydi."
 
-#: .\templates\core\pricing.html:23
+#: .\templates\core\pricing.html:20
 msgid "Connect your own provider accounts yourself, free"
 msgstr "O'z provayder hisoblaringizni o'zingiz bepul ulaysiz"
 
-#: .\templates\core\pricing.html:24
+#: .\templates\core\pricing.html:21
 msgid "Support in Uzbek and Russian"
 msgstr "O'zbek va rus tillarida qo'llab-quvvatlash"
 
-#: .\templates\core\pricing.html:31
+#: .\templates\core\pricing.html:28
 msgid "Merchant account setup"
 msgstr "Merchant hisobini ochish"
 
-#: .\templates\core\pricing.html:32
+#: .\templates\core\pricing.html:29
 msgid "Priced per business"
 msgstr "Narx har bir biznes uchun alohida"
 
-#: .\templates\core\pricing.html:33
+#: .\templates\core\pricing.html:30
 msgid "Optional — only if you want us to do it"
 msgstr "Ixtiyoriy — faqat biz qilishimizni istasangiz"
 
-#: .\templates\core\pricing.html:35
+#: .\templates\core\pricing.html:32
 msgid ""
 "To accept payments you need a merchant account with each provider you want "
 "to offer: Click, Payme, Uzum, Paynet. Each of them asks for different "
@@ -1783,7 +1914,7 @@ msgstr ""
 "merchant hisob kerak: Click, Payme, Uzum, Paynet. Har biri turli hujjat "
 "so'raydi va turli vaqt oladi."
 
-#: .\templates\core\pricing.html:38
+#: .\templates\core\pricing.html:35
 msgid ""
 "If you already have those accounts, enter the credentials in your portal and"
 " pay us nothing extra. If you would rather we handled the paperwork, tell us"
@@ -1793,11 +1924,11 @@ msgstr ""
 "yo'q. Hujjatlarni biz bajarishimizni istasangiz, qaysi provayderlar "
 "kerakligini ayting, narxini aytamiz."
 
-#: .\templates\core\pricing.html:47
+#: .\templates\core\pricing.html:44
 msgid "What else might cost money"
 msgstr "Yana nima pul turishi mumkin"
 
-#: .\templates\core\pricing.html:51
+#: .\templates\core\pricing.html:48
 msgid ""
 "Your payment providers charge their own commission on each payment. That is "
 "between you and them — TapCon adds nothing on top."
@@ -1805,38 +1936,37 @@ msgstr ""
 "To'lov provayderlaringiz har bir to'lovdan o'z komissiyasini oladi. Bu siz "
 "bilan ular o'rtasida — TapCon ustiga hech narsa qo'shmaydi."
 
-#: .\templates\core\pricing.html:52
+#: .\templates\core\pricing.html:49
 msgid "Delivery of the cards, if you are outside Tashkent."
 msgstr "Toshkentdan tashqarida bo'lsangiz, kartalarni yetkazib berish."
 
-#: .\templates\core\pricing.html:53
+#: .\templates\core\pricing.html:50
 msgid "Extra cards, at the same price per card."
 msgstr "Qo'shimcha kartalar — har biri shu narxda."
 
-#: .\templates\core\pricing.html:60
+#: .\templates\core\pricing.html:57
 msgid "Questions about price?"
 msgstr "Narx bo'yicha savollar bormi?"
 
-#: .\templates\core\pricing.html:61
+#: .\templates\core\pricing.html:58
 msgid "Call us or write on Telegram. We answer in Uzbek and Russian."
 msgstr ""
 "Qo'ng'iroq qiling yoki Telegramga yozing. O'zbek va rus tillarida javob "
 "beramiz."
 
-#: .\templates\core\privacy.html:4 .\templates\core\privacy.html:8
-#: .\templates\layouts\marketing.html:49
+#: .\templates\core\privacy.html:5 .\templates\layouts\marketing.html:49
 msgid "Privacy policy"
 msgstr "Maxfiylik siyosati"
 
-#: .\templates\core\privacy.html:9 .\templates\core\terms.html:9
+#: .\templates\core\privacy.html:6 .\templates\core\terms.html:6
 msgid "Draft. To be reviewed by a lawyer before launch."
 msgstr "Qoralama. Ishga tushirishdan oldin yurist ko'rib chiqadi."
 
-#: .\templates\core\privacy.html:11
+#: .\templates\core\privacy.html:8
 msgid "What we collect"
 msgstr "Nimalarni yig'amiz"
 
-#: .\templates\core\privacy.html:13
+#: .\templates\core\privacy.html:10
 msgid ""
 "From sellers: phone number, name, business name, address, and the provider "
 "credentials you enter."
@@ -1844,12 +1974,12 @@ msgstr ""
 "Sotuvchilardan: telefon raqami, ism, biznes nomi, manzil va siz kiritgan "
 "provayder ma'lumotlari."
 
-#: .\templates\core\privacy.html:14
+#: .\templates\core\privacy.html:11
 msgid "From people ordering cards: name, phone number, delivery address."
 msgstr ""
 "Karta buyurtma qiluvchilardan: ism, telefon raqami, yetkazib berish manzili."
 
-#: .\templates\core\privacy.html:15
+#: .\templates\core\privacy.html:12
 msgid ""
 "From customers paying: the amount and which provider they chose. Nothing "
 "that identifies them personally."
@@ -1857,11 +1987,11 @@ msgstr ""
 "To'lovchi mijozlardan: summa va tanlangan provayder. Shaxsni aniqlaydigan "
 "hech narsa emas."
 
-#: .\templates\core\privacy.html:18
+#: .\templates\core\privacy.html:15
 msgid "What we never collect"
 msgstr "Nimalarni hech qachon yig'maymiz"
 
-#: .\templates\core\privacy.html:20
+#: .\templates\core\privacy.html:17
 msgid ""
 "Card numbers, CVV codes or any card details. Card payments happen on the "
 "provider's own page."
@@ -1869,15 +1999,15 @@ msgstr ""
 "Karta raqamlari, CVV kodlar yoki karta ma'lumotlari. Karta to'lovlari "
 "provayderning o'z sahifasida bo'ladi."
 
-#: .\templates\core\privacy.html:21
+#: .\templates\core\privacy.html:18
 msgid "Passport or ID numbers."
 msgstr "Pasport yoki ID raqamlari."
 
-#: .\templates\core\privacy.html:24
+#: .\templates\core\privacy.html:21
 msgid "How we protect provider credentials"
 msgstr "Provayder ma'lumotlarini qanday himoya qilamiz"
 
-#: .\templates\core\privacy.html:25
+#: .\templates\core\privacy.html:22
 msgid ""
 "Your merchant credentials are encrypted in our database, never shown back to"
 " you in full, and never written to logs."
@@ -1885,11 +2015,11 @@ msgstr ""
 "Merchant ma'lumotlaringiz bazamizda shifrlangan, to'liq holda qaytarib "
 "ko'rsatilmaydi va loglarga yozilmaydi."
 
-#: .\templates\core\privacy.html:27
+#: .\templates\core\privacy.html:24
 msgid "Who we share it with"
 msgstr "Kim bilan bo'lishamiz"
 
-#: .\templates\core\privacy.html:28
+#: .\templates\core\privacy.html:25
 msgid ""
 "Payment providers receive what they need to process a payment. Our SMS "
 "provider receives your phone number to deliver a confirmation code. We sell "
@@ -1899,11 +2029,11 @@ msgstr ""
 "SMS provayderimiz tasdiqlash kodini yetkazish uchun raqamingizni oladi. "
 "Ma'lumotlaringizni hech kimga sotmaymiz."
 
-#: .\templates\core\privacy.html:30
+#: .\templates\core\privacy.html:27
 msgid "How long we keep it"
 msgstr "Qancha vaqt saqlaymiz"
 
-#: .\templates\core\privacy.html:31
+#: .\templates\core\privacy.html:28
 msgid ""
 "Transaction records are kept while your account is active and afterwards as "
 "long as the law requires. Confirmation codes are deleted within minutes."
@@ -1912,11 +2042,11 @@ msgstr ""
 "qilgan muddatgacha saqlanadi. Tasdiqlash kodlari bir necha daqiqada "
 "o'chiriladi."
 
-#: .\templates\core\privacy.html:33
+#: .\templates\core\privacy.html:30
 msgid "Your rights"
 msgstr "Huquqlaringiz"
 
-#: .\templates\core\privacy.html:34
+#: .\templates\core\privacy.html:31
 msgid ""
 "Ask us to correct or delete your data at any time using the contacts below. "
 "We will do it unless the law requires us to keep a record."
@@ -1924,71 +2054,70 @@ msgstr ""
 "Quyidagi kontaktlar orqali istalgan vaqtda ma'lumotlaringizni tuzatish yoki "
 "o'chirishni so'rang. Qonun saqlashni talab qilmasa, bajaramiz."
 
-#: .\templates\core\styleguide.html:4 .\templates\core\styleguide.html:7
+#: .\templates\core\styleguide.html:4
 msgid "Design system"
 msgstr "Dizayn tizimi"
 
-#: .\templates\core\styleguide.html:8
+#: .\templates\core\styleguide.html:5
 msgid ""
 "Every page is built from these pieces. Change a token, everything follows."
 msgstr ""
 "Har bir sahifa shu qismlardan yig'iladi. Bitta qiymatni o'zgartirsangiz, "
 "hammasi ergashadi."
 
-#: .\templates\core\styleguide.html:11
+#: .\templates\core\styleguide.html:8
 msgid "Colours"
 msgstr "Ranglar"
 
-#: .\templates\core\styleguide.html:22
+#: .\templates\core\styleguide.html:19
 msgid "Buttons"
 msgstr "Tugmalar"
 
-#: .\templates\core\styleguide.html:24
+#: .\templates\core\styleguide.html:21
 msgid "Pay"
 msgstr "To'lash"
 
-#: .\templates\core\styleguide.html:25
+#: .\templates\core\styleguide.html:22
 msgid "Cancel"
 msgstr "Bekor qilish"
 
-#: .\templates\core\styleguide.html:26 .\templates\core\styleguide.html:64
+#: .\templates\core\styleguide.html:23 .\templates\core\styleguide.html:61
 msgid "Disabled"
 msgstr "O'chirilgan"
 
-#: .\templates\core\styleguide.html:31
+#: .\templates\core\styleguide.html:28
 msgid "Provider buttons"
 msgstr "To'lov tizimi tugmalari"
 
-#: .\templates\core\styleguide.html:46
+#: .\templates\core\styleguide.html:43
 msgid "Inputs"
 msgstr "Kiritish maydonlari"
 
-#: .\templates\core\styleguide.html:61
+#: .\templates\core\styleguide.html:58
 msgid "Badges & toggle"
 msgstr "Nishonlar va tugma"
 
-#: .\templates\core\styleguide.html:63
+#: .\templates\core\styleguide.html:60
 msgid "Active"
 msgstr "Faol"
 
-#: .\templates\core\styleguide.html:69
+#: .\templates\core\styleguide.html:66
 msgid "Saved successfully."
 msgstr "Muvaffaqiyatli saqlandi."
 
-#: .\templates\core\styleguide.html:70
+#: .\templates\core\styleguide.html:67
 msgid "Something went wrong."
 msgstr "Xatolik yuz berdi."
 
-#: .\templates\core\terms.html:4 .\templates\core\terms.html:8
-#: .\templates\layouts\marketing.html:50
+#: .\templates\core\terms.html:5 .\templates\layouts\marketing.html:50
 msgid "Terms of service"
 msgstr "Foydalanish shartlari"
 
-#: .\templates\core\terms.html:11
+#: .\templates\core\terms.html:8
 msgid "What TapCon provides"
 msgstr "TapCon nima taqdim etadi"
 
-#: .\templates\core\terms.html:12
+#: .\templates\core\terms.html:9
 msgid ""
 "TapCon supplies an NFC card and a payment page that forwards your customer "
 "to the payment provider you have chosen. TapCon is not a bank, not a payment"
@@ -1998,31 +2127,31 @@ msgstr ""
 "yo'naltiruvchi to'lov sahifasini taqdim etadi. TapCon bank ham, to'lov "
 "tashkiloti ham emas va pulingizni ushlab turmaydi."
 
-#: .\templates\core\terms.html:14
+#: .\templates\core\terms.html:11
 msgid "Your responsibilities"
 msgstr "Sizning majburiyatlaringiz"
 
-#: .\templates\core\terms.html:16
+#: .\templates\core\terms.html:13
 msgid "Keep your own merchant accounts with the providers in good standing."
 msgstr "Provayderlardagi merchant hisoblaringizni faol holatda saqlang."
 
-#: .\templates\core\terms.html:17
+#: .\templates\core\terms.html:14
 msgid "Keep your account credentials and provider keys secret."
 msgstr "Hisob ma'lumotlaringiz va provayder kalitlarini maxfiy saqlang."
 
-#: .\templates\core\terms.html:18
+#: .\templates\core\terms.html:15
 msgid "Only accept payments for lawful goods and services."
 msgstr "Faqat qonuniy tovar va xizmatlar uchun to'lov qabul qiling."
 
-#: .\templates\core\terms.html:19
+#: .\templates\core\terms.html:16
 msgid "Give your customers a receipt where the law requires one."
 msgstr "Qonun talab qilgan hollarda mijozlarga chek bering."
 
-#: .\templates\core\terms.html:22
+#: .\templates\core\terms.html:19
 msgid "Approval and suspension"
 msgstr "Tasdiqlash va to'xtatish"
 
-#: .\templates\core\terms.html:23
+#: .\templates\core\terms.html:20
 msgid ""
 "A new business must be approved before its payment page accepts payments. We"
 " may suspend an account that breaks these terms or that a provider asks us "
@@ -2032,11 +2161,11 @@ msgstr ""
 " shart. Ushbu shartlarni buzgan yoki provayder xizmatni to'xtatishni "
 "so'ragan hisobni to'xtatishimiz mumkin."
 
-#: .\templates\core\terms.html:25
+#: .\templates\core\terms.html:22
 msgid "Money and commission"
 msgstr "Pul va komissiya"
 
-#: .\templates\core\terms.html:26
+#: .\templates\core\terms.html:23
 msgid ""
 "Payments go directly to your merchant account. TapCon takes no commission. "
 "Your providers charge their own fees under your agreement with them."
@@ -2045,11 +2174,11 @@ msgstr ""
 " olmaydi. Provayderlaringiz siz bilan tuzgan shartnoma bo'yicha o'z "
 "to'lovlarini oladi."
 
-#: .\templates\core\terms.html:28
+#: .\templates\core\terms.html:25
 msgid "The card: price and replacement"
 msgstr "Karta: narxi va almashtirish"
 
-#: .\templates\core\terms.html:29
+#: .\templates\core\terms.html:26
 msgid ""
 "The card is paid for once, on delivery. A faulty card is replaced free of "
 "charge."
@@ -2057,11 +2186,11 @@ msgstr ""
 "Karta bir marta, yetkazib berishda to'lanadi. Nosoz karta bepul "
 "almashtiriladi."
 
-#: .\templates\core\terms.html:37
+#: .\templates\core\terms.html:34
 msgid "Returning a payment to a customer"
 msgstr "Mijozga to'lovni qaytarish"
 
-#: .\templates\core\terms.html:38
+#: .\templates\core\terms.html:35
 msgid ""
 "TapCon does not return payments. Money goes straight from your customer to "
 "your own merchant account, and we never hold it, so we have nothing to send "
@@ -2071,7 +2200,7 @@ msgstr ""
 "merchant hisobingizga tushadi, biz uni hech qachon ushlab turmaymiz, shuning"
 " uchun qaytaradigan narsamiz yo'q."
 
-#: .\templates\core\terms.html:39
+#: .\templates\core\terms.html:36
 msgid ""
 "If a customer paid too much or should be refunded, settle it with them "
 "directly, or ask your payment provider to return the payment through their "
@@ -2084,11 +2213,11 @@ msgstr ""
 "to'lov tranzaksiyalaringizda «Mijozga qaytarilgan» deb ko'rsatiladi va "
 "tushumingizga qo'shilmaydi."
 
-#: .\templates\core\terms.html:41
+#: .\templates\core\terms.html:38
 msgid "Limits of responsibility"
 msgstr "Javobgarlik chegaralari"
 
-#: .\templates\core\terms.html:42
+#: .\templates\core\terms.html:39
 msgid ""
 "We do our best to keep the service running, but we are not responsible for a"
 " payment provider being unavailable, nor for a dispute between you and your "
@@ -2105,6 +2234,14 @@ msgstr "Mahsulot"
 #: .\templates\layouts\marketing.html:42
 msgid "Company"
 msgstr "Kompaniya"
+
+#: .\templates\layouts\marketing.html:43
+msgid "About"
+msgstr "Biz haqimizda"
+
+#: .\templates\layouts\marketing.html:44 .\templates\partials\navbar.html:20
+msgid "FAQ"
+msgstr "Savol-javob"
 
 #: .\templates\layouts\marketing.html:48
 msgid "Legal"
@@ -2469,6 +2606,16 @@ msgstr "Barcha bildirishnomalar"
 #: .\templates\partials\notification_item.html:23
 msgid "Unread"
 msgstr "O'qilmagan"
+
+#: .\templates\partials\structured_data.html:32
+msgid ""
+"NFC-card payments for small businesses in Uzbekistan. The customer taps the "
+"card, enters the amount and pays - the money goes straight to the seller's "
+"own merchant account."
+msgstr ""
+"O'zbekistondagi kichik bizneslar uchun NFC karta orqali to'lovlar. Mijoz "
+"kartaga tegadi, summani kiritadi va to'laydi - pul to'g'ridan-to'g'ri "
+"sotuvchining merchant hisobiga tushadi."
 
 #: .\templates\payments\pay.html:28
 msgid "Not accepting payments yet"

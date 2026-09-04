@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-03 02:04+0500\n"
+"POT-Creation-Date: 2026-09-04 00:09+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgid "Business name"
 msgstr ""
 
 #: .\accounts\forms.py:37 .\accounts\forms.py:66 .\accounts\forms.py:85
-#: .\core\forms.py:30 .\core\forms.py:57 .\templates\core\styleguide.html:48
+#: .\core\forms.py:30 .\core\forms.py:57 .\templates\core\styleguide.html:45
 #: .\templates\merchants\settings.html:20
 msgid "Phone number"
 msgstr ""
@@ -410,13 +410,101 @@ msgstr ""
 msgid "Your payment page no longer accepts payments. Please contact support."
 msgstr ""
 
-#: .\core\views.py:120
+#: .\core\views.py:58
+msgid "TapCon — accept payments with a single tap"
+msgstr ""
+
+#: .\core\views.py:60
+msgid "An NFC card for your business. The customer taps it, enters the amount and pays with Click, Payme, Uzum or a bank card — straight to your own merchant account. No terminal, no monthly fee."
+msgstr ""
+
+#: .\core\views.py:70
+msgid "How it works — TapCon"
+msgstr ""
+
+#: .\core\views.py:72
+msgid "Three steps: the customer taps your card, their phone opens your payment page, they pay. The money goes to your merchant account and you see it immediately. No app to install."
+msgstr ""
+
+#: .\core\views.py:82
+msgid "For business — TapCon"
+msgstr ""
+
+#: .\core\views.py:84
+msgid "For cafes, shops, salons, taxis and couriers in Uzbekistan. Take cashless payments without a POS terminal — one card on the counter and every payment lands in your own account."
+msgstr ""
+
+#: .\core\views.py:94
+msgid "Pricing — TapCon"
+msgstr ""
+
+#: .\core\views.py:96
+msgid "100 000 soum for the card, paid once. No commission on payments, no monthly fee, no contract. Your customers' money goes directly to your merchant account — TapCon never holds it."
+msgstr ""
+
+#: .\core\views.py:105
+msgid "About us — TapCon"
+msgstr ""
+
+#: .\core\views.py:107
+msgid "TapCon makes cashless payments simple for small businesses in Uzbekistan. Who we are, why we built it, and how to reach us."
+msgstr ""
+
+#: .\core\views.py:116
+msgid "Questions and answers — TapCon"
+msgstr ""
+
+#: .\core\views.py:118
+msgid "Which phones work, which payment methods are supported, when the money arrives, what happens if a payment fails, and how to get a card for your business."
+msgstr ""
+
+#: .\core\views.py:127
+msgid "Privacy policy — TapCon"
+msgstr ""
+
+#: .\core\views.py:129
+msgid "What TapCon collects, why, how long it is kept, and who it is shared with. TapCon never sees or stores your customers' card details."
+msgstr ""
+
+#: .\core\views.py:138
+msgid "Terms of service — TapCon"
+msgstr ""
+
+#: .\core\views.py:140
+msgid "The terms for sellers using TapCon: what the service does, what it does not do, how payments are settled, and why refunds are handled by your payment provider rather than by TapCon."
+msgstr ""
+
+#: .\core\views.py:151
+msgid "Design system — TapCon"
+msgstr ""
+
+#: .\core\views.py:178
+msgid "Order an NFC card — TapCon"
+msgstr ""
+
+#: .\core\views.py:180
+msgid "Order a TapCon card for your business. 100 000 soum, one payment, delivered in Tashkent. Leave your number and we will call you back."
+msgstr ""
+
+#: .\core\views.py:194
+msgid "Order received — TapCon"
+msgstr ""
+
+#: .\core\views.py:205
 msgid "Thank you. We will call you back shortly."
 msgstr ""
 
-#: .\merchants\admin.py:19 .\templates\core\contact.html:4
-#: .\templates\core\privacy.html:36 .\templates\core\terms.html:44
-#: .\templates\layouts\marketing.html:45 .\templates\partials\navbar.html:21
+#: .\core\views.py:210
+msgid "Contact — TapCon"
+msgstr ""
+
+#: .\core\views.py:212
+msgid "Questions about TapCon, or want a card for your business? Call us, message us on Telegram, or leave your number and we will call you back."
+msgstr ""
+
+#: .\merchants\admin.py:19 .\templates\core\privacy.html:33
+#: .\templates\core\terms.html:41 .\templates\layouts\marketing.html:45
+#: .\templates\partials\navbar.html:21
 msgid "Contact"
 msgstr ""
 
@@ -610,8 +698,8 @@ msgid "Provider"
 msgstr ""
 
 #: .\merchants\views.py:317 .\payments\forms.py:36
-#: .\templates\core\home.html:38 .\templates\core\how_it_works.html:20
-#: .\templates\core\styleguide.html:52
+#: .\templates\core\home.html:34 .\templates\core\how_it_works.html:17
+#: .\templates\core\styleguide.html:49
 #: .\templates\merchants\transactions.html:112 .\templates\payments\pay.html:53
 msgid "Amount"
 msgstr ""
@@ -707,18 +795,18 @@ msgstr ""
 msgid "Created"
 msgstr ""
 
-#: .\payments\models.py:211 .\templates\core\styleguide.html:65
+#: .\payments\models.py:211 .\templates\core\styleguide.html:62
 msgid "Pending"
 msgstr ""
 
 #: .\payments\models.py:212 .\payments\reporting.py:38
-#: .\templates\core\home.html:48 .\templates\core\how_it_works.html:30
+#: .\templates\core\home.html:44 .\templates\core\how_it_works.html:27
 #: .\templates\payments\result.html:32
 msgid "Paid"
 msgstr ""
 
 #: .\payments\models.py:214 .\payments\reporting.py:42
-#: .\templates\core\styleguide.html:66
+#: .\templates\core\styleguide.html:63
 msgid "Failed"
 msgstr ""
 
@@ -876,9 +964,9 @@ msgid "Go to home page"
 msgstr ""
 
 #: .\templates\400.html:15 .\templates\404.html:27
-#: .\templates\core\about.html:34 .\templates\core\contact.html:10
-#: .\templates\core\faq.html:68 .\templates\core\for_business.html:62
-#: .\templates\core\pricing.html:62
+#: .\templates\core\about.html:31 .\templates\core\contact.html:7
+#: .\templates\core\faq.html:65 .\templates\core\for_business.html:59
+#: .\templates\core\pricing.html:59
 msgid "Contact us"
 msgstr ""
 
@@ -997,403 +1085,393 @@ msgstr ""
 msgid "Send a new code"
 msgstr ""
 
-#: .\templates\base.html:7 .\templates\base.html:40
+#: .\templates\base.html:19 .\templates\base.html:61 .\templates\base.html:76
 #: .\templates\layouts\marketing.html:32
 msgid "Accept payments with a single tap."
 msgstr ""
 
-#: .\templates\core\about.html:4 .\templates\layouts\marketing.html:43
-msgid "About"
+#: .\templates\base.html:65
+msgid "A TapCon NFC card on a shop counter"
 msgstr ""
 
-#: .\templates\core\about.html:8
+#: .\templates\core\about.html:5
 msgid "About TapCon"
 msgstr ""
 
-#: .\templates\core\about.html:10
+#: .\templates\core\about.html:7
 msgid "TapCon makes accepting a payment in person as simple as handing over cash — without a terminal."
 msgstr ""
 
-#: .\templates\core\about.html:13
+#: .\templates\core\about.html:10
 msgid "Why we built it"
 msgstr ""
 
-#: .\templates\core\about.html:15
+#: .\templates\core\about.html:12
 msgid "In Uzbekistan almost everyone pays with Click, Payme or Uzum. But a small business that wants to accept those payments has to read out a card number, wait for a screenshot, or rent a terminal it cannot afford."
 msgstr ""
 
-#: .\templates\core\about.html:18
+#: .\templates\core\about.html:15
 msgid "A TapCon card removes that. It costs less than a month of terminal rent, needs no power, and the money goes straight to the seller's own merchant account."
 msgstr ""
 
-#: .\templates\core\about.html:21
+#: .\templates\core\about.html:18
 msgid "How we make money"
 msgstr ""
 
-#: .\templates\core\about.html:23
+#: .\templates\core\about.html:20
 msgid "We sell the card once. We take no commission from your payments and charge no subscription. If you want us to obtain merchant accounts on your behalf, that is a separate service you can decline."
 msgstr ""
 
-#: .\templates\core\about.html:26
+#: .\templates\core\about.html:23
 msgid "Where we are"
 msgstr ""
 
-#: .\templates\core\about.html:27
+#: .\templates\core\about.html:24
 msgid "Tashkent, Uzbekistan. Support is available in Uzbek and Russian."
 msgstr ""
 
-#: .\templates\core\about.html:32
+#: .\templates\core\about.html:29
 msgid "Get in touch"
 msgstr ""
 
-#: .\templates\core\about.html:33
+#: .\templates\core\about.html:30
 msgid "We would rather answer a question than lose a customer to confusion."
 msgstr ""
 
-#: .\templates\core\contact.html:11
+#: .\templates\core\contact.html:8
 msgid "Call, write on Telegram, or leave your number and we will call you back."
 msgstr ""
 
-#: .\templates\core\contact.html:32
+#: .\templates\core\contact.html:29
 msgid "We answer in Uzbek and Russian, and in English when we can."
 msgstr ""
 
-#: .\templates\core\contact.html:37
+#: .\templates\core\contact.html:34
 msgid "Write to us"
 msgstr ""
 
-#: .\templates\core\contact.html:41
+#: .\templates\core\contact.html:38
 msgid "Send message"
 msgstr ""
 
-#: .\templates\core\faq.html:4 .\templates\layouts\marketing.html:44
-#: .\templates\partials\navbar.html:20
-msgid "FAQ"
-msgstr ""
-
-#: .\templates\core\faq.html:8
+#: .\templates\core\faq.html:5
 msgid "Frequently asked questions"
 msgstr ""
 
-#: .\templates\core\faq.html:9
+#: .\templates\core\faq.html:6
 msgid "If your question is not here, call us or write on Telegram."
 msgstr ""
 
-#: .\templates\core\faq.html:14
+#: .\templates\core\faq.html:11
 msgid "Does the customer need to install anything?"
 msgstr ""
 
-#: .\templates\core\faq.html:15
+#: .\templates\core\faq.html:12
 msgid "No. They tap the card and their browser opens your payment page. They only need the payment app they already use."
 msgstr ""
 
-#: .\templates\core\faq.html:19
+#: .\templates\core\faq.html:16
 msgid "Does the card need charging or internet?"
 msgstr ""
 
-#: .\templates\core\faq.html:20
+#: .\templates\core\faq.html:17
 msgid "No. The card has no battery and no electronics beyond a chip that stores your web address. It works forever as long as it is not physically destroyed."
 msgstr ""
 
-#: .\templates\core\faq.html:24
+#: .\templates\core\faq.html:21
 msgid "Where does the money go?"
 msgstr ""
 
-#: .\templates\core\faq.html:25
+#: .\templates\core\faq.html:22
 msgid "Straight to your own merchant account with the provider. TapCon never holds your money and takes no commission from it."
 msgstr ""
 
-#: .\templates\core\faq.html:29
+#: .\templates\core\faq.html:26
 msgid "What if the customer's phone has no NFC?"
 msgstr ""
 
-#: .\templates\core\faq.html:30
+#: .\templates\core\faq.html:27
 msgid "Your payment page is an ordinary web address, so you can also show it as a QR code or send the link in a message."
 msgstr ""
 
-#: .\templates\core\faq.html:34
+#: .\templates\core\faq.html:31
 msgid "Do I need a merchant account?"
 msgstr ""
 
-#: .\templates\core\faq.html:35
+#: .\templates\core\faq.html:32
 msgid "Yes, with each provider you want to accept. If you already have them, connect them in the portal for free. If not, we can obtain them for you as a separate paid service."
 msgstr ""
 
-#: .\templates\core\faq.html:39
+#: .\templates\core\faq.html:36
 msgid "How much does it cost?"
 msgstr ""
 
-#: .\templates\core\faq.html:40
+#: .\templates\core\faq.html:37
 #, python-format
 msgid "%(price)s soum per card, paid once. No subscription and no commission from TapCon."
 msgstr ""
 
-#: .\templates\core\faq.html:44
+#: .\templates\core\faq.html:41
 msgid "How long does it take to start?"
 msgstr ""
 
-#: .\templates\core\faq.html:45
+#: .\templates\core\faq.html:42
 msgid "Registration takes a minute. We approve a business usually within a day. The longest part is getting merchant accounts, if you do not already have them."
 msgstr ""
 
-#: .\templates\core\faq.html:49
+#: .\templates\core\faq.html:46
 msgid "Can I have more than one card?"
 msgstr ""
 
-#: .\templates\core\faq.html:50
+#: .\templates\core\faq.html:47
 msgid "Yes. Many cafes put one on each table. All of them open the same payment page."
 msgstr ""
 
-#: .\templates\core\faq.html:54
+#: .\templates\core\faq.html:51
 msgid "Is it safe to enter card details?"
 msgstr ""
 
-#: .\templates\core\faq.html:55
+#: .\templates\core\faq.html:52
 msgid "Card payments happen on the payment provider's own secure page, not ours. TapCon never sees or stores card numbers."
 msgstr ""
 
-#: .\templates\core\faq.html:59
+#: .\templates\core\faq.html:56
 msgid "What if I lose a card?"
 msgstr ""
 
-#: .\templates\core\faq.html:60
+#: .\templates\core\faq.html:57
 msgid "Anyone finding it can only open your payment page and pay you money. Tell us and we will issue a new address if you want the old one closed."
 msgstr ""
 
-#: .\templates\core\faq.html:66
+#: .\templates\core\faq.html:63
 msgid "Still have a question?"
 msgstr ""
 
-#: .\templates\core\faq.html:67
+#: .\templates\core\faq.html:64
 msgid "We answer in Uzbek and Russian, on the phone or on Telegram."
 msgstr ""
 
-#: .\templates\core\for_business.html:4 .\templates\core\for_business.html:8
-#: .\templates\layouts\marketing.html:37 .\templates\partials\navbar.html:18
+#: .\templates\core\for_business.html:5 .\templates\layouts\marketing.html:37
+#: .\templates\partials\navbar.html:18
 msgid "For business"
 msgstr ""
 
-#: .\templates\core\for_business.html:9
+#: .\templates\core\for_business.html:6
 msgid "TapCon suits any place where people pay in person and a terminal is too much."
 msgstr ""
 
-#: .\templates\core\for_business.html:14
+#: .\templates\core\for_business.html:11
 msgid "Cafes and restaurants"
 msgstr ""
 
-#: .\templates\core\for_business.html:15
+#: .\templates\core\for_business.html:12
 msgid "A card on each table. The customer pays without waiting for anyone to bring a terminal."
 msgstr ""
 
-#: .\templates\core\for_business.html:18
+#: .\templates\core\for_business.html:15
 msgid "Shops and market stalls"
 msgstr ""
 
-#: .\templates\core\for_business.html:19
+#: .\templates\core\for_business.html:16
 msgid "One card by the till. Nothing to charge, nothing to break."
 msgstr ""
 
-#: .\templates\core\for_business.html:22
+#: .\templates\core\for_business.html:19
 msgid "Taxis and delivery"
 msgstr ""
 
-#: .\templates\core\for_business.html:23
+#: .\templates\core\for_business.html:20
 msgid "A card on the dashboard or in the courier's pocket. Payment confirmed before they drive away."
 msgstr ""
 
-#: .\templates\core\for_business.html:26
+#: .\templates\core\for_business.html:23
 msgid "Barbers, salons, clinics"
 msgstr ""
 
-#: .\templates\core\for_business.html:27
+#: .\templates\core\for_business.html:24
 msgid "The client pays at the chair. No queue at the counter."
 msgstr ""
 
-#: .\templates\core\for_business.html:30
+#: .\templates\core\for_business.html:27
 msgid "Services and repairs"
 msgstr ""
 
-#: .\templates\core\for_business.html:31
+#: .\templates\core\for_business.html:28
 msgid "Take payment at the customer's home, with a receipt in their own app."
 msgstr ""
 
-#: .\templates\core\for_business.html:34
+#: .\templates\core\for_business.html:31
 msgid "Events and pop-ups"
 msgstr ""
 
-#: .\templates\core\for_business.html:35
+#: .\templates\core\for_business.html:32
 msgid "No power, no internet contract, no rented terminal for three days of trading."
 msgstr ""
 
-#: .\templates\core\for_business.html:41
+#: .\templates\core\for_business.html:38
 msgid "What you need"
 msgstr ""
 
-#: .\templates\core\for_business.html:43
+#: .\templates\core\for_business.html:40
 msgid "A phone number to register with."
 msgstr ""
 
-#: .\templates\core\for_business.html:44
+#: .\templates\core\for_business.html:41
 msgid "A merchant account with at least one provider."
 msgstr ""
 
-#: .\templates\core\for_business.html:45
+#: .\templates\core\for_business.html:42
 msgid "Somewhere to put the card."
 msgstr ""
 
-#: .\templates\core\for_business.html:49
+#: .\templates\core\for_business.html:46
 msgid "What TapCon does not do"
 msgstr ""
 
-#: .\templates\core\for_business.html:51
+#: .\templates\core\for_business.html:48
 msgid "We never hold your money — it goes to your own merchant account."
 msgstr ""
 
-#: .\templates\core\for_business.html:52
+#: .\templates\core\for_business.html:49
 msgid "We take no commission from your payments."
 msgstr ""
 
-#: .\templates\core\for_business.html:53
+#: .\templates\core\for_business.html:50
 msgid "We never see or store your customers' card numbers."
 msgstr ""
 
-#: .\templates\core\for_business.html:60
+#: .\templates\core\for_business.html:57
 msgid "Talk to us about your business"
 msgstr ""
 
-#: .\templates\core\for_business.html:61
+#: .\templates\core\for_business.html:58
 msgid "Tell us what you sell and how you take payment today. We will tell you what it takes."
 msgstr ""
 
-#: .\templates\core\home.html:4 .\templates\core\home.html:10
+#: .\templates\core\home.html:6
 msgid "Accept payments with a single tap"
 msgstr ""
 
-#: .\templates\core\home.html:5
-msgid "An NFC card for your business. The customer taps, enters the amount and pays — straight to your own merchant account."
-msgstr ""
-
-#: .\templates\core\home.html:12
+#: .\templates\core\home.html:8
 msgid "Put a TapCon card on your counter. The customer taps it with their phone, enters the amount and pays with Click, Payme, Uzum, Paynet or a bank card. No terminal, no queue, no cables."
 msgstr ""
 
-#: .\templates\core\home.html:15 .\templates\core\home.html:109
-#: .\templates\core\home.html:128 .\templates\core\how_it_works.html:60
-#: .\templates\core\order.html:4 .\templates\core\order.html:10
-#: .\templates\core\pricing.html:27 .\templates\layouts\marketing.html:39
-#: .\templates\partials\navbar.html:29
+#: .\templates\core\home.html:11 .\templates\core\home.html:105
+#: .\templates\core\home.html:124 .\templates\core\how_it_works.html:57
+#: .\templates\core\order.html:7 .\templates\core\pricing.html:24
+#: .\templates\layouts\marketing.html:39 .\templates\partials\navbar.html:29
 msgid "Order a card"
 msgstr ""
 
-#: .\templates\core\home.html:16 .\templates\core\how_it_works.html:4
-#: .\templates\core\how_it_works.html:8 .\templates\core\order_done.html:19
-#: .\templates\layouts\marketing.html:36 .\templates\partials\navbar.html:17
+#: .\templates\core\home.html:12 .\templates\core\how_it_works.html:5
+#: .\templates\core\order_done.html:16 .\templates\layouts\marketing.html:36
+#: .\templates\partials\navbar.html:17
 msgid "How it works"
 msgstr ""
 
-#: .\templates\core\home.html:19
+#: .\templates\core\home.html:15
 #, python-format
 msgid "%(price)s soum per card — one payment, no monthly fee."
 msgstr ""
 
-#: .\templates\core\home.html:27
+#: .\templates\core\home.html:23
 msgid "Four steps, about ten seconds"
 msgstr ""
 
-#: .\templates\core\home.html:28
+#: .\templates\core\home.html:24
 msgid "Nothing to install. Any phone with NFC opens your payment page by itself."
 msgstr ""
 
-#: .\templates\core\home.html:33 .\templates\core\how_it_works.html:15
+#: .\templates\core\home.html:29 .\templates\core\how_it_works.html:12
 msgid "Tap"
 msgstr ""
 
-#: .\templates\core\home.html:34
+#: .\templates\core\home.html:30
 msgid "The customer holds their phone near your card."
 msgstr ""
 
-#: .\templates\core\home.html:39
+#: .\templates\core\home.html:35
 msgid "Your payment page opens. They type the amount."
 msgstr ""
 
-#: .\templates\core\home.html:43 .\templates\core\how_it_works.html:25
+#: .\templates\core\home.html:39 .\templates\core\how_it_works.html:22
 msgid "Choose"
 msgstr ""
 
-#: .\templates\core\home.html:44
+#: .\templates\core\home.html:40
 msgid "They pick their app — Click, Payme, Uzum, Paynet or a card."
 msgstr ""
 
-#: .\templates\core\home.html:49
+#: .\templates\core\home.html:45
 msgid "The money goes to your merchant account. You see it in your portal."
 msgstr ""
 
-#: .\templates\core\home.html:56
+#: .\templates\core\home.html:52
 msgid "Every popular payment app"
 msgstr ""
 
-#: .\templates\core\home.html:57
+#: .\templates\core\home.html:53
 msgid "Your customers pay the way they already do."
 msgstr ""
 
-#: .\templates\core\home.html:64
+#: .\templates\core\home.html:60
 msgid "Why businesses use TapCon"
 msgstr ""
 
-#: .\templates\core\home.html:68
+#: .\templates\core\home.html:64
 msgid "The money is yours"
 msgstr ""
 
-#: .\templates\core\home.html:69
+#: .\templates\core\home.html:65
 msgid "Payments go straight to your own merchant accounts. TapCon never holds your money."
 msgstr ""
 
-#: .\templates\core\home.html:72
+#: .\templates\core\home.html:68
 msgid "Nothing to buy but the card"
 msgstr ""
 
-#: .\templates\core\home.html:73
+#: .\templates\core\home.html:69
 msgid "No terminal, no rent, no monthly fee. One card, one payment."
 msgstr ""
 
-#: .\templates\core\home.html:76
+#: .\templates\core\home.html:72
 msgid "Works on any counter"
 msgstr ""
 
-#: .\templates\core\home.html:77
+#: .\templates\core\home.html:73
 msgid "A cafe table, a taxi dashboard, a market stall. The card needs no power."
 msgstr ""
 
-#: .\templates\core\home.html:80
+#: .\templates\core\home.html:76
 msgid "Every payment recorded"
 msgstr ""
 
-#: .\templates\core\home.html:81
+#: .\templates\core\home.html:77
 msgid "See what came in today, by app, confirmed by the provider itself."
 msgstr ""
 
-#: .\templates\core\home.html:84
+#: .\templates\core\home.html:80
 msgid "Your customers need nothing new"
 msgstr ""
 
-#: .\templates\core\home.html:85
+#: .\templates\core\home.html:81
 msgid "No app to install, no registration. Their phone opens the page by itself."
 msgstr ""
 
-#: .\templates\core\home.html:88
+#: .\templates\core\home.html:84
 msgid "In three languages"
 msgstr ""
 
-#: .\templates\core\home.html:89
+#: .\templates\core\home.html:85
 msgid "Uzbek, Russian and English — the page follows the customer's phone."
 msgstr ""
 
-#: .\templates\core\home.html:97 .\templates\core\pricing.html:14
+#: .\templates\core\home.html:93 .\templates\core\pricing.html:11
 msgid "TapCon card"
 msgstr ""
 
-#: .\templates\core\home.html:99 .\templates\core\pricing.html:16
-#: .\templates\core\styleguide.html:55 .\templates\merchants\dashboard.html:18
+#: .\templates\core\home.html:95 .\templates\core\pricing.html:13
+#: .\templates\core\styleguide.html:52 .\templates\merchants\dashboard.html:18
 #: .\templates\merchants\dashboard.html:26
 #: .\templates\merchants\dashboard.html:34
 #: .\templates\merchants\transactions.html:82 .\templates\payments\pay.html:56
@@ -1402,107 +1480,107 @@ msgstr ""
 msgid "soum"
 msgstr ""
 
-#: .\templates\core\home.html:101 .\templates\core\pricing.html:18
+#: .\templates\core\home.html:97 .\templates\core\pricing.html:15
 msgid "per card, one payment"
 msgstr ""
 
-#: .\templates\core\home.html:103 .\templates\core\pricing.html:20
+#: .\templates\core\home.html:99 .\templates\core\pricing.html:17
 msgid "The NFC card itself"
 msgstr ""
 
-#: .\templates\core\home.html:104 .\templates\core\pricing.html:21
+#: .\templates\core\home.html:100 .\templates\core\pricing.html:18
 msgid "Your own payment page"
 msgstr ""
 
-#: .\templates\core\home.html:105 .\templates\core\pricing.html:22
+#: .\templates\core\home.html:101 .\templates\core\pricing.html:19
 msgid "Merchant portal with transactions"
 msgstr ""
 
-#: .\templates\core\home.html:106
+#: .\templates\core\home.html:102
 msgid "No monthly fee, no commission from TapCon"
 msgstr ""
 
-#: .\templates\core\home.html:112
+#: .\templates\core\home.html:108
 msgid "Connecting your merchant accounts"
 msgstr ""
 
-#: .\templates\core\home.html:114
+#: .\templates\core\home.html:110
 msgid "To accept payments you need a merchant account with each provider — Click, Payme, Uzum, Paynet. If you already have them, connect them yourself in the portal for free."
 msgstr ""
 
-#: .\templates\core\home.html:117
+#: .\templates\core\home.html:113
 msgid "If you do not, we can obtain them for you. This is a separate service and is priced per business, because each provider asks for different documents."
 msgstr ""
 
-#: .\templates\core\home.html:119 .\templates\core\pricing.html:41
+#: .\templates\core\home.html:115 .\templates\core\pricing.html:38
 msgid "Ask about setup"
 msgstr ""
 
-#: .\templates\core\home.html:126
+#: .\templates\core\home.html:122
 msgid "Start accepting payments this week"
 msgstr ""
 
-#: .\templates\core\home.html:127
+#: .\templates\core\home.html:123
 msgid "Order a card, connect your providers, and put it on the counter."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:9
+#: .\templates\core\how_it_works.html:6
 msgid "For the customer it is one tap. For you it is a card on the counter and a page in your portal."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:16
+#: .\templates\core\how_it_works.html:13
 msgid "The customer holds their phone near your card. No app, no scanning."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:21
+#: .\templates\core\how_it_works.html:18
 msgid "Your payment page opens in their browser. They type what they owe."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:26
+#: .\templates\core\how_it_works.html:23
 msgid "They tap the app they use. It opens with the amount already filled in."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:31
+#: .\templates\core\how_it_works.html:28
 msgid "The provider confirms the payment to us and the money reaches your account."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:37
+#: .\templates\core\how_it_works.html:34
 msgid "What you do once"
 msgstr ""
 
-#: .\templates\core\how_it_works.html:39
+#: .\templates\core\how_it_works.html:36
 msgid "Order a card and register with your phone number."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:40
+#: .\templates\core\how_it_works.html:37
 msgid "Enter your merchant credentials for the providers you use."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:41
+#: .\templates\core\how_it_works.html:38
 msgid "We approve your business, usually within a day."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:42
+#: .\templates\core\how_it_works.html:39
 msgid "Put the card where customers pay."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:46
+#: .\templates\core\how_it_works.html:43
 msgid "What about phones without NFC?"
 msgstr ""
 
-#: .\templates\core\how_it_works.html:48
+#: .\templates\core\how_it_works.html:45
 msgid "Most phones sold in the last few years read NFC. Older iPhones and some cheap Android phones do not."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:51
+#: .\templates\core\how_it_works.html:48
 msgid "Your payment page is an ordinary web address, so it also works from a QR code or a link you send in a message."
 msgstr ""
 
-#: .\templates\core\how_it_works.html:58
+#: .\templates\core\how_it_works.html:55
 msgid "Ready to try it?"
 msgstr ""
 
-#: .\templates\core\how_it_works.html:59
+#: .\templates\core\how_it_works.html:56
 msgid "Order a card and we will call you back to arrange delivery."
 msgstr ""
 
@@ -1529,307 +1607,305 @@ msgstr ""
 msgid "Nothing new yet."
 msgstr ""
 
-#: .\templates\core\order.html:11
+#: .\templates\core\order.html:8
 msgid "Leave your number and we will call you back to confirm the order and arrange delivery."
 msgstr ""
 
-#: .\templates\core\order.html:15
+#: .\templates\core\order.html:12
 msgid "What happens next"
 msgstr ""
 
-#: .\templates\core\order.html:17
+#: .\templates\core\order.html:14
 msgid "We call you to confirm quantity and address."
 msgstr ""
 
-#: .\templates\core\order.html:18
+#: .\templates\core\order.html:15
 msgid "We deliver the cards and help you register."
 msgstr ""
 
-#: .\templates\core\order.html:19
+#: .\templates\core\order.html:16
 msgid "You connect your payment providers and start taking payments."
 msgstr ""
 
-#: .\templates\core\order.html:22
+#: .\templates\core\order.html:19
 #, python-format
 msgid "%(price)s soum per card. Payment on delivery."
 msgstr ""
 
-#: .\templates\core\order.html:31
+#: .\templates\core\order.html:28
 msgid "Send order"
 msgstr ""
 
-#: .\templates\core\order.html:33
+#: .\templates\core\order.html:30
 msgid "We only use your number to contact you about this order."
 msgstr ""
 
-#: .\templates\core\order_done.html:4 .\templates\core\order_done.html:15
+#: .\templates\core\order_done.html:12
 msgid "Order received"
 msgstr ""
 
-#: .\templates\core\order_done.html:16
+#: .\templates\core\order_done.html:13
 msgid "Thank you. We will call you back shortly to confirm the details."
 msgstr ""
 
-#: .\templates\core\order_done.html:18
+#: .\templates\core\order_done.html:15
 msgid "Back to home"
 msgstr ""
 
-#: .\templates\core\pricing.html:4 .\templates\core\pricing.html:8
-#: .\templates\layouts\marketing.html:38 .\templates\partials\navbar.html:19
+#: .\templates\core\pricing.html:5 .\templates\layouts\marketing.html:38
+#: .\templates\partials\navbar.html:19
 msgid "Pricing"
 msgstr ""
 
-#: .\templates\core\pricing.html:9
+#: .\templates\core\pricing.html:6
 msgid "One payment for the card. No subscription, and TapCon takes no commission from your sales."
 msgstr ""
 
-#: .\templates\core\pricing.html:23
+#: .\templates\core\pricing.html:20
 msgid "Connect your own provider accounts yourself, free"
 msgstr ""
 
-#: .\templates\core\pricing.html:24
+#: .\templates\core\pricing.html:21
 msgid "Support in Uzbek and Russian"
 msgstr ""
 
-#: .\templates\core\pricing.html:31
+#: .\templates\core\pricing.html:28
 msgid "Merchant account setup"
 msgstr ""
 
-#: .\templates\core\pricing.html:32
+#: .\templates\core\pricing.html:29
 msgid "Priced per business"
 msgstr ""
 
-#: .\templates\core\pricing.html:33
+#: .\templates\core\pricing.html:30
 msgid "Optional — only if you want us to do it"
 msgstr ""
 
-#: .\templates\core\pricing.html:35
+#: .\templates\core\pricing.html:32
 msgid "To accept payments you need a merchant account with each provider you want to offer: Click, Payme, Uzum, Paynet. Each of them asks for different documents and takes a different amount of time."
 msgstr ""
 
-#: .\templates\core\pricing.html:38
+#: .\templates\core\pricing.html:35
 msgid "If you already have those accounts, enter the credentials in your portal and pay us nothing extra. If you would rather we handled the paperwork, tell us which providers you need and we will quote you."
 msgstr ""
 
-#: .\templates\core\pricing.html:47
+#: .\templates\core\pricing.html:44
 msgid "What else might cost money"
 msgstr ""
 
-#: .\templates\core\pricing.html:51
+#: .\templates\core\pricing.html:48
 msgid "Your payment providers charge their own commission on each payment. That is between you and them — TapCon adds nothing on top."
 msgstr ""
 
-#: .\templates\core\pricing.html:52
+#: .\templates\core\pricing.html:49
 msgid "Delivery of the cards, if you are outside Tashkent."
 msgstr ""
 
-#: .\templates\core\pricing.html:53
+#: .\templates\core\pricing.html:50
 msgid "Extra cards, at the same price per card."
 msgstr ""
 
-#: .\templates\core\pricing.html:60
+#: .\templates\core\pricing.html:57
 msgid "Questions about price?"
 msgstr ""
 
-#: .\templates\core\pricing.html:61
+#: .\templates\core\pricing.html:58
 msgid "Call us or write on Telegram. We answer in Uzbek and Russian."
 msgstr ""
 
-#: .\templates\core\privacy.html:4 .\templates\core\privacy.html:8
-#: .\templates\layouts\marketing.html:49
+#: .\templates\core\privacy.html:5 .\templates\layouts\marketing.html:49
 msgid "Privacy policy"
 msgstr ""
 
-#: .\templates\core\privacy.html:9 .\templates\core\terms.html:9
+#: .\templates\core\privacy.html:6 .\templates\core\terms.html:6
 msgid "Draft. To be reviewed by a lawyer before launch."
 msgstr ""
 
-#: .\templates\core\privacy.html:11
+#: .\templates\core\privacy.html:8
 msgid "What we collect"
 msgstr ""
 
-#: .\templates\core\privacy.html:13
+#: .\templates\core\privacy.html:10
 msgid "From sellers: phone number, name, business name, address, and the provider credentials you enter."
 msgstr ""
 
-#: .\templates\core\privacy.html:14
+#: .\templates\core\privacy.html:11
 msgid "From people ordering cards: name, phone number, delivery address."
 msgstr ""
 
-#: .\templates\core\privacy.html:15
+#: .\templates\core\privacy.html:12
 msgid "From customers paying: the amount and which provider they chose. Nothing that identifies them personally."
 msgstr ""
 
-#: .\templates\core\privacy.html:18
+#: .\templates\core\privacy.html:15
 msgid "What we never collect"
 msgstr ""
 
-#: .\templates\core\privacy.html:20
+#: .\templates\core\privacy.html:17
 msgid "Card numbers, CVV codes or any card details. Card payments happen on the provider's own page."
 msgstr ""
 
-#: .\templates\core\privacy.html:21
+#: .\templates\core\privacy.html:18
 msgid "Passport or ID numbers."
 msgstr ""
 
-#: .\templates\core\privacy.html:24
+#: .\templates\core\privacy.html:21
 msgid "How we protect provider credentials"
 msgstr ""
 
-#: .\templates\core\privacy.html:25
+#: .\templates\core\privacy.html:22
 msgid "Your merchant credentials are encrypted in our database, never shown back to you in full, and never written to logs."
 msgstr ""
 
-#: .\templates\core\privacy.html:27
+#: .\templates\core\privacy.html:24
 msgid "Who we share it with"
 msgstr ""
 
-#: .\templates\core\privacy.html:28
+#: .\templates\core\privacy.html:25
 msgid "Payment providers receive what they need to process a payment. Our SMS provider receives your phone number to deliver a confirmation code. We sell your data to nobody."
 msgstr ""
 
-#: .\templates\core\privacy.html:30
+#: .\templates\core\privacy.html:27
 msgid "How long we keep it"
 msgstr ""
 
-#: .\templates\core\privacy.html:31
+#: .\templates\core\privacy.html:28
 msgid "Transaction records are kept while your account is active and afterwards as long as the law requires. Confirmation codes are deleted within minutes."
 msgstr ""
 
-#: .\templates\core\privacy.html:33
+#: .\templates\core\privacy.html:30
 msgid "Your rights"
 msgstr ""
 
-#: .\templates\core\privacy.html:34
+#: .\templates\core\privacy.html:31
 msgid "Ask us to correct or delete your data at any time using the contacts below. We will do it unless the law requires us to keep a record."
 msgstr ""
 
-#: .\templates\core\styleguide.html:4 .\templates\core\styleguide.html:7
+#: .\templates\core\styleguide.html:4
 msgid "Design system"
 msgstr ""
 
-#: .\templates\core\styleguide.html:8
+#: .\templates\core\styleguide.html:5
 msgid "Every page is built from these pieces. Change a token, everything follows."
 msgstr ""
 
-#: .\templates\core\styleguide.html:11
+#: .\templates\core\styleguide.html:8
 msgid "Colours"
 msgstr ""
 
-#: .\templates\core\styleguide.html:22
+#: .\templates\core\styleguide.html:19
 msgid "Buttons"
 msgstr ""
 
-#: .\templates\core\styleguide.html:24
+#: .\templates\core\styleguide.html:21
 msgid "Pay"
 msgstr ""
 
-#: .\templates\core\styleguide.html:25
+#: .\templates\core\styleguide.html:22
 msgid "Cancel"
 msgstr ""
 
-#: .\templates\core\styleguide.html:26 .\templates\core\styleguide.html:64
+#: .\templates\core\styleguide.html:23 .\templates\core\styleguide.html:61
 msgid "Disabled"
 msgstr ""
 
-#: .\templates\core\styleguide.html:31
+#: .\templates\core\styleguide.html:28
 msgid "Provider buttons"
 msgstr ""
 
-#: .\templates\core\styleguide.html:46
+#: .\templates\core\styleguide.html:43
 msgid "Inputs"
 msgstr ""
 
-#: .\templates\core\styleguide.html:61
+#: .\templates\core\styleguide.html:58
 msgid "Badges & toggle"
 msgstr ""
 
-#: .\templates\core\styleguide.html:63
+#: .\templates\core\styleguide.html:60
 msgid "Active"
 msgstr ""
 
-#: .\templates\core\styleguide.html:69
+#: .\templates\core\styleguide.html:66
 msgid "Saved successfully."
 msgstr ""
 
-#: .\templates\core\styleguide.html:70
+#: .\templates\core\styleguide.html:67
 msgid "Something went wrong."
 msgstr ""
 
-#: .\templates\core\terms.html:4 .\templates\core\terms.html:8
-#: .\templates\layouts\marketing.html:50
+#: .\templates\core\terms.html:5 .\templates\layouts\marketing.html:50
 msgid "Terms of service"
 msgstr ""
 
-#: .\templates\core\terms.html:11
+#: .\templates\core\terms.html:8
 msgid "What TapCon provides"
 msgstr ""
 
-#: .\templates\core\terms.html:12
+#: .\templates\core\terms.html:9
 msgid "TapCon supplies an NFC card and a payment page that forwards your customer to the payment provider you have chosen. TapCon is not a bank, not a payment institution, and does not hold your money."
 msgstr ""
 
-#: .\templates\core\terms.html:14
+#: .\templates\core\terms.html:11
 msgid "Your responsibilities"
 msgstr ""
 
-#: .\templates\core\terms.html:16
+#: .\templates\core\terms.html:13
 msgid "Keep your own merchant accounts with the providers in good standing."
 msgstr ""
 
-#: .\templates\core\terms.html:17
+#: .\templates\core\terms.html:14
 msgid "Keep your account credentials and provider keys secret."
 msgstr ""
 
-#: .\templates\core\terms.html:18
+#: .\templates\core\terms.html:15
 msgid "Only accept payments for lawful goods and services."
 msgstr ""
 
-#: .\templates\core\terms.html:19
+#: .\templates\core\terms.html:16
 msgid "Give your customers a receipt where the law requires one."
 msgstr ""
 
-#: .\templates\core\terms.html:22
+#: .\templates\core\terms.html:19
 msgid "Approval and suspension"
 msgstr ""
 
-#: .\templates\core\terms.html:23
+#: .\templates\core\terms.html:20
 msgid "A new business must be approved before its payment page accepts payments. We may suspend an account that breaks these terms or that a provider asks us to stop serving."
 msgstr ""
 
-#: .\templates\core\terms.html:25
+#: .\templates\core\terms.html:22
 msgid "Money and commission"
 msgstr ""
 
-#: .\templates\core\terms.html:26
+#: .\templates\core\terms.html:23
 msgid "Payments go directly to your merchant account. TapCon takes no commission. Your providers charge their own fees under your agreement with them."
 msgstr ""
 
-#: .\templates\core\terms.html:28
+#: .\templates\core\terms.html:25
 msgid "The card: price and replacement"
 msgstr ""
 
-#: .\templates\core\terms.html:29
+#: .\templates\core\terms.html:26
 msgid "The card is paid for once, on delivery. A faulty card is replaced free of charge."
 msgstr ""
 
-#: .\templates\core\terms.html:37
+#: .\templates\core\terms.html:34
 msgid "Returning a payment to a customer"
 msgstr ""
 
-#: .\templates\core\terms.html:38
+#: .\templates\core\terms.html:35
 msgid "TapCon does not return payments. Money goes straight from your customer to your own merchant account, and we never hold it, so we have nothing to send back."
 msgstr ""
 
-#: .\templates\core\terms.html:39
+#: .\templates\core\terms.html:36
 msgid "If a customer paid too much or should be refunded, settle it with them directly, or ask your payment provider to return the payment through their own system. A payment your provider returns is shown in your transactions as “Returned to customer” and is not counted in your takings."
 msgstr ""
 
-#: .\templates\core\terms.html:41
+#: .\templates\core\terms.html:38
 msgid "Limits of responsibility"
 msgstr ""
 
-#: .\templates\core\terms.html:42
+#: .\templates\core\terms.html:39
 msgid "We do our best to keep the service running, but we are not responsible for a payment provider being unavailable, nor for a dispute between you and your customer."
 msgstr ""
 
@@ -1839,6 +1915,14 @@ msgstr ""
 
 #: .\templates\layouts\marketing.html:42
 msgid "Company"
+msgstr ""
+
+#: .\templates\layouts\marketing.html:43
+msgid "About"
+msgstr ""
+
+#: .\templates\layouts\marketing.html:44 .\templates\partials\navbar.html:20
+msgid "FAQ"
 msgstr ""
 
 #: .\templates\layouts\marketing.html:48
@@ -2185,6 +2269,10 @@ msgstr ""
 
 #: .\templates\partials\notification_item.html:23
 msgid "Unread"
+msgstr ""
+
+#: .\templates\partials\structured_data.html:32
+msgid "NFC-card payments for small businesses in Uzbekistan. The customer taps the card, enters the amount and pays - the money goes straight to the seller's own merchant account."
 msgstr ""
 
 #: .\templates\payments\pay.html:28

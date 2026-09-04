@@ -3,8 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}TapCon{% endblock %}</title>
-  <meta name="description" content="{% block description %}{% trans "Accept payments with a single tap." %}{% endblock %}">
+  {% comment %}
+  A page's name and summary come from the view (core/seo.py), not from a
+  template block, because each is needed twice — once for search and once for
+  a link preview — and a Django block can only be rendered once. When they
+  lived in blocks, nine of ten pages shipped the same 37-character
+  description and every link shared to Telegram was titled "TapCon".
+
+  The blocks remain as the fallback for pages with no view-supplied metadata:
+  the merchant portal, the auth screens, the pay page and the error pages,
+  none of which are indexed.
+  {% endcomment %}
+  <title>{% if meta_title %}{{ meta_title }}{% else %}{% block title %}TapCon{% endblock %}{% endif %}</title>
+  <meta name="description" content="{% if meta_description %}{{ meta_description }}{% else %}{% block description %}{% trans "Accept payments with a single tap." %}{% endblock %}{% endif %}">
   <link rel="icon" href="{% static 'img/favicon.svg' %}" type="image/svg+xml">
 
   {% comment %}
@@ -31,17 +42,36 @@
     <link rel="alternate" hreflang="x-default" href="{{ site_url }}{{ default_alternate }}">
   {% endif %}
 
+  {% comment %}
+  og:locale takes language_TERRITORY, not a bare language code. Telegram and
+  Facebook ignore a malformed one, and a link shared into an Uzbek group then
+  loses its localisation — which matters here, because Telegram is how most
+  of this will actually be shared.
+  {% endcomment %}
   <meta property="og:site_name" content="TapCon">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="{{ LANGUAGE_CODE }}">
-  <meta property="og:title" content="{% block og_title %}TapCon{% endblock %}">
-  <meta property="og:description" content="{% block og_description %}{% trans "Accept payments with a single tap." %}{% endblock %}">
+  <meta property="og:locale" content="{{ og_locale }}">
+  {% for alt in og_locale_alternates %}<meta property="og:locale:alternate" content="{{ alt }}">
+  {% endfor %}
+  <meta property="og:title" content="{% if meta_title %}{{ meta_title }}{% else %}{% block og_title %}TapCon{% endblock %}{% endif %}">
+  <meta property="og:description" content="{% if meta_description %}{{ meta_description }}{% else %}{% block og_description %}{% trans "Accept payments with a single tap." %}{% endblock %}{% endif %}">
   <meta property="og:image" content="{{ site_url }}{% static 'img/og-image.png' %}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{% trans "A TapCon NFC card on a shop counter" %}">
   {% if canonical_path %}<meta property="og:url" content="{{ site_url }}{{ canonical_path }}">{% endif %}
+
+  {% comment %}
+  Twitter reads og:* as a fallback, but only if the card type is set — and
+  naming title and description explicitly is what stops a preview being
+  built from whatever text the crawler finds first on the page.
+  {% endcomment %}
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if meta_title %}{{ meta_title }}{% else %}TapCon{% endif %}">
+  <meta name="twitter:description" content="{% if meta_description %}{{ meta_description }}{% else %}{% trans "Accept payments with a single tap." %}{% endif %}">
+  <meta name="twitter:image" content="{{ site_url }}{% static 'img/og-image.png' %}">
   <meta name="theme-color" content="#2563eb">
+  {% include "partials/structured_data.html" %}
   {% comment %}
   Inter is served from our own domain, not fonts.googleapis.com. That was a
   render-blocking request to a third party on the one page that has to be fast
