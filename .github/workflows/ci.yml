@@ -1,0 +1,78 @@
+# TapCon - continuous integration.
+#
+# Runs the whole suite twice on every push and every pull request: once on
+# SQLite, which is what a developer's machine uses, and once on PostgreSQL,
+# which is what production uses. The second pass is the one that matters for
+# payments: SQLite ignores SELECT ... FOR UPDATE, so the row-lock tests skip
+# there and only run against a real PostgreSQL.
+
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+concurrency:
+  # A new push supersedes the run in flight for the same branch.
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: tests
+    runs-on: ubuntu-24.04
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      # None of these are secrets. They are placeholders so the settings
+      # load; nothing real is ever signed or encrypted with them.
+      SECRET_KEY: ci-only-never-used-to-sign-anything-real-0123456789abcdef
+      FIELD_ENCRYPTION_KEY: Q0ktb25seS1rZXktbm90LWEtc2VjcmV0LTAxMjM0NTY=
+      PGTEST_DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/tapcon_verify
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+          cache: pip
+
+      - name: Install gettext
+        # compilemessages shells out to msgfmt, and the *.mo files are not in
+        # the repository.
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq gettext
+
+      - name: Install dependencies
+        # tblib lets a parallel test run report a failure's traceback.
+        run: pip install -r requirements-dev.txt -r requirements-prod.txt tblib
+
+      - name: Compile the translation catalogues
+        run: python manage.py compilemessages
+
+      - name: Rebuild the stylesheet bundle
+        # One test compares the age of bundle.css with the age of its sources.
+        # A fresh checkout gives every file the same age, so the bundle is
+        # rebuilt here to make that comparison mean something.
+        run: python manage.py bundlecss
+
+      - name: System check
+        run: python manage.py check
+
+      - name: Test suite on SQLite
+        run: python manage.py test --parallel 4
+
+      - name: Test suite on PostgreSQL
+        run: python manage.py test --settings=config.settings.pgtest --parallel 4 --noinput
