@@ -1,10 +1,15 @@
 # TapCon
 
+[![CI](https://github.com/A-Kamronbek/TapCon/actions/workflows/ci.yml/badge.svg)](https://github.com/A-Kamronbek/TapCon/actions/workflows/ci.yml)
+
 NFC-card payment service for Uzbekistan. A customer taps a seller's NFC card,
 their phone opens `tapcon.uz/pay/<uid>`, they enter an amount and pay with
 Click, Payme, Uzum, Paynet or a bank card. Sellers manage their own provider
 credentials in a merchant portal — TapCon is multi-tenant and never holds
 global provider credentials.
+
+**Status:** the website is complete. The service has not been launched to the
+public yet and has no users.
 
 ## Stack
 
@@ -89,7 +94,7 @@ without them, so a failed injection fails *closed*.
 ## Testing
 
 ```bash
-python manage.py test                                   # 438 tests, SQLite
+python manage.py test                                   # 450 tests, SQLite
 python manage.py test --settings=config.settings.pgtest # the same, on PostgreSQL
 ```
 
